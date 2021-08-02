@@ -9,6 +9,8 @@
   --yellow: rgb(202, 157, 59);
   --blue: rgb(155, 220, 254);
   --orange: rgb(206, 145, 120);
+  --green: rgb(106, 153, 86);
+  --pink: rgb(206, 120, 199);
 
   --ff-primary: 'Montserrat', sans-serif;
   --ff-secondary: 'Roboto Mono', monospace;
@@ -16,9 +18,14 @@
   --transition: 0.3s ease;
   --shadow: rgba(0, 0, 0, 0.25) 0px 4px 16px;
   --shadow-in: inset rgba(0, 0, 0, 0.25) 0px 4px 16px;
+  --radius: 1rem;
 }
 
 .dark {
+  --pr-white: #343434;
+  --pure-white: #292929;
+  --pr-black: #f4f4f4;
+
   --yellow: rgb(215, 186, 125);
   --blue: rgb(155, 220, 254);
   --orange: rgb(206, 145, 120);
@@ -39,4 +46,12 @@ body {
   line-height: 1.4;
   color: var(--pr-black);
   background-color: var(--pr-white);
+  transition: var(--transition);
+}
+
+main {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

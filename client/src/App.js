@@ -1,7 +1,9 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { ThemeContext } from './context/ThemeContext';
 import './App.css';
-import Nav from './Components/Nav';
+// import Nav from './Components/Nav';
+import Home from './Components/Pages/Home';
+import Header from './Components/Header';
 
 function App() {
   const [isSticky, setSticky] = useState(false);
@@ -32,11 +34,13 @@ function App() {
   // for sticky nav
   useEffect(() => {
     const nav = document.querySelector('nav');
-    const sticky = document.querySelector('nav').offsetHeight;
+    const yoni = document.querySelector('.yoni-container');
+    const sticky = document.querySelector('header').offsetHeight;
     const scrollCallBack = window.addEventListener('scroll', () => {
       if (window.pageYOffset >= sticky) {
         setSticky(true);
         nav.classList.add('sticky');
+        yoni.style.width = '20vw';
       } else {
         setSticky(false);
         nav.classList.remove('sticky');
@@ -47,9 +51,16 @@ function App() {
     };
   }, [setSticky]);
 
+  const updateMode = () => {
+    darkMode
+      ? theme.dispatch({ type: 'LIGHTMODE' })
+      : theme.dispatch({ type: 'DARKMODE' });
+  };
+
   return (
     <div className='App'>
-      <Nav />
+      <Header updateMode={updateMode} />
+      <Home />
     </div>
   );
 }

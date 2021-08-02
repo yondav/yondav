@@ -3,7 +3,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  background-color: var(--pure-white);
   width: 100%;
   z-index: 10;
 }
@@ -52,33 +51,40 @@ nav {
   transform: scaleX(1);
 }
 
+/* .contrast {
+  margin-right: 1rem;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.contrast:hover {
+  transform: scale(1.1);
+} */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: var(--pure-white);
+  z-index: 1;
+}
+
 @media only screen and (min-width: 600px) {
   .inner-nav {
     flex-basis: auto;
     width: 30%;
     font-size: 1.2em;
   }
-
-  .inner-nav {
-    width: 40%;
-    font-size: 1.4em;
-  }
 }
 
 @media only screen and (min-width: 900px) {
   .inner-nav {
-    width: 20%;
-    font-size: 1.4em;
-  }
-
-  .inner-nav {
     width: 30%;
     font-size: 1.4em;
   }
-}
 
-@media only screen and (min-width: 1200px) {
-  .inner-nav {
-    width: 20%;
-  }
+  /* .contrast {
+    font-size: 1.4em;
+  } */
 }
