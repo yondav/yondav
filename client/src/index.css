@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+@import url('https://use.typekit.net/vhg7llf.css');
+
+:root {
+  --pr-white: #f4f4f4;
+  --pure-white: #faf9fa;
+  --pr-black: #343434;
+
+  --yellow: rgb(202, 157, 59);
+  --blue: rgb(155, 220, 254);
+  --orange: rgb(206, 145, 120);
+
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-secondary: 'Roboto Mono', monospace;
+
+  --transition: 0.3s ease;
+  --shadow: rgba(0, 0, 0, 0.25) 0px 4px 16px;
+  --shadow-in: inset rgba(0, 0, 0, 0.25) 0px 4px 16px;
+}
+
+.dark {
+  --yellow: rgb(215, 186, 125);
+  --blue: rgb(155, 220, 254);
+  --orange: rgb(206, 145, 120);
+}
+
+html {
+  max-width: 100vw;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: var(--pr-black);
+  background-color: var(--pr-white);
+}
