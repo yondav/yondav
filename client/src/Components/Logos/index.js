@@ -1,0 +1,13 @@
+import './logos.css';
+export { default as HTML } from './HTML';
+export { default as CSS } from './CSS';
+export { default as Javascript } from './Javascript';
+export { default as Node } from './Node';
+export { default as ReactLogo } from './React';
+export { default as MySQL } from './MySQL';
+export { default as Mongo } from './Mongo';
+export { default as HandleBars } from './Handlebars';
+export { default as AcrobatDC } from './Acrobat';
+export { default as Illustrator } from './Illustrator';
+export { default as InDesign } from './Indesign';
+export { default as Photoshop } from './Photoshop';

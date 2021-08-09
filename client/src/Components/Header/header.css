@@ -9,13 +9,13 @@ header {
 
 .icons {
   position: absolute;
-  right: 1.5rem;
+  right: 1rem;
   top: 1rem;
   height: 8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-size: 1.4em;
+  font-size: 1.2em;
   z-index: 10;
 }
 
@@ -52,15 +52,16 @@ header {
 }
 
 .yoni-container {
-  width: 90%;
+  margin-top: 0.5rem;
+  width: fit-content;
 }
 
 .yoni {
-  height: 100%;
+  height: 50vh;
 }
 
 .about-btn {
-  width: 5rem;
+  /* width: 5rem; */
   position: absolute;
   top: 10rem;
   right: 1.5rem;
@@ -73,11 +74,14 @@ header {
 }
 
 .about-btn:hover,
-.about-btn:focus,
-.about-btn:active {
+.about-btn:focus {
   color: var(--pr-white);
   background-color: var(--pr-black);
   box-shadow: var(--shadow);
+}
+
+.about-btn:active {
+  box-shadow: var(--shadow-in);
 }
 
 .bounce {
@@ -95,13 +99,13 @@ header {
 }
 
 @media only screen and (min-width: 757px) {
-  .yoni-container {
-    width: 75%;
+  .yoni {
+    height: 83vh;
   }
 }
 
 @media only screen and (min-width: 989px) {
-  .yoni-container {
-    width: 50%;
+  .yoni {
+    height: 88vh;
   }
 }

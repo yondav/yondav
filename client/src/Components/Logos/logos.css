@@ -1,0 +1,22 @@
+.react-logos-wrapper {
+  width: fit-content;
+  height: fit-content;
+  margin: 0.5rem;
+}
+
+/* transitions */
+.ease {
+  transition: 0.3s all ease;
+}
+
+.ease-in {
+  transition: 0.3s all ease-in;
+}
+
+.ease-in-out {
+  transition: 0.3s all ease-in-out;
+}
+
+.ease-out {
+  transition: 0.3s all ease-out;
+}

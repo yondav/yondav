@@ -1,34 +1,47 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import YDIcon from '../Icons/YD';
+import NavLink from './NavLink';
+import ContactModal from '../Contact_Modal';
 import './nav.css';
 
 const Nav = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => setOpen(false);
+
   return (
     <nav>
       <div className='inner-nav'>
-        <NavLink to='/' style={{ textDecoration: 'none' }}>
+        <Link to='/' style={{ textDecoration: 'none' }}>
           <YDIcon />
-        </NavLink>
+        </Link>
         <motion.div
           initial={{ y: -100 }}
           animate={{ y: 0 }}
-          transition={{ ease: 'easeIn', duration: 0.5 }}
+          transition={{ ease: 'easeIn', duration: 0.5, delay: 0 }}
         >
-          <NavLink to='/dev' className='nav-link'>
-            dev
-          </NavLink>
+          <NavLink link='dev' />
         </motion.div>
         <motion.div
           initial={{ y: -100 }}
           animate={{ y: 0 }}
-          transition={{ ease: 'easeIn', duration: 1 }}
+          transition={{ ease: 'easeIn', duration: 0.5, delay: 0.5 }}
         >
-          <NavLink to='/portraits' className='nav-link'>
-            portraits
-          </NavLink>
+          <NavLink link='portraits' />
         </motion.div>
+        <motion.div
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ ease: 'easeIn', duration: 0.5, delay: 1 }}
+        >
+          <NavLink link='about' onClick={() => setOpen(true)} />
+          {/* <p className='nav-link' onClick={() => setOpen(true)}>
+            about
+          </p> */}
+        </motion.div>
+        <ContactModal open={open} handleClose={handleClose} />
       </div>
     </nav>
   );

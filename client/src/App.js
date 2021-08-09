@@ -2,10 +2,9 @@ import React, { useEffect, useContext, useState } from 'react';
 import { ThemeContext } from './context/ThemeContext';
 import './App.css';
 // import Nav from './Components/Nav';
-import Home from './Components/Pages/Home';
 import Header from './Components/Header';
 
-function App() {
+const App = () => {
   const [isSticky, setSticky] = useState(false);
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
@@ -60,9 +59,9 @@ function App() {
   return (
     <div className='App'>
       <Header updateMode={updateMode} />
-      <Home />
+      <main></main>
     </div>
   );
-}
+};
 
 export default App;

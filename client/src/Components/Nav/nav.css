@@ -1,6 +1,6 @@
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 1rem 0;
   width: 100%;
@@ -8,26 +8,21 @@ nav {
 }
 
 .inner-nav {
-  flex-basis: 50%;
+  flex-basis: 80%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin-left: 1rem;
 }
 
 .nav-link {
   position: relative;
-  color: var(--pr-black);
+  color: var(--primary-light);
   text-decoration: none;
-  transition: var(--transition);
 }
 
 .nav-link:hover,
 .nav-link:focus,
-.nav-link:active,
-.pop-up .bio-card a:hover,
-.pop-up .bio-card a:focus,
-.pop-up .bio-card a:active {
+.nav-link:active {
   color: var(--orange);
 }
 
@@ -41,7 +36,7 @@ nav {
   background-color: var(--orange);
   visibility: hidden;
   transform: scaleX(0);
-  transition: var(--transition);
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-link:hover::before,
@@ -50,17 +45,6 @@ nav {
   visibility: visible;
   transform: scaleX(1);
 }
-
-/* .contrast {
-  margin-right: 1rem;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.contrast:hover {
-  transform: scale(1.1);
-} */
 
 .sticky {
   position: fixed;
@@ -72,19 +56,14 @@ nav {
 
 @media only screen and (min-width: 600px) {
   .inner-nav {
-    flex-basis: auto;
-    width: 30%;
+    flex-basis: 50%;
     font-size: 1.2em;
   }
 }
 
 @media only screen and (min-width: 900px) {
   .inner-nav {
-    width: 30%;
+    flex-basis: 30%;
     font-size: 1.4em;
   }
-
-  /* .contrast {
-    font-size: 1.4em;
-  } */
 }

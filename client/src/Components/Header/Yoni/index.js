@@ -32,8 +32,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#1c1614')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 4 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 4 },
             }}
           />
         </g>
@@ -45,8 +45,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#000000')}
             transition={{
-              default: { duration: 9 },
-              fill: { duration: 8, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 2 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 2 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -59,8 +59,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#bd8867')}
             transition={{
-              default: { duration: 3 },
-              fill: { duration: 5, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 1 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -71,8 +71,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#bd8867')}
             transition={{
-              default: { duration: 3 },
-              fill: { duration: 5, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 1 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -83,8 +83,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#bd8867')}
             transition={{
-              default: { duration: 3 },
-              fill: { duration: 5, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 2 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 2 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -95,8 +95,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#bd8867')}
             transition={{
-              default: { delay: 7, duration: 3 },
-              fill: { delay: 7, duration: 3, ease: [1, 0, 0.8, 0] },
+              default: { delay: 6, duration: 1 },
+              fill: { delay: 6, duration: 2, ease: [1, 0, 0.8, 0] },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -107,8 +107,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#bd8867')}
             transition={{
-              default: { delay: 7, duration: 3 },
-              fill: { delay: 7, duration: 3, ease: [1, 0, 0.8, 0] },
+              default: { delay: 6, duration: 1 },
+              fill: { delay: 6, duration: 2, ease: [1, 0, 0.8, 0] },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -119,8 +119,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#bd8867')}
             transition={{
-              default: { duration: 3 },
-              fill: { duration: 5, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0] },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -132,8 +132,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#b96b52')}
             transition={{
-              default: { duration: 3 },
-              fill: { duration: 5, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0] },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -143,8 +143,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#996446')}
             transition={{
-              default: { duration: 5 },
-              fill: { duration: 6, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0] },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -154,8 +154,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#835043')}
             transition={{
-              default: { duration: 5 },
-              fill: { duration: 6, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0] },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -165,8 +165,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#835043')}
             transition={{
-              default: { duration: 5 },
-              fill: { duration: 6, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0] },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -176,8 +176,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#835043')}
             transition={{
-              default: { duration: 5 },
-              fill: { duration: 6, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0] },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -187,8 +187,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#835043')}
             transition={{
-              default: { duration: 5 },
-              fill: { duration: 6, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0] },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -198,8 +198,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#674639')}
             transition={{
-              default: { duration: 5 },
-              fill: { duration: 6, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 7 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 7 },
             }}
           />
           <motion.polyline
@@ -208,8 +208,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#674639')}
             transition={{
-              default: { duration: 5 },
-              fill: { duration: 6, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 7 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 7 },
             }}
           />
         </g>
@@ -221,8 +221,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#ffffff')}
             transition={{
-              default: { duration: 8 },
-              fill: { duration: 11, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 1 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -233,8 +233,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#ffffff')}
             transition={{
-              default: { duration: 8 },
-              fill: { duration: 11, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 1 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -247,8 +247,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#29201b')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 1 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -259,54 +259,21 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#29201b')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 1 },
             }}
             transform='translate(-199.49 -165.5)'
           />
         </g>
         <g id='beard'>
           <motion.path
-            d='M714.36,411.67l.61,2A10.64,10.64,0,0,0,714.36,411.67Z'
-            variants={icon}
-            initial='hidden'
-            animate={icon.visible('#55483f')}
-            transition={{
-              default: { duration: 2 },
-              fill: { duration: 3, ease: [1, 0, 0.8, 0] },
-            }}
-            transform='translate(-199.49 -165.5)'
-          />
-          <motion.path
-            d='M714.36,411.67l.61,2a10.64,10.64,0,0,0-.61-2Z'
-            variants={icon}
-            initial='hidden'
-            animate={icon.visible('none')}
-            transition={{
-              default: { duration: 2 },
-              fill: { duration: 3, ease: [1, 0, 0.8, 0] },
-            }}
-            transform='translate(-199.49 -165.5)'
-          />
-          <motion.path
             d='M601.3,594.73c-15.09,0-30.4-4.92-45.51-14.62-7.27-4.68-13.81-11-18.7-16a214,214,0,0,1-20-23.59c-4.16-5.68-8.1-11.65-11.7-17.73a62.81,62.81,0,0,0-3.66-5.32,45.73,45.73,0,0,1-4.74-7.33q-1.32-2.81-2.65-5.59c-5.16-10.88-10.51-22.13-14.27-34-.14-.46-.31-1-.5-1.56-.77-2.34-1.82-5.53-2.54-8.75-.94-4.21-1.06-7.37-.36-9.42a4.38,4.38,0,0,0,2.62,2.66,7.3,7.3,0,0,0,2.15.31,11.46,11.46,0,0,0,2-.19l.9-.17c1.49-.31,3-.7,4.4-1.08a36.14,36.14,0,0,1,9.26-1.63,15.42,15.42,0,0,1,4.28.58A38,38,0,0,1,510,454.9a40.62,40.62,0,0,0,7.79,3.54,5.34,5.34,0,0,0,1.45.27l.36,0a4.37,4.37,0,0,0,1.78-.82c1.55-1,3.11-2.06,4.67-3.08,3.08-2,6.28-4.12,9.32-6.3.58-.41,1.19-.92,1.84-1.45,2.11-1.73,4.51-3.69,6.9-3.69a3.92,3.92,0,0,1,1.18.17l8.25,2.51.2-.14a14.8,14.8,0,0,0,4.86-5.94c.14-.3.27-.61.4-.93a7.92,7.92,0,0,1,1.62-2.81,2.32,2.32,0,0,1,1.59-.73c1.4,0,2.84,1.6,4,2.88.39.44.76.84,1.1,1.16a19.87,19.87,0,0,0,3.92,2.65c1.24.7,2.65,1.68,4.16,2.71,4,2.75,8.52,5.86,12.51,5.86h.1a16.83,16.83,0,0,0,6.68-1.72,4.75,4.75,0,0,0,3.16-3.21,8.86,8.86,0,0,1,.42-.95,8.56,8.56,0,0,1,2.32-2.41c1.48-1.19,3-2.61,4.65-4.12,4.75-4.4,10.15-9.4,15.93-9.9,2.9-.25,6.32-.51,9.74-.51,6.59,0,11.72.94,16.17,3,5,2.27,8.93,6.21,12.76,10,1.49,1.49,3,3,4.62,4.44a4.31,4.31,0,0,0,2.7,1.38c1.75,0,2.82-1.61,3.56-3,.9-1.71,1.76-3.61,2.66-5.62,2.22-4.93,4.52-10,8-13.21a11.63,11.63,0,0,1,3.55-2.26,19.46,19.46,0,0,1,7.27-1.16,78.9,78.9,0,0,1,13.55,1.64l3.1.54a17.57,17.57,0,0,0,2.82.27,6.39,6.39,0,0,0,3.4-.79c.36,13.56.44,26.81-1.86,39.84-2.4,13.58-8,26.54-13.39,39.08l-.25.56a257.31,257.31,0,0,1-31.89,54.61C648.83,581.76,625.89,594.73,601.3,594.73Z'
             variants={icon}
             initial='hidden'
             animate={icon.visible('#55483f')}
             transition={{
-              default: { duration: 2 },
-              fill: { duration: 3, ease: [1, 0, 0.8, 0] },
-            }}
-            transform='translate(-199.49 -165.5)'
-          />
-          <motion.path
-            d='M692.16,422a79.09,79.09,0,0,1,13.46,1.63l3.11.55a18.37,18.37,0,0,0,2.9.27,7.79,7.79,0,0,0,2.92-.5c.34,13.26.38,26.23-1.87,39-2.39,13.52-8,26.46-13.36,39l-.25.57a256.22,256.22,0,0,1-31.83,54.49c-18.71,24.42-41.51,37.32-65.94,37.32-15,0-30.22-4.89-45.24-14.54-7.23-4.65-13.74-10.93-18.61-15.88a214,214,0,0,1-20-23.53c-4.15-5.68-8.08-11.63-11.67-17.7a64.53,64.53,0,0,0-3.69-5.36A44.87,44.87,0,0,1,497.4,510q-1.32-2.81-2.65-5.6c-5.16-10.86-10.49-22.09-14.24-33.89l-.51-1.57c-.76-2.32-1.81-5.51-2.52-8.69a22.52,22.52,0,0,1-.68-8,4.38,4.38,0,0,0,2.3,1.77,7.35,7.35,0,0,0,2.3.34,13.59,13.59,0,0,0,2.07-.19l.92-.18c1.5-.31,3-.71,4.43-1.09a36.31,36.31,0,0,1,9.13-1.61,14.91,14.91,0,0,1,4.15.56,37.4,37.4,0,0,1,7.67,3.47,41.09,41.09,0,0,0,7.89,3.58,5.7,5.7,0,0,0,1.59.29,3.11,3.11,0,0,0,.43,0,4.69,4.69,0,0,0,2-.9c1.54-1,3.1-2,4.66-3.07,3.09-2,6.29-4.13,9.34-6.31.59-.43,1.21-.93,1.87-1.47,2-1.68,4.37-3.58,6.58-3.58a3.68,3.68,0,0,1,1,.15l2.92.89,5.09,1.55.47.15.4-.29a15.34,15.34,0,0,0,5-6.14c.14-.31.27-.63.4-.94a7.35,7.35,0,0,1,1.51-2.64,1.83,1.83,0,0,1,1.24-.6c1.17,0,2.53,1.5,3.63,2.71.39.44.77.86,1.13,1.2a20.55,20.55,0,0,0,4,2.72c1.22.69,2.63,1.66,4.12,2.68,4.06,2.79,8.66,5.95,12.8,5.95H588a17.42,17.42,0,0,0,6.88-1.76,6.33,6.33,0,0,0,2.53-1.76,6.78,6.78,0,0,0,.89-1.73,6.62,6.62,0,0,1,.39-.89,8.37,8.37,0,0,1,2.19-2.26c1.5-1.2,3-2.63,4.68-4.14,4.7-4.35,10-9.28,15.63-9.77,2.89-.25,6.3-.51,9.7-.51,6.51,0,11.58.93,16,2.93,4.9,2.23,8.82,6.13,12.62,9.91,1.49,1.49,3,3,4.63,4.45a4.77,4.77,0,0,0,3,1.51h.05c2.23,0,3.49-2.37,4-3.27.91-1.72,1.77-3.62,2.68-5.64,2.2-4.89,4.48-9.95,7.84-13.06a11.42,11.42,0,0,1,3.39-2.16,19.13,19.13,0,0,1,7.09-1.12m0-1a20.26,20.26,0,0,0-7.46,1.19,12.21,12.21,0,0,0-3.7,2.36c-4.93,4.55-7.6,13.07-10.72,19-.68,1.28-1.64,2.74-3.08,2.74h0a3.92,3.92,0,0,1-2.37-1.25c-5.63-5-10.49-11.33-17.5-14.53-5.11-2.33-10.75-3-16.38-3-3.3,0-6.59.23-9.78.51-7.94.69-15,9.42-20.85,14.13a8.94,8.94,0,0,0-2.45,2.57,18.24,18.24,0,0,1-1.19,2.48,5.45,5.45,0,0,1-2.15,1.46,16.63,16.63,0,0,1-6.49,1.67h-.09c-5.32,0-11.93-6-16.43-8.5a19.86,19.86,0,0,1-3.82-2.58c-1.38-1.3-3.32-4.18-5.44-4.18a2.76,2.76,0,0,0-1.93.87c-1.08,1-1.52,2.54-2.14,3.9a14.23,14.23,0,0,1-4.69,5.73l-8-2.44a4.75,4.75,0,0,0-1.33-.19c-3.35,0-6.61,3.5-9,5.23-4.55,3.26-9.33,6.25-14,9.37a3.79,3.79,0,0,1-1.57.74,1.42,1.42,0,0,1-.29,0,4.6,4.6,0,0,1-1.31-.25c-5.49-1.61-10.07-5.51-15.57-7.06a16.25,16.25,0,0,0-4.42-.59c-4.64,0-9.1,1.75-13.76,2.72l-.88.17a12.46,12.46,0,0,1-1.91.18,6.46,6.46,0,0,1-2-.29c-1.37-.44-2.21-1.74-2.71-3.49h0c-1.5,2.44-1.11,6.66-.18,10.84s2.32,8,3.06,10.35c4.4,13.85,10.81,26.58,16.94,39.61,2.1,4.47,5.89,8.42,8.42,12.69q5.44,9.2,11.73,17.78a212.67,212.67,0,0,0,20.09,23.64c5.78,5.88,12,11.65,18.78,16,15.57,10,31,14.7,45.78,14.7,25.09,0,48.22-13.55,66.74-37.71a257.85,257.85,0,0,0,32-54.71c5.49-12.73,11.22-25.91,13.67-39.76,2.39-13.49,2.22-27.29,1.84-41a5,5,0,0,1-3.87,1.34,17.66,17.66,0,0,1-2.74-.26c-4.72-.78-11-2.19-16.73-2.19Z'
-            variants={icon}
-            initial='hidden'
-            animate={icon.visible('none')}
-            transition={{
-              default: { duration: 2 },
-              fill: { duration: 3, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 0.5 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 0.5 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -318,8 +285,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#191918')}
             transition={{
-              default: { duration: 3 },
-              fill: { duration: 6, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 2 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 2 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -329,8 +296,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#191918')}
             transition={{
-              default: { duration: 3 },
-              fill: { duration: 6, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 2 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 2 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -343,8 +310,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('none')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 10, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -355,8 +322,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('none')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 10, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -367,8 +334,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('none')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 10, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -379,8 +346,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('none')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 10, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -391,8 +358,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('none')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 10, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -403,8 +370,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('none')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 10, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -415,8 +382,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('none')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 10, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -427,8 +394,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('none')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 10, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -441,8 +408,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#cbc5ad')}
             transition={{
-              default: { duration: 6 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 4 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 4 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -453,8 +420,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#cbc5ad')}
             transition={{
-              default: { duration: 6 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 4 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 4 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -468,8 +435,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#b26a3e')}
             transition={{
-              default: { duration: 7 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 5 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 5 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -481,8 +448,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#b26a3e')}
             transition={{
-              default: { duration: 7 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 5 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 5 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -495,8 +462,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#2b221f')}
             transition={{
-              default: { duration: 5 },
-              fill: { duration: 7, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 1 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -509,8 +476,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#cbc5ad')}
             transition={{
-              default: { duration: 3 },
-              fill: { duration: 5, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0] },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -522,8 +489,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#402d29')}
             transition={{
-              default: { duration: 3 },
-              fill: { duration: 5, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0] },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -538,8 +505,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('none')}
             transition={{
-              default: { duration: 5 },
-              fill: { duration: 6, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 2 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 2 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -552,8 +519,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#717b8c')}
             transition={{
-              default: { duration: 4 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -566,8 +533,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#928b75')}
             transition={{
-              default: { duration: 8 },
-              fill: { duration: 10, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -580,8 +547,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#b6a19f')}
             transition={{
-              default: { duration: 6 },
-              fill: { duration: 8, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -592,8 +559,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#9d8a77')}
             transition={{
-              default: { duration: 8 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -604,8 +571,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#c0bca4')}
             transition={{
-              default: { duration: 6 },
-              fill: { duration: 8, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -616,8 +583,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dad4b1')}
             transition={{
-              default: { duration: 8 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -628,8 +595,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#92866d')}
             transition={{
-              default: { duration: 6 },
-              fill: { duration: 8, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -640,8 +607,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#261c1e')}
             transition={{
-              default: { duration: 8 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -652,8 +619,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#261c1e')}
             transition={{
-              default: { duration: 6 },
-              fill: { duration: 8, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -666,8 +633,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('none')}
             transition={{
-              default: { duration: 8 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -680,8 +647,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('none')}
             transition={{
-              default: { duration: 6 },
-              fill: { duration: 8, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -695,8 +662,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('none')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -708,8 +675,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#161516')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -719,8 +686,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -730,8 +697,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -741,8 +708,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -752,8 +719,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -763,8 +730,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -774,8 +741,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -785,8 +752,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -797,8 +764,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#161516')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -808,8 +775,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -819,8 +786,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -830,8 +797,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -841,8 +808,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -852,8 +819,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -863,8 +830,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -874,8 +841,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -885,8 +852,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#dbc7ba')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -897,8 +864,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#794139')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
@@ -909,8 +876,8 @@ const Yoni = () => {
             initial='hidden'
             animate={icon.visible('#794139')}
             transition={{
-              default: { duration: 10 },
-              fill: { duration: 9, ease: [1, 0, 0.8, 0] },
+              default: { duration: 1, delay: 3 },
+              fill: { duration: 2, ease: [1, 0, 0.8, 0], delay: 3 },
             }}
             transform='translate(-199.49 -165.5)'
           />
