@@ -6,35 +6,35 @@ const HTML = (props) => {
   const fill = {
     path_one: props.theme
       ? !color
-        ? props.primaryDark || '#000000'
+        ? props.primaryDark || '#343434'
         : '#E44D26'
       : !color
-      ? props.primaryWhite || '#ffffff'
+      ? props.primaryWhite || '#f4f4f4'
       : '#E44D26',
     path_two: props.theme
       ? !color
-        ? props.primaryDark || '#000000'
+        ? props.primaryDark || '#343434'
         : '#F16529'
       : !color
-      ? props.primaryWhite || '#ffffff'
+      ? props.primaryWhite || '#f4f4f4'
       : '#F16529',
     path_three: props.theme
       ? !color
-        ? props.primaryWhite || '#ffffff'
+        ? props.primaryWhite || '#f4f4f4'
         : '#EBEBEB'
       : !color
-      ? props.primaryDark || '#000000'
+      ? props.primaryDark || '#343434'
       : '#EBEBEB',
     path_four: props.theme
-      ? props.primaryDark || '#000000'
-      : props.primaryWhite || '#ffffff',
+      ? props.primaryDark || '#343434'
+      : props.primaryWhite || '#f4f4f4',
     path_five: props.theme
       ? !color
-        ? props.primaryWhite || '#ffffff'
-        : '#ffffff'
+        ? props.primaryWhite || '#f4f4f4'
+        : '#f4f4f4'
       : !color
-      ? props.primaryDark || '#000000'
-      : '#ffffff',
+      ? props.primaryDark || '#343434'
+      : '#f4f4f4',
   };
 
   const handleMouseOver = () => {

@@ -6,18 +6,18 @@ const Javascript = (props) => {
   const fill = {
     path_one: props.theme
       ? !color
-        ? props.primaryDark || '#000000'
+        ? props.primaryDark || '#343434'
         : '#F7DF1E'
       : !color
-      ? props.primaryWhite || '#ffffff'
+      ? props.primaryWhite || '#f4f4f4'
       : '#F7DF1E',
     path_two: props.theme
       ? !color
-        ? props.primaryWhite || '#ffffff'
-        : '#000000'
+        ? props.primaryWhite || '#f4f4f4'
+        : '#343434'
       : !color
-      ? props.primaryDark || '#000000'
-      : '#000000',
+      ? props.primaryDark || '#343434'
+      : '#343434',
   };
 
   const handleMouseOver = () => {

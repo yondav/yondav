@@ -6,10 +6,10 @@ const ReactLogo = (props) => {
   const fill = {
     path_one: props.theme
       ? !color
-        ? props.primaryDark || '#000000'
+        ? props.primaryDark || '#343434'
         : '#00D8FF'
       : !color
-      ? props.primaryWhite || '#ffffff'
+      ? props.primaryWhite || '#f4f4f4'
       : '#00D8FF',
   };
 

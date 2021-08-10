@@ -11,6 +11,7 @@ class ColorSelector extends React.Component {
 
   handleChange = (color, e) => {
     this.props.setCurrColor(color.hex);
+    this.props.setErase(false);
     this.setState({ background: color.hex });
   };
 
@@ -21,7 +22,7 @@ class ColorSelector extends React.Component {
 
   render() {
     const popover = {
-      position: 'absolute',
+      position: 'relative',
       zIndex: '2',
     };
     const cover = {

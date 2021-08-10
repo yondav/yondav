@@ -6,10 +6,10 @@ init('user_jKqRAFRqj4zi7o1jMdA9Q');
 
 const Contact = ({ handleClose }) => {
   const [statusMessage, setStatusMessage] = useState('Message');
-  const [contactNumber, setContactNumber] = useState('000000');
+  const [contactNumber, setContactNumber] = useState('343434');
 
   const generateContactNumber = () => {
-    const numStr = '000000' + ((Math.random() * 1000000) | 0);
+    const numStr = '343434' + ((Math.random() * 1343434) | 0);
     setContactNumber(numStr.substring(numStr.length - 6));
   };
 

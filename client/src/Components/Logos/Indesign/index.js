@@ -6,17 +6,17 @@ const InDesign = (props) => {
   const fill = {
     path_one: props.theme
       ? !color
-        ? props.primaryDark || '#000000'
+        ? props.primaryDark || '#343434'
         : '#49021F'
       : !color
-      ? props.primaryWhite || '#ffffff'
+      ? props.primaryWhite || '#f4f4f4'
       : '#49021F',
     path_two: props.theme
       ? !color
-        ? props.primaryWhite || '#ffffff'
+        ? props.primaryWhite || '#f4f4f4'
         : '#FF3366'
       : !color
-      ? props.primaryDark || '#000000'
+      ? props.primaryDark || '#343434'
       : '#FF3366',
   };
 

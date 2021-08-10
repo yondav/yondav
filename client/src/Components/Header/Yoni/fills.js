@@ -1,7 +1,7 @@
 export const fills = {
   shadow: '#1c1b14',
-  black: '#000000',
-  white: '#ffffff',
+  black: '#343434',
+  white: '#f4f4f4',
   skin: '#bd8867',
   skin_shadow: ['#996446', '#835043', '#674639', '#b96b52'],
   pupils: '#29201b',

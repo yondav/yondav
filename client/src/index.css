@@ -18,7 +18,7 @@
   --transition: 0.3s ease;
   --shadow: rgba(0, 0, 0, 0.25) 0px 4px 16px;
   --shadow-in: inset rgba(0, 0, 0, 0.25) 0px 4px 16px;
-  --radius: 1rem;
+  --radius: 0.5rem;
 }
 
 .dark {

@@ -6,17 +6,17 @@ const Illustrator = (props) => {
   const fill = {
     path_one: props.theme
       ? !color
-        ? props.primaryDark || '#000000'
+        ? props.primaryDark || '#343434'
         : '#330000'
       : !color
-      ? props.primaryWhite || '#ffffff'
+      ? props.primaryWhite || '#f4f4f4'
       : '#330000',
     path_two: props.theme
       ? !color
-        ? props.primaryWhite || '#ffffff'
+        ? props.primaryWhite || '#f4f4f4'
         : '#FF9A00'
       : !color
-      ? props.primaryDark || '#000000'
+      ? props.primaryDark || '#343434'
       : '#FF9A00',
   };
 

@@ -6,17 +6,17 @@ const AcrobatDC = (props) => {
   const fill = {
     path_one: props.theme
       ? !color
-        ? props.primaryDark || '#000000'
+        ? props.primaryDark || '#343434'
         : '#3b1b16'
       : !color
-      ? props.primaryWhite || '#ffffff'
+      ? props.primaryWhite || '#f4f4f4'
       : '#3b1b16',
     path_two: props.theme
       ? !color
-        ? props.primaryWhite || '#ffffff'
+        ? props.primaryWhite || '#f4f4f4'
         : '#e54629'
       : !color
-      ? props.primaryDark || '#000000'
+      ? props.primaryDark || '#343434'
       : '#e54629',
   };
 

@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Nav from '../Nav';
 import Icons from './Icons';
 import Yoni from './Yoni';
+import ColoringToolBar from './ColoringToolbar';
 import './header.css';
-import ColorSelector from './ColorSelector';
 
 const Header = ({ updateMode }) => {
   const [clear, setClear] = useState('start');
-  const [customColors, setCustomColors] = useState(Array(25).fill('#ffffff'));
+  const [customColors, setCustomColors] = useState(Array(25).fill('#f4f4f4'));
   const [currColor, setCurrColor] = useState('#11CB3C');
+  const [erase, setErase] = useState(false);
 
   const onCustomColor = (i) => {
     let newColor = customColors.slice(0);
@@ -16,24 +17,31 @@ const Header = ({ updateMode }) => {
     setCustomColors(newColor);
   };
 
+  useEffect(() => {
+    if (erase) {
+      setCurrColor('#f4f4f4');
+    }
+  }, [erase]);
+
   console.log(customColors);
 
-  useEffect(() => console.log(clear), [clear]);
   return (
     <header>
-      <button onClick={() => setCustomColors(Array(26).fill('#ffffff'))}>
-        clear
-      </button>
-      <button onClick={() => setClear('color')}>color</button>
-      <button onClick={() => setClear('customize')}>customize</button>
       <Nav />
       <Icons updateMode={updateMode} />
       <Yoni
         clear={clear}
         customColors={customColors}
         onCustomColor={onCustomColor}
+        erase={erase}
       />
-      <ColorSelector setCurrColor={setCurrColor} />
+      <ColoringToolBar
+        clear={clear}
+        setClear={setClear}
+        setCustomColors={setCustomColors}
+        setCurrColor={setCurrColor}
+        setErase={setErase}
+      />
     </header>
   );
 };

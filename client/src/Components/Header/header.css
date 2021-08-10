@@ -1,5 +1,6 @@
 header {
   width: 100vw;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,6 +88,14 @@ header {
 .bounce {
   transition: var(--transition);
   animation: bounce 1s infinite;
+}
+
+.bucket {
+  cursor: url('../../Assets/cursors/bucket.svg'), auto;
+}
+
+.eraser {
+  cursor: url('../../Assets/cursors/eraser.svg'), auto;
 }
 
 @keyframes bounce {

@@ -6,31 +6,31 @@ const Mongo = (props) => {
   const fill = {
     path_one: props.theme
       ? !color
-        ? props.primaryDark || '#000000'
+        ? props.primaryDark || '#343434'
         : '#8E714E'
       : !color
-      ? props.primaryWhite || '#ffffff'
+      ? props.primaryWhite || '#f4f4f4'
       : '#8E714E',
     path_two: props.theme
       ? !color
-        ? props.primaryDark || '#000000'
+        ? props.primaryDark || '#343434'
         : '#442D22'
       : !color
-      ? props.primaryWhite || '#ffffff'
+      ? props.primaryWhite || '#f4f4f4'
       : '#b3846f',
     path_three: props.theme
       ? !color
-        ? props.primaryDark || '#000000'
+        ? props.primaryDark || '#343434'
         : '#499D4A'
       : !color
-      ? props.primaryWhite || '#ffffff'
+      ? props.primaryWhite || '#f4f4f4'
       : '#499D4A',
     path_four: props.theme
       ? !color
-        ? props.primaryDark || '#000000'
+        ? props.primaryDark || '#343434'
         : '#58AA50'
       : !color
-      ? props.primaryWhite || '#ffffff'
+      ? props.primaryWhite || '#f4f4f4'
       : '#58AA50',
   };
 
@@ -73,7 +73,7 @@ const Mongo = (props) => {
               <path
                 className={props.transition}
                 d='M35.0534362,142.317005 L31.2699893,141.024486 C31.2699893,141.024486 31.7319117,121.737713 24.8108459,120.353673 C20.1968021,115.001416 25.5490584,-106.659184 42.1592709,119.61546 C42.1592709,119.61546 36.43834,122.475926 35.4229741,127.367123 C34.3152237,132.165936 35.0534362,142.317005 35.0534362,142.317005 L35.0534362,142.317005 L35.0534362,142.317005 Z'
-                fill='#FFFFFF'
+                fill='#f4f4f4'
               ></path>
               <path
                 className={props.transition}

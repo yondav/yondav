@@ -1,0 +1,42 @@
+.tool-bar {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--pr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  /* transition: var(--transition); */
+}
+
+.controls {
+  height: fit-content;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--pr-white);
+  background-color: var(--pr-black);
+  cursor: grab;
+}
+
+.min {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 767px) {
+  .tool-bar {
+    position: absolute;
+    bottom: 38rem;
+    right: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 989px) {
+  .tool-bar {
+    position: absolute;
+    bottom: 25rem;
+    right: auto;
+    left: 0.5rem;
+  }
+}

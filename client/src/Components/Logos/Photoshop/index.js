@@ -6,17 +6,17 @@ const Photoshop = (props) => {
   const fill = {
     path_one: props.theme
       ? !color
-        ? props.primaryDark || '#000000'
+        ? props.primaryDark || '#343434'
         : '#001E36'
       : !color
-      ? props.primaryWhite || '#ffffff'
+      ? props.primaryWhite || '#f4f4f4'
       : '#001E36',
     path_two: props.theme
       ? !color
-        ? props.primaryWhite || '#ffffff'
+        ? props.primaryWhite || '#f4f4f4'
         : '#31A8FF'
       : !color
-      ? props.primaryDark || '#000000'
+      ? props.primaryDark || '#343434'
       : '#31A8FF',
   };
 
