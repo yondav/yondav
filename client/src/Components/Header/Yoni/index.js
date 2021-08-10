@@ -19,19 +19,22 @@ const icon = {
 
 const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
   const trans = (defDuration, defDelay, fillDuration, fillDelay) => {
-    switch (clear) {
-      case 'start':
-        return {
+    return clear === 'start'
+      ? {
           default: { duration: defDuration, delay: defDelay },
           fill: {
             duration: fillDuration,
             ease: [1, 0, 0.8, 0],
             delay: fillDelay,
           },
+        }
+      : {
+          default: { duration: 0, delay: 0 },
+          fill: {
+            duration: 0.5,
+            delay: 0,
+          },
         };
-      default:
-        break;
-    }
   };
 
   const fill = (color, i) => {
@@ -46,15 +49,6 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
         return customColors[i];
       default:
         break;
-    }
-  };
-
-  const cursor = () => {
-    if (clear === 'customize' && !erase) {
-      return 'bucket';
-    }
-    if (clear === 'customize' && erase) {
-      return 'eraser';
     }
   };
 

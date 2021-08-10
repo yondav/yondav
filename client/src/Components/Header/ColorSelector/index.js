@@ -1,53 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { SketchPicker } from 'react-color';
+import Draggable from 'react-draggable';
+import { AiOutlineClose } from 'react-icons/ai';
 
-class ColorSelector extends React.Component {
-  state = {
-    displayColorPicker: false,
-    background: '#bd8867',
+const ColorSelector = ({ setCurrColor, setErase, setDisplayColorPicker }) => {
+  const [background, setBackground] = useState('#bd867');
+
+  const handleChangeComplete = (color) => setBackground(color.hex);
+
+  const handleChange = (color, e) => {
+    setCurrColor(color.hex);
+    setErase(false);
+    setBackground(color.hex);
   };
 
-  handleChangeComplete = (color) => this.setState({ background: color.hex });
-
-  handleChange = (color, e) => {
-    this.props.setCurrColor(color.hex);
-    this.props.setErase(false);
-    this.setState({ background: color.hex });
-  };
-
-  handleClick = () =>
-    this.setState({ displayColorPicker: !this.state.displayColorPicker });
-
-  handleClose = () => this.setState({ displayColorPicker: false });
-
-  render() {
-    const popover = {
-      position: 'relative',
-      zIndex: '2',
-    };
-    const cover = {
-      position: 'fixed',
-      top: '0px',
-      right: '0px',
-      bottom: '0px',
-      left: '0px',
-    };
-    return (
-      <div>
-        <button onClick={this.handleClick}>Pick Color</button>
-        {this.state.displayColorPicker ? (
-          <div style={popover}>
-            <div style={cover} onClick={this.handleClose} />
-            <SketchPicker
-              color={this.state.background}
-              onChangeComplete={this.handleChangeComplete}
-              onChange={this.handleChange}
-            />
-          </div>
-        ) : null}
+  return (
+    <Draggable>
+      <div className='color-selector'>
+        <div className='controls'>
+          <motion.div
+            onClick={() => setDisplayColorPicker()}
+            onTap={() => setDisplayColorPicker()}
+          >
+            <AiOutlineClose className='min' />
+          </motion.div>
+        </div>
+        <div>
+          <div />
+          <SketchPicker
+            className='color-selector-pop'
+            color={background}
+            onChangeComplete={handleChangeComplete}
+            onChange={handleChange}
+          />
+        </div>
       </div>
-    );
-  }
-}
+    </Draggable>
+  );
+};
 
 export default ColorSelector;

@@ -5,12 +5,16 @@
   --pr-white: #f4f4f4;
   --pure-white: #faf9fa;
   --pr-black: #343434;
+  --pr-grey: #e4e4e4;
 
   --yellow: rgb(202, 157, 59);
   --blue: rgb(155, 220, 254);
+  --alt-blue: rgb(87, 156, 214);
   --orange: rgb(206, 145, 120);
   --green: rgb(106, 153, 86);
   --pink: rgb(206, 120, 199);
+  --red: rgb(206, 120, 120);
+  --brown: rgb(128, 88, 72);
 
   --ff-primary: 'Montserrat', sans-serif;
   --ff-secondary: 'Roboto Mono', monospace;

@@ -4,12 +4,14 @@ import Icons from './Icons';
 import Yoni from './Yoni';
 import ColoringToolBar from './ColoringToolbar';
 import './header.css';
+import ColorSelector from './ColorSelector';
 
 const Header = ({ updateMode }) => {
   const [clear, setClear] = useState('start');
   const [customColors, setCustomColors] = useState(Array(25).fill('#f4f4f4'));
   const [currColor, setCurrColor] = useState('#11CB3C');
   const [erase, setErase] = useState(false);
+  const [displayColorPicker, setDisplayColorPicker] = useState(false);
 
   const onCustomColor = (i) => {
     let newColor = customColors.slice(0);
@@ -41,7 +43,16 @@ const Header = ({ updateMode }) => {
         setCustomColors={setCustomColors}
         setCurrColor={setCurrColor}
         setErase={setErase}
+        displayColorPicker={displayColorPicker}
+        setDisplayColorPicker={setDisplayColorPicker}
       />
+      {displayColorPicker && (
+        <ColorSelector
+          setCurrColor={setCurrColor}
+          setErase={setErase}
+          setDisplayColorPicker={setDisplayColorPicker}
+        />
+      )}
     </header>
   );
 };
