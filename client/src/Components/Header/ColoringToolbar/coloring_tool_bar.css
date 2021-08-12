@@ -93,6 +93,12 @@
   background-color: var(--green);
 }
 
+.bg-btn:hover,
+.bg-btn:focus,
+.bg-btn:active {
+  background-color: var(--purple);
+}
+
 .color-selector-pop {
   background: transparent !important;
 }
@@ -100,6 +106,31 @@
 .color-selector-pop > div > div > div > input,
 .color-selector-pop > div > div > div > label {
   color: var(--pr-black) !important;
+}
+
+.bg-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bg-opt {
+  width: 85%;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--pr-black);
+  border-radius: var(--radius);
+}
+
+.bg-thumb-cont {
+  flex-basis: 50%;
+  text-align: left;
+}
+
+.bg-thumbnail {
+  width: 2rem;
+  border-radius: var(--radius);
 }
 
 @keyframes customize {
@@ -117,8 +148,8 @@
 @media only screen and (min-width: 767px) {
   .customize-btn {
     position: absolute;
-    bottom: 50rem;
-    right: 5.5rem;
+    bottom: 30rem;
+    right: 1.5rem;
   }
 
   .tool-bar {
@@ -136,9 +167,8 @@
 @media only screen and (min-width: 989px) {
   .customize-btn {
     position: absolute;
-    bottom: 30rem;
     right: auto;
-    left: 10.5rem;
+    left: 1.5rem;
   }
 
   .tool-bar {

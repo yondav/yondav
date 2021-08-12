@@ -13,6 +13,7 @@ const Header = ({ updateMode }) => {
   const [currColor, setCurrColor] = useState('#11CB3C');
   const [erase, setErase] = useState(false);
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
+  const [bg, setBg] = useState(false);
 
   const onCustomColor = (i) => {
     let newColor = customColors.slice(0);
@@ -24,14 +25,16 @@ const Header = ({ updateMode }) => {
     if (erase) {
       setCurrColor('#f4f4f4');
     }
-  }, [erase]);
+
+    console.log(bg);
+  }, [erase, bg]);
 
   return (
     <header>
       <Nav />
       <Icons updateMode={updateMode} />
       <div className='canvas'>
-        <Background />
+        <Background bg={bg} />
         <Yoni
           clear={clear}
           customColors={customColors}
@@ -47,6 +50,7 @@ const Header = ({ updateMode }) => {
         setErase={setErase}
         displayColorPicker={displayColorPicker}
         setDisplayColorPicker={setDisplayColorPicker}
+        setBg={setBg}
       />
       {displayColorPicker && (
         <ColorSelector
