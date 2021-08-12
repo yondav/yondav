@@ -5,6 +5,7 @@ import Yoni from './Yoni';
 import ColoringToolBar from './ColoringToolbar';
 import './header.css';
 import ColorSelector from './ColorSelector';
+import Background from './Backgrounds';
 
 const Header = ({ updateMode }) => {
   const [clear, setClear] = useState('start');
@@ -25,18 +26,19 @@ const Header = ({ updateMode }) => {
     }
   }, [erase]);
 
-  console.log(customColors);
-
   return (
     <header>
       <Nav />
       <Icons updateMode={updateMode} />
-      <Yoni
-        clear={clear}
-        customColors={customColors}
-        onCustomColor={onCustomColor}
-        erase={erase}
-      />
+      <div className='canvas'>
+        <Background />
+        <Yoni
+          clear={clear}
+          customColors={customColors}
+          onCustomColor={onCustomColor}
+          erase={erase}
+        />
+      </div>
       <ColoringToolBar
         clear={clear}
         setClear={setClear}

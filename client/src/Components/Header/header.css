@@ -52,37 +52,32 @@ header {
   color: var(--blue);
 }
 
+.canvas {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  overflow: hidden;
+  height: fit-content;
+}
+
+.background-container {
+  width: fit-content;
+}
+
+.background {
+  /* position: relative; */
+}
+
 .yoni-container {
-  margin-top: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  /* margin-top: 0.5rem; */
   width: fit-content;
 }
 
 .yoni {
   height: 50vh;
-}
-
-.about-btn {
-  /* width: 5rem; */
-  position: absolute;
-  top: 10rem;
-  right: 1.5rem;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  background-color: transparent;
-  border: 1px solid var(--pr-black);
-  transition: all 0.4s ease-in-out;
-  cursor: pointer;
-}
-
-.about-btn:hover,
-.about-btn:focus {
-  color: var(--pr-white);
-  background-color: var(--pr-black);
-  box-shadow: var(--shadow);
-}
-
-.about-btn:active {
-  box-shadow: var(--shadow-in);
 }
 
 .bounce {
@@ -108,8 +103,12 @@ header {
 }
 
 @media only screen and (min-width: 757px) {
+  /* .yoni-container {
+    top: 10rem;
+  } */
+
   .yoni {
-    height: 83vh;
+    height: 73vh;
   }
 }
 
