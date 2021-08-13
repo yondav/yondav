@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { icon } from '../../../../Utils/animations';
 
-const Path = ({ tap, stroke, d, animate, transition, clear, erase }) => {
+const Path = ({ tap, stroke, d, animate, transition, yoni, erase }) => {
   const classification =
-    clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move';
+    yoni === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move';
 
   return (
     <motion.path

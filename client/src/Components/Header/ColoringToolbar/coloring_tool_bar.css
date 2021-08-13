@@ -79,9 +79,9 @@
   background-color: var(--brown);
 }
 
-.clear-btn:hover,
-.clear-btn:focus,
-.clear-btn:active {
+.yoni-btn:hover,
+.yoni-btn:focus,
+.yoni-btn:active {
   background-color: var(--red);
 }
 

@@ -8,7 +8,7 @@ import ColorSelector from './ColorSelector';
 import Background from './Backgrounds';
 
 const Header = ({ updateMode }) => {
-  const [clear, setClear] = useState('start');
+  const [yoni, setYoni] = useState('start');
   const [customColors, setCustomColors] = useState(Array(25).fill('#f4f4f4'));
   const [currColor, setCurrColor] = useState('#11CB3C');
   const [erase, setErase] = useState(false);
@@ -35,14 +35,14 @@ const Header = ({ updateMode }) => {
       <Icons updateMode={updateMode} />
       <Background bg={bg} />
       <Yoni
-        clear={clear}
+        yoni={yoni}
         customColors={customColors}
         onCustomColor={onCustomColor}
         erase={erase}
       />
       <ColoringToolBar
-        clear={clear}
-        setClear={setClear}
+        yoni={yoni}
+        setYoni={setYoni}
         setCustomColors={setCustomColors}
         setCurrColor={setCurrColor}
         setErase={setErase}

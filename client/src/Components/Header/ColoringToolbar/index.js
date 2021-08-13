@@ -15,7 +15,7 @@ import './coloring_tool_bar.css';
 import BGSelector from './BGSelector';
 
 const ColoringToolBar = ({
-  setClear,
+  setYoni,
   setCustomColors,
   setErase,
   setDisplayColorPicker,
@@ -46,22 +46,16 @@ const ColoringToolBar = ({
               <>
                 <div className='control-panel'>
                   <motion.button
-                    onTap={() => setClear('color')}
+                    onTap={() => setYoni('color')}
                     className='btn original-btn control-btn'
                     title='back to original'
                   >
                     <MdSettingsBackupRestore />
                   </motion.button>
                   <motion.button
-                    className='btn move-btn control-btn'
-                    onTap={() => setClear('move')}
-                  >
-                    <RiDragMoveFill />
-                  </motion.button>
-                  <motion.button
                     onTap={() => setCustomColors(Array(26).fill('#f4f4f4'))}
-                    className='btn clear-btn control-btn'
-                    title='clear'
+                    className='btn yoni-btn control-btn'
+                    title='yoni'
                   >
                     <MdDoNotDisturb />
                   </motion.button>
@@ -74,7 +68,7 @@ const ColoringToolBar = ({
                   </motion.button>
                   <motion.button
                     onTap={() => {
-                      setClear('customize');
+                      setYoni('customize');
                       setDisplayColorPicker(true);
                       setErase(false);
                     }}

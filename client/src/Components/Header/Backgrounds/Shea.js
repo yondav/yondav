@@ -49,12 +49,10 @@ const Shea = () => {
   return (
     <motion.svg
       xmlns='http://www.w3.org/2000/svg'
-      // width='1060'
-      // height='1060'
       viewBox='0 0 1060 1060'
       initial={{ y: -4000 }}
       animate={{ y: 0 }}
-      transition={{ ease: 'easeIn', duration: 1.5 }}
+      transition={{ duration: 0.5 }}
     >
       <rect width='1060' height='1060' fill='#00b6ce' />
       <g>

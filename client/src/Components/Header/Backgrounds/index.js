@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Shea from './Shea';
+import { backgrounds } from '../ColoringToolbar/backgrounds';
 
 const Background = ({ bg }) => {
   const [viewPort, setViewPort] = useState(false);
@@ -16,23 +18,57 @@ const Background = ({ bg }) => {
     }
   };
 
+  let color = backgrounds.colors.filter(
+    (background) => background.state === bg
+  );
+
+  let illustration = backgrounds.illustrations.filter(
+    (background) => background.state === bg
+  );
+
   useEffect(() => {
+    console.log(bg, color, illustration);
     if (window.innerWidth) {
       updateMedia();
     }
 
     window.addEventListener('resize', updateMedia);
     return () => window.removeEventListener('resize', updateMedia);
-  }, []);
+  }, [bg]);
 
   return (
     <div className='background-container'>
       <div className='background'>
-        {!bg && (
-          <div
+        {color &&
+          color.map((el) => (
+            <AnimatePresence key={el.name}>
+              <motion.div
+                initial={el.element.initial}
+                animate={el.element.animate}
+                transition={el.element.transition}
+                exit={{ opacity: 0 }}
+                style={el.element.style}
+              />
+            </AnimatePresence>
+          ))}
+        {illustration &&
+          illustration.map((el, index) =>
+            React.createElement(el.element, {
+              key: index,
+              width: viewPort.width,
+              height: viewPort.height,
+              rect: viewPort.rect,
+            })
+          )}
+        {/* {!bg && (
+          <motion.div
+            initial={{ y: 4000 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5 }}
             style={{
               width: '100vw',
-              height: '30rem',
+              height: '100vh',
+              backgroundColor: 'var(--pr-white)',
             }}
           />
         )}
@@ -43,6 +79,42 @@ const Background = ({ bg }) => {
             rect={viewPort.rect}
           />
         )}
+        {bg === 'white' && (
+          <motion.div
+            initial={{ y: 4000 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{
+              width: '100vw',
+              height: '100vh',
+              backgroundColor: '#f4f4f4',
+            }}
+          />
+        )}
+        {bg === 'black' && (
+          <motion.div
+            initial={{ x: 4000 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{
+              width: '100vw',
+              height: '100vh',
+              backgroundColor: '#343434',
+            }}
+          />
+        )}
+        {bg === 'yellow' && (
+          <motion.div
+            initial={{ x: -4000 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{
+              width: '100vw',
+              height: '100vh',
+              backgroundColor: 'var(--yellow)',
+            }}
+          />
+        )} */}
       </div>
     </div>
   );
