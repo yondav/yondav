@@ -68,9 +68,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(0) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(0) : () => ''}
               fill={() => fill(fills.shadow, 0)}
               points='497.01 367 501.01 367 510.01 375 512.01 383 513.01 394 508.01 404 505.01 410 502.01 414 498.01 410 491.01 371 497.01 367'
               variants={icon}
@@ -84,9 +82,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(1) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(1) : () => ''}
               stroke={fills.black}
               d='M478.15,465.14a20.85,20.85,0,0,1-5.88-8.08,24.29,24.29,0,0,1-1-7.7c-.16-5.73-.26-11.47-.69-17.19-.45-6-2.19-12-1.22-17.95,3.43-21.28-7.76-43.13-14.56-62.74a16.05,16.05,0,0,1-1-3.72c-1-10.5,3.78-24.07,6.63-34.1a219.24,219.24,0,0,1,11-29.55c3.88-8.65,7.63-18.61,13.44-26.16a57.27,57.27,0,0,1,7.17-7.44c14.36-13,33-20.59,51.7-24.8A396.15,396.15,0,0,1,584.46,219c16.36-1.89,36.16-.35,51.61,5.77a63.09,63.09,0,0,1,8.89,4.55c15.59,9.26,27.22,25.56,44.8,31a11.62,11.62,0,0,1,3.54,1.51,10.23,10.23,0,0,1,2.71,3.73c3.74,7.24,7,14.76,11.06,21.78,4.19,7.24,8.07,14.91,9,23.34a42.82,42.82,0,0,1-.21,10.18c-1,7.42-6.15,13.14-7.78,20.19-1.93,8.37-.4,17.73,1.35,26,3.48,16.42,8,32.47,6.19,49.43-.17,1.55-91.28-.88-100.84-1h-.26l-96,11c-7.1,5.94-13.52,13-20.2,19.37s-14.25,12.42-19.93,19.46Z'
               variants={icon}
@@ -101,9 +97,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(2) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(2) : () => ''}
               stroke={fills.black}
               d='M460.19,367.1a35.32,35.32,0,0,0-3.85-4.73c-1.65-1.8-4.1-.61-5.9.45-1.54.9-4.62,5.13-3.63,7.07.34.66,1.19.92,1.53,1.57a2.49,2.49,0,0,1,.19,1.21,146,146,0,0,0,.47,16.47,16.52,16.52,0,0,0,.6,3.27,18.43,18.43,0,0,0,1.1,2.5c1.16,2.32,2.39,4.62,3.48,7a17.1,17.1,0,0,1,1,3.91c.45,2.24.89,4.47,1.34,6.71,1.46,3.3,3.61,6.81,4.25,10.36,1,5.52,2.12,11,3.31,16.44.57,2.61.79,5.23-.28,7.69a11.13,11.13,0,0,0-.53,7.42,18.12,18.12,0,0,0,4.36,8.06,9.07,9.07,0,0,0,4.61,2.23,23.7,23.7,0,0,0,2.52.44,24,24,0,0,0,2.41,0,31.12,31.12,0,0,1-3.2-5.3l-1.74-4.27c-1-2.4-.8-4.86-.87-7.4-.07-2.8-.16-5.59-.45-8.37-.88-8.55-.23-17.16-.69-25.73,0-.67-.18-1.32-.21-2a147.84,147.84,0,0,0-3.26-26.36,88.05,88.05,0,0,0-5.36-16.47A19,19,0,0,0,460.19,367.1Z'
               variants={icon}
@@ -116,9 +110,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(2) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(2) : () => ''}
               stroke={fills.black}
               d='M716.26,325.11a12.35,12.35,0,0,1,6.32-4.52,6.23,6.23,0,0,1,6.13,1.84,12.19,12.19,0,0,1,2.26,5.44L734,340.81a43.57,43.57,0,0,1,1.51,9.4,37.92,37.92,0,0,1-.83,7.43c-2.31,12.42-4.49,25.34-3.28,38,.92,9.66,4.29,23.66-6.32,29.65-10.24,5.8-8.9-3.68-8.9-7.44,0-9.26.51-18-1.09-27.27-1.93-11.16-5.67-22-6.87-33.26C707.16,347,707.33,336.31,716.26,325.11Z'
               variants={icon}
@@ -131,9 +123,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(2) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(2) : () => ''}
               stroke={fills.black}
               d='M509.75,542.79a26.33,26.33,0,0,1,4.86-3.45c1.79.19,6.13,6.81,7.31,8.13,3.89,4.35,7.78,8.7,12.08,12.66,9.6,8.85,20.52,16.11,31.49,23.14a79.07,79.07,0,0,0,12.93,7.14c4.31,1.73,9.11,1.4,13.78,1.32a144.7,144.7,0,0,0,32-4.15c13.56-3.33,24.39-14.23,33.55-24.31,15-16.56,26.53-42.81,39.95-60.69-1.22,19.87,2.9,46.72,3.92,66.61.33,6.55,0,13.16-3.76,18.73-3.23,4.73-6.28,9.66-9.32,14.58l-14,28-83.57,14.75L535.5,630.5l-41-68C499.2,556.23,503.64,548.19,509.75,542.79Z'
               variants={icon}
@@ -146,9 +136,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(2) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(2) : () => ''}
               stroke={fills.black}
               d='M1000.93,1078.79c1.2-.9-3.73-2.94-3.32-8.23,2.19-28.24-4.23-59.77-7.7-87.79-2.39-19.24-.37-38.68-3.77-57.78-2.78-15.57-22.62-26.21-34.14-36l-63,14c-2.94,32,2.91,63.35,5.54,95.42,2,24.23,2.74,50,8.46,73.58l-4,8h59.71c11.44,0,24,1.47,35.33,0C997.91,1079.5,999.86,1079.59,1000.93,1078.79Z'
               variants={icon}
@@ -161,9 +149,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(2) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(2) : () => ''}
               stroke={fills.black}
               d='M208,918.73c-4.16,10.19-4.85,22.76-6.25,33.61-1.62,12.49-2.46,25.14-1.18,37.71.61,5.94,1.68,11.83,2.31,17.78,1.17,11.17.88,22.45.65,33.66-.2,10.46,1.72,20.85,3.35,31.17,1.33,8.34,7,6.84,13.57,6.84h88c-2.29-16.59-5.09-33.11-6.74-49.78-1.4-14.14-3.07-29.67-.06-43.68,3.2-14.89,6.54-29.76,9.81-44.64l-84-46.9c-5.33,6.39-11.76,11.82-16.51,18.71A28.84,28.84,0,0,0,208,918.73Z'
               variants={icon}
@@ -176,9 +162,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(2) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(2) : () => ''}
               stroke={fills.black}
               d='M483.31,453.2a8.33,8.33,0,0,1-3.91-.11c-4.85-1.54-3-13.95-3.62-18.2-1.2-8-3.27-15.86-4-23.93-1.54-16.27-1.33-32.62-1.27-48.94.06-13.28-1-26.64.75-39.86,1.53-11.82,3-25.4,9-35.84,3.8-6.63,8.82-12.48,13.81-18.28,8.13-9.47,15.45-16,28.64-16.38,8.5-.24,16.89,1.73,25.29,3a10.63,10.63,0,0,0,3.51.14,11.7,11.7,0,0,0,4.27-2.11c18.07-12,48-20.72,68.93-12.86,13.38,5,25.81,6.4,33.7,19.68a8.86,8.86,0,0,0,2,2.64,8.13,8.13,0,0,0,2.52,1.15l7.45,2.42a4.56,4.56,0,0,1,1.59.75,4.72,4.72,0,0,1,1.19,1.83c3.11,7.05,3.83,13.61,4.32,21.2a8.21,8.21,0,0,0,.32,2.1c.55,1.6,2,2.66,3.32,3.75,4.59,3.9,7.65,9.36,9.59,15.06,5.54,16.29,7.12,33.53,9.44,50.48,2.69,19.64,10.31,37,15.74,55.82.46,1.61.86,3.44,0,4.87-1.32,2.17-4.47,1.95-7,1.54-7-1.16-17.5-3.68-24.19-1a12.21,12.21,0,0,0-3.7,2.36c-4.93,4.55-7.6,13.07-10.72,19-.69,1.29-1.66,2.76-3.12,2.74a3.92,3.92,0,0,1-2.37-1.25c-5.63-5-10.49-11.33-17.5-14.53-8.1-3.7-17.51-3.26-26.16-2.51-7.94.69-15,9.42-20.85,14.13a8.94,8.94,0,0,0-2.45,2.57,18.24,18.24,0,0,1-1.19,2.48,5.45,5.45,0,0,1-2.15,1.46,16.63,16.63,0,0,1-6.49,1.67c-5.33.07-12-5.94-16.52-8.5a19.86,19.86,0,0,1-3.82-2.58c-1.79-1.69-4.51-6-7.37-3.31-1.08,1-1.52,2.54-2.14,3.9a14.23,14.23,0,0,1-4.69,5.73l-8-2.44c-3.8-1.15-7.62,3.08-10.36,5-4.55,3.26-9.33,6.25-14,9.37a3.79,3.79,0,0,1-1.57.74,3.84,3.84,0,0,1-1.6-.23c-5.49-1.61-10.07-5.51-15.57-7.06-6.28-1.76-12.06.86-18.18,2.13Z'
               variants={icon}
@@ -193,9 +177,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(3) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(3) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -210,9 +192,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(4) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(4) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -227,9 +207,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(5) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(5) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -244,9 +222,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(5) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(5) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -261,9 +237,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(5) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(5) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -278,9 +252,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(5) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(5) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -295,9 +267,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(6) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(6) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -311,9 +281,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(6) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(6) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -329,9 +297,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(7) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(7) : () => ''}
               stroke={fills.black}
               d='M504.62,379.51c.77.14,4.24-3.3,4.92-3.81,2-1.5,3.94-3,6-4.35a31.21,31.21,0,0,1,13.83-5.29c6.9-.69,13.74,1.46,20.34,3.59,1.6.52,3.44,1.29,3.81,2.93-.09-.42-21.11,6.32-23.26,6.73A71.84,71.84,0,0,1,504.62,379.51Z'
               variants={icon}
@@ -344,9 +310,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(7) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(7) : () => ''}
               stroke={fills.black}
               d='M611.54,362.5c-.25-.77,6.77-5.74,7.68-6.39A37.86,37.86,0,0,1,628.3,351c5.22-1.93,10.7-1.52,16-.33s9.81,3.81,15.07,4.85c-.23-.05-3,2.77-3.41,3a17.23,17.23,0,0,1-5.15,2.18c-11.52,3.15-24,5-36,3.67C613.52,364.29,612,363.79,611.54,362.5Z'
               variants={icon}
@@ -361,9 +325,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(8) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(8) : () => ''}
               stroke={fills.black}
               d='M519.1,371c-.73,2.23.42,4.44,1.77,5.91s3.18,3,5.13,2.58c1.47-.28,2.85-.9,4.31-1.23,1.7-.37,3.5-.33,5.16-.9,3.29-1.13,3.93-6.21,3.55-9.28,0-.41-.13.17-.36-.18-1.24-2-7.17-.95-9.1-.95a21.13,21.13,0,0,0-3.47.19C523.9,367.54,519.88,368.66,519.1,371Z'
               variants={icon}
@@ -376,9 +338,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(8) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(8) : () => ''}
               stroke={fills.black}
               d='M625.34,353.45a8.09,8.09,0,0,0-.81,3.5c.37,2.92,3.59,5.57,6.26,6.26a10.88,10.88,0,0,0,2.48.32c2.78.07,6.28-.55,8.44-2.45a10.08,10.08,0,0,0,2.33-3.6c.81-1.83.47-4.14.48-6,0-1.34-8.15-1-9.15-1a25.45,25.45,0,0,0-9.13,1.75,1.39,1.39,0,0,0-.49.28,1.42,1.42,0,0,0-.29.59Z'
               variants={icon}
@@ -393,9 +353,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(9) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(9) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -412,9 +370,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(10) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(10) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -429,9 +385,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(10) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(10) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -546,9 +500,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(11) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(11) : () => ''}
               stroke={fills.black}
               d='M872.17,898a17,17,0,0,0,1.63,4.16l8.45,16.22c2.08,4,4,7.1,7.58,9.84A64.43,64.43,0,0,0,901.06,935c10.47,5,23.69,7.64,35.22,6.08C944,940.06,952.6,938.65,959,934c10.49-7.62,20.13-17.11,26.37-28.7,5.33-9.92,7.3-21.38,7.19-32.62-.05-4.67-.54-9.46-2.64-13.62-2.65-.37-5.29-.72-7.94-1L882,888l-5,1-5,4c-.23.18-.09,2.84-.06,3.3A10,10,0,0,0,872.17,898Z'
               variants={icon}
@@ -561,9 +513,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(11) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(11) : () => ''}
               stroke={fills.black}
               d='M207.8,915.38A98.38,98.38,0,0,0,266,973.49c5.2,1.93,9.25,3.18,14.91,3.18,8.51,0,19.66-1,26.91-5.76,8-5.19,15.3-15,18.29-24,.7-2.11,1.64-5.76.65-7.93-.77-1.69-.85-1.21-2.54-.9-2.92.53-5.82,1.35-8.71,2L301,943.43a49.79,49.79,0,0,1-33.57-4l-14.05-7a40.66,40.66,0,0,1-10.53-7.59l-14.4-14.4a58,58,0,0,1-10-13.34c-3-5.5-5.93-11-9-16.46-4.27.61-7.29,4.84-7.92,9.1s.62,8.57,1.91,12.69c.35,1.11.7,2.24,1.06,3.37C205.57,909,206.63,912.18,207.8,915.38Z'
               variants={icon}
@@ -578,9 +528,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(12) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(12) : () => ''}
               stroke={clear === 'customize' ? '#343434' : fills.shirt.primary}
               strokeWidth={clear === 'customize' ? '1px' : '2px'}
               d='M281.93,966.66l-.83-.06c-6.49-.44-13.43-3-19.21-5.9C241.58,950.56,225.72,934,214,915c-2.61-4.24-7.74-14.75-8-20,0-.78-1-11-1-9,0,6.91,12.49,24.71,17,30,4,4.68,7.67,9.27,12.55,13,4.69,3.6,10,6.43,14.61,10a75,75,0,0,0,33.06,14.86,62.2,62.2,0,0,0,40.85-7.11c-3.52,7.41-9,14.59-16.66,18S290.08,967.25,281.93,966.66Z'
@@ -594,9 +542,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(12) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(12) : () => ''}
               stroke={clear === 'customize' ? '#343434' : fills.shirt.primary}
               strokeWidth={clear === 'customize' ? '1px' : '2px'}
               d='M875,898a39.12,39.12,0,0,0,6,7c3.93,3.93,9.44,7,14.07,10.07,6.47,4.21,14.24,5.69,21.84,6.08,5.54.28,11.09,0,16.64-.19,15-.37,29.37-12.88,39.45-23l10-10c2-3.76,6.69-9.33,6-13.76.11,8,0,16.68-4.79,23.08a99.52,99.52,0,0,1-12.93,13.75c-4.33,3.93-8.73,8.63-13.9,11.41-6.44,3.46-14.64,6.86-21.93,7.71a97.14,97.14,0,0,1-24.92-.29c-7.62-1.07-13.09-4.52-18.78-9.59C884.64,914.05,880.57,905.61,875,898Z'
@@ -612,9 +558,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(13) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(13) : () => ''}
               stroke={fills.black}
               d='M476.11,558.83a5.89,5.89,0,0,0-4.82.3Q420,586.88,366.12,609.53c-28.62,12-52.6,21.88-74.28,44.66a222.27,222.27,0,0,0-47.2,75.2c-9.13,24.4-13.8,50.09-20.51,75.18C214,842.48,193.37,871.42,220.5,907c23.37,30.67,77.73,62.9,111,29.42,1.49-1.5,3.06-3.19,3.17-5.29.11-1.92-1.06-3.67-1.52-5.54s.35-4.45,2.28-4.5a105.19,105.19,0,0,0,26,1.34c3.55,52.56,12.11,104.85,19.09,157,94.74.74,189.52,0,284.27,0,69.18,0,140.77,1.39,211.1,0,3.67-28.52-5-63.54-6-92.83-1-27.83-10.12-67.55,1.81-93.53,8.24,4.25,14.25,12.88,22.79,17.58,14.79,8.16,33.26,8.26,49.05,2.25,29.65-11.29,47.52-33.24,44.81-65.75-1.83-21.93-11.67-36.17-8.59-58.77,3.13-23,0-46.6-6.26-68.83-8.63-30.53-23.94-58.18-37.84-86.56-2.63-5.39-5.3-10.82-9-15.54-7-8.91-17.23-14.72-27.72-19-32.55-13.29-68.94-16.78-102.41-27.77-23.78-7.81-44.57-19.85-67.12-29.89a4.12,4.12,0,0,0-1.7-.36h-7.4a1.7,1.7,0,0,0-1.21.5h0c-.32.32-.51-.25-.53.21l-2,55.29-96,61-107-44C507.3,603.28,489.17,563.11,476.11,558.83Z'
               variants={icon}
@@ -629,9 +573,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(11) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(11) : () => ''}
               stroke={fills.black}
               d='M512.46,540.5c-.45.14,0,16.19,0,17.77a75.06,75.06,0,0,0,1.71,17.88c2.51,10.29,9.54,17.78,17.52,24.35,11.86,9.77,25.2,17.5,39,24.23,6.76,3.3,13.54,6.82,20.87,8.65a73.23,73.23,0,0,0,23.69,1.92c15.13-1.24,29.34-7.84,42-15.91a157.19,157.19,0,0,0,21.67-16.73c5.84-5.38,12.11-10.79,16.89-17.17A74.75,74.75,0,0,0,704.11,571c2.94-6.64,6.13-13.85,6.15-21.24a14.66,14.66,0,0,0-3.27-10c-2.39-2.7-8.42-4.09-8.48-8.29a28.14,28.14,0,0,1,0-4c.2-.64,10.39,8,11.08,9,2.08,3,3,2.81,6.47,3.09a21.78,21.78,0,0,1,10.34,3.61c9.67,6.53,13,19.42,12.76,30.47-.25,14.38-6.57,27.77-15,39.18-8.56,11.67-19.35,22.28-30.35,31.64-9.68,8.24-19.22,15.22-31,20.22-11,4.7-23,8.67-35,9.75a137.48,137.48,0,0,1-24.43-.24c-7.65-.66-15.72-1.16-23.21-2.8-27.64-6-55.14-17.85-73.84-39.78a173.82,173.82,0,0,1-18.9-27.38c-2.73-4.84-5.24-9.8-7.69-14.79-2.53-5.19-2.9-11.52-3.7-17.22-.51-3.62-1.41-9.26.31-12.71a14.35,14.35,0,0,1,6.34-7,15.07,15.07,0,0,1,4.79-1.41,59.58,59.58,0,0,0,13.47-3.91C505.1,545.44,508.34,541.77,512.46,540.5Z'
               variants={icon}
@@ -646,9 +588,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(13) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(13) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -683,9 +623,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(14) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(14) : () => ''}
               stroke={fills.black}
               d='M694.46,261.49c1-7.06,0-14.63-4-20.53-4.89-7.2-13.52-11.44-20.78-15.83-42.56-25.73-91-35-140-27.48a75.8,75.8,0,0,0-25.11,8.07c-7.78,4.1-16.66,5.7-23.77,11.17-5.12,3.94-10,8.68-14.82,13a189.73,189.73,0,0,0-18,18c-11.09,12.85-20.16,27.67-24.55,44.18-2.78,10.46-3,23.12,4.92,30.46,4.52,4.16,10.83,5.73,16.93,6.49,3,.37,6.35.5,8.77-1.34,3.6-2.73,5.61-9.71,7.4-13.72,2.55-5.71,4.63-11.6,6.67-17.5,4.65-13.42,9-28.05,18.17-39.16,7.62-9.19,17.48-16.25,28.14-21.49,21.87-10.77,46.89-14.56,71.05-15.31,2.28-.07,4.55-.11,6.83-.13,13.09-.06,26.61-.52,39.17,3.64s23.58,11.89,32.8,21.26C672.61,253.72,681.8,261.5,694.46,261.49Z'
               variants={icon}
@@ -700,9 +638,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(15) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(15) : () => ''}
               stroke={fills.black}
               d='M550.79,166.59c2.07.84,3.79,2.44,5.65,3.73,11.79,8.17,26-1.38,39,2.09,2.68.71,5.28,1.84,8,2.1a29.92,29.92,0,0,0,8-.82,65.93,65.93,0,0,1,43.18,6.46c15.07,8,29.58,28.86,37.3,43.84a250.52,250.52,0,0,1,25.74,80.18c.42,3,.7,6.41-1.11,8.88-1.8-5.1-2-10.54-4.13-15.55l-7-14-7-12-2-6-3-4,1-4c1.41-5.63-1.2-13.87-4.65-18a42,42,0,0,0-9.34-7.75c-69.35-46-167.88-57.4-228.44,10.32-1.18,1.32-2.34,2.67-3.48,4-1.89-6.61,3.41-14,8.52-18.58a197.8,197.8,0,0,1,25.77-19.7c7.55-4.84,16.45-8.37,22-15.72,2.06-2.72,3.43-5.9,5.36-8.71C517.38,173,530.7,169.31,543,166.65c2.26-.49,4.62-1,6.86-.37A7.53,7.53,0,0,1,550.79,166.59Z'
               variants={icon}
@@ -717,9 +653,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(16) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(16) : () => ''}
               stroke={fills.black}
               d='M462.54,359.85c1.07-.12,1.76,1.58,2.22,2.29a43.41,43.41,0,0,0,3,3.74,4.37,4.37,0,0,1,.76,3,.82.82,0,0,1-1.24.68,14.13,14.13,0,0,1-1.65-1,15.29,15.29,0,0,1-2.42-4.5A7.29,7.29,0,0,1,462.54,359.85Z'
               variants={icon}
@@ -732,9 +666,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(17) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(17) : () => ''}
               stroke={fills.black}
               d='M689,336.63a1.66,1.66,0,0,1,.33-.58,24.79,24.79,0,0,1,5.14-3.94c4.09-2.42,8.06-5.06,12.07-7.61l3-2c.08-.05.08-.62.12-.73,3.74,2.3-4.73,7.38-6.33,8.64-3.63,2.87-9.39,7.57-13.4,9.87-.28.16.41-1.68.09-1.72s.32-.43.09-.76C689.41,336.82,688.76,337.32,689,336.63Z'
               variants={icon}
@@ -747,9 +679,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(18) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(18) : () => ''}
               stroke={fills.black}
               d='M596.45,361.23s0-.05,0-.07c.52-3.08-.25-6.5-.77-9.53a2.13,2.13,0,0,0-.43-1c-1.18-1.53-4.35-1.94-6-2.29a46.09,46.09,0,0,0-9.74-.87c-5.94,0-11,2.35-16,5.35a5,5,0,0,0-.8.56,3.14,3.14,0,0,0-.56.74c-1.49,2.71,1.24,6.75,2.28,9.35l1,2c0-3.09-1-7.9-1-11l4-2a24.94,24.94,0,0,1,12.19-2.71c2.07.1,4,.63,6.08.67,2.23,0,6.22-.11,7.32,2.31a7.85,7.85,0,0,1,.47,3.48l-.09,7.69a.18.18,0,0,0,.33.09Z'
               variants={icon}
@@ -762,9 +692,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(19) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(19) : () => ''}
               stroke={fills.black}
               d='M468.4,368.08a1.59,1.59,0,0,1,1.46-1.44,19.34,19.34,0,0,0,4.06-1.12l3.54-1,.08,0,1.4-.7a1.11,1.11,0,0,1,1.58.84,1.17,1.17,0,0,1,0,.54,5.34,5.34,0,0,1-.68,1.66c-.38.76-.76,2.42-1.14,3.28a.78.78,0,0,1-.65.4H470.7l-.66,0a1.63,1.63,0,0,1-1.71-1.81Z'
               variants={icon}
@@ -777,9 +705,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(20) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(20) : () => ''}
               stroke={fills.black}
               d='M677.63,338.28a24.65,24.65,0,0,1,5.21.17,6.42,6.42,0,0,0,1.58-.06,11.16,11.16,0,0,0,2.58-1.3,2.56,2.56,0,0,1,2.73,0,3.08,3.08,0,0,1,.81,2.13,3.33,3.33,0,0,1-.31,2.21,3.42,3.42,0,0,1-2.56,1.08,11.86,11.86,0,0,1-5.81-.31A9,9,0,0,1,677.63,338.28Z'
               variants={icon}
@@ -792,9 +718,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(21) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(21) : () => ''}
               stroke={fills.black}
               d='M564.13,392.5l0,.05a1,1,0,0,0,.53.27c3.84.8,5.84-23.08,5.89-26.37a2.85,2.85,0,0,0-.44-1.91c-.8-1-2.5-.46-3.14.62-1.08,1.85-.81,5.77-1,7.91l-1.07,9.61c-.33,2.95-.74,5.91-.93,8.88A1.43,1.43,0,0,0,564.13,392.5Z'
               variants={icon}
@@ -807,9 +731,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(21) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(21) : () => ''}
               stroke={fills.black}
               d='M593.48,373.51c-1.28-3.1-3.94-7.32-1.53-10.53a.8.8,0,0,1,.42-.33.85.85,0,0,1,.55.11l2,.9a7.14,7.14,0,0,1,2.59,1.67,6,6,0,0,1,1.1,2.64c1.17,5.64,1.43,10.54,4.56,15.6l0,0a1.52,1.52,0,0,1-2.36,1.89,10,10,0,0,1-.69-.76,30.76,30.76,0,0,1-5.44-8.34C594.28,375.43,593.88,374.47,593.48,373.51Z'
               variants={icon}
@@ -867,9 +789,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(22) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(22) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -884,9 +804,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -901,9 +819,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -918,9 +834,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -935,9 +849,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -952,9 +864,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -969,9 +879,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -986,9 +894,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -1003,9 +909,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(22) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(22) : () => ''}
               stroke={fills.black}
               d='M595.69,477.33c2.83,1,6.74,3.14,9.83,2.48,1.63-.35.88.51,2.44.05a147.58,147.58,0,0,1,18.3-3.93c4.57-.73,9.21.08,13.93-.05,2.18-.06,10.92-14.75,11.81-15.88.42-.54-2.66-4-3-4-4-.34-13,8.45-17,9-7.21,1-13.3,2.95-19.83,5.05l-3.55,1.73-3.16.71C601.31,473.82,599.26,475.5,595.69,477.33Z'
               variants={icon}
@@ -1018,9 +922,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -1035,9 +937,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -1052,9 +952,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -1069,9 +967,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -1086,9 +982,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -1103,9 +997,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -1120,9 +1012,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -1137,9 +1027,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(23) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(23) : () => ''}
               stroke={
                 clear === 'customize' || clear === 'move' ? fills.black : ''
               }
@@ -1154,9 +1042,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(24) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(24) : () => ''}
               stroke={fills.black}
               d='M540.52,477.44c.63.17,1.26.39,1.9.55a16.69,16.69,0,0,1,2.05.53c.34.13.66.3,1,.46l3.08,1.54c3.34,1.67,7.11,2.15,10.81,2.51a98.47,98.47,0,0,0,10.16.51,68.51,68.51,0,0,0,9.61-.32c2.31-.34,4.57-1,6.86-1.48,4.38-.93,8.58-.57,12.95-1.07,5.57-.64,10.81-2.9,16.3-3.94a156.86,156.86,0,0,0,18.51-4.35,34.42,34.42,0,0,0,9.77-5.16,103.44,103.44,0,0,0,8.69-7.37,0,0,0,0,1,.07.06c-.9,1.56-.81,3.49-1.49,5.14a34.7,34.7,0,0,1-2.57,5,46.11,46.11,0,0,1-7.5,9A63.19,63.19,0,0,1,621.5,491.4a98.16,98.16,0,0,1-27.43,6.69c-9.78,1.09-19.83,1.59-29.55-.25a52.71,52.71,0,0,1-8.9-2.49,37.44,37.44,0,0,1-8.71-4.55,19.31,19.31,0,0,1-6.52-7.49,14.42,14.42,0,0,1-1-2.93,6,6,0,0,1-.11-1,4,4,0,0,0-1.06-2.46,4.81,4.81,0,0,0,1.47.37Z'
               variants={icon}
@@ -1169,9 +1055,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
               className={
                 clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
-              onClick={
-                clear === 'customize' ? () => onCustomColor(24) : () => ''
-              }
+              onTap={clear === 'customize' ? () => onCustomColor(24) : () => ''}
               stroke={fills.black}
               d='M541,473.82c13.71,0,26.57.91,40.25.15,3.23-.18,6.48-1,9.71-1l12-4c14.84-5.4,30.64-8.56,45.85-12.83-5,2.56-9.39,6-14.85,7.83-5.9,2.15-12.46,3.57-18.09,6.31-5.12,2.5-9.28,6.66-14.53,8.9-7.5,3.18-15.61,1.76-23.3.17A116.67,116.67,0,0,0,558,476.76C551.83,476.59,546.67,476.61,541,473.82Z'
               variants={icon}
