@@ -2,7 +2,6 @@ export const backgrounds = [
   {
     name: 'blank',
     state: false,
-    thumbnail: '',
   },
   {
     name: 'shea',
