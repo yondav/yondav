@@ -33,13 +33,11 @@ const App = () => {
   // for sticky nav
   useEffect(() => {
     const nav = document.querySelector('nav');
-    const yoni = document.querySelector('.yoni-container');
     const sticky = document.querySelector('header').offsetHeight;
     const scrollCallBack = window.addEventListener('scroll', () => {
       if (window.pageYOffset >= sticky) {
         setSticky(true);
         nav.classList.add('sticky');
-        yoni.style.width = '20vw';
       } else {
         setSticky(false);
         nav.classList.remove('sticky');

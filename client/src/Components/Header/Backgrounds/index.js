@@ -17,7 +17,10 @@ const Background = ({ bg }) => {
   };
 
   useEffect(() => {
-    window.addEventListener('DOMContentLoaded', updateMedia);
+    if (window.innerWidth) {
+      updateMedia();
+    }
+
     window.addEventListener('resize', updateMedia);
     return () => window.removeEventListener('resize', updateMedia);
   }, []);
@@ -25,6 +28,14 @@ const Background = ({ bg }) => {
   return (
     <div className='background-container'>
       <div className='background'>
+        {!bg && (
+          <div
+            style={{
+              width: '100vw',
+              height: '30rem',
+            }}
+          />
+        )}
         {bg === 'shea' && (
           <Shea
             width={viewPort.width}

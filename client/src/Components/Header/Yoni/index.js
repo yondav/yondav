@@ -48,13 +48,15 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
         return color;
       case 'customize':
         return customColors[i];
+      case 'move':
+        return customColors[i];
       default:
         break;
     }
   };
 
   return (
-    <Draggable bounds={`parent`}>
+    <Draggable>
       <div className='yoni-container'>
         <motion.svg
           xmlns='http://www.w3.org/2000/svg'
@@ -64,7 +66,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='shadow'>
             <motion.polygon
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(0) : () => ''
@@ -80,7 +82,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='hair'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(1) : () => ''
@@ -97,7 +99,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='skin'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(2) : () => ''
@@ -112,7 +114,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(2) : () => ''
@@ -127,7 +129,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(2) : () => ''
@@ -142,7 +144,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(2) : () => ''
@@ -157,7 +159,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(2) : () => ''
@@ -172,7 +174,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(2) : () => ''
@@ -189,12 +191,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='skin-shadows'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(3) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M452.5,372.5h0a1.33,1.33,0,0,1,2-1.17,7.76,7.76,0,0,1,3.87,5.24,15.48,15.48,0,0,1,.18,2.89l0,8'
               variants={icon}
               initial='hidden'
@@ -204,12 +208,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(4) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M465,397h-1.86a3.51,3.51,0,0,0-3.49,3.12L459,406'
               variants={icon}
               initial='hidden'
@@ -219,12 +225,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(5) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M719.52,335.51c1.45-2.35,3.08-5.58,5.32-7.3,4.31-3.31,3.55,2.59,3.86,5.23a60.73,60.73,0,0,0,1.92,9.15c.75,2.78,2.06,5.62,1.43,8.54a21.47,21.47,0,0,1-1.63,4.34'
               variants={icon}
               initial='hidden'
@@ -234,12 +242,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(5) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M713,354l-.51,1.54a9,9,0,0,0,1.33,8.22L717,368'
               variants={icon}
               initial='hidden'
@@ -249,12 +259,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(5) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M716,348h0a2.24,2.24,0,0,0,1,3h0'
               variants={icon}
               initial='hidden'
@@ -264,12 +276,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(5) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M729,386l-2.51,2.48a1,1,0,0,0-.31.44c-.23.79.82,4.07,2.05,4.59,2,.85.84,4.25.77,6.42a3.43,3.43,0,0,1-.17,1.19,3.71,3.71,0,0,1-.49.77c-.78,1-1.57,2.06-2.34,3.1'
               variants={icon}
               initial='hidden'
@@ -279,12 +293,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.polyline
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(6) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               points='699.01 797 730.01 797 775.01 784'
               variants={icon}
               initial='hidden'
@@ -293,12 +309,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.polyline
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(6) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               points='29.51 841.5 52.51 845.5 64.51 843.5 88.51 845.5 90.51 848.5'
               variants={icon}
               initial='hidden'
@@ -309,7 +327,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='eye-backs'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(7) : () => ''
@@ -324,7 +342,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(7) : () => ''
@@ -341,7 +359,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='Pupils'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(8) : () => ''
@@ -356,7 +374,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(8) : () => ''
@@ -373,12 +391,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='beard'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(9) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M601.3,594.73c-15.09,0-30.4-4.92-45.51-14.62-7.27-4.68-13.81-11-18.7-16a214,214,0,0,1-20-23.59c-4.16-5.68-8.1-11.65-11.7-17.73a62.81,62.81,0,0,0-3.66-5.32,45.73,45.73,0,0,1-4.74-7.33q-1.32-2.81-2.65-5.59c-5.16-10.88-10.51-22.13-14.27-34-.14-.46-.31-1-.5-1.56-.77-2.34-1.82-5.53-2.54-8.75-.94-4.21-1.06-7.37-.36-9.42a4.38,4.38,0,0,0,2.62,2.66,7.3,7.3,0,0,0,2.15.31,11.46,11.46,0,0,0,2-.19l.9-.17c1.49-.31,3-.7,4.4-1.08a36.14,36.14,0,0,1,9.26-1.63,15.42,15.42,0,0,1,4.28.58A38,38,0,0,1,510,454.9a40.62,40.62,0,0,0,7.79,3.54,5.34,5.34,0,0,0,1.45.27l.36,0a4.37,4.37,0,0,0,1.78-.82c1.55-1,3.11-2.06,4.67-3.08,3.08-2,6.28-4.12,9.32-6.3.58-.41,1.19-.92,1.84-1.45,2.11-1.73,4.51-3.69,6.9-3.69a3.92,3.92,0,0,1,1.18.17l8.25,2.51.2-.14a14.8,14.8,0,0,0,4.86-5.94c.14-.3.27-.61.4-.93a7.92,7.92,0,0,1,1.62-2.81,2.32,2.32,0,0,1,1.59-.73c1.4,0,2.84,1.6,4,2.88.39.44.76.84,1.1,1.16a19.87,19.87,0,0,0,3.92,2.65c1.24.7,2.65,1.68,4.16,2.71,4,2.75,8.52,5.86,12.51,5.86h.1a16.83,16.83,0,0,0,6.68-1.72,4.75,4.75,0,0,0,3.16-3.21,8.86,8.86,0,0,1,.42-.95,8.56,8.56,0,0,1,2.32-2.41c1.48-1.19,3-2.61,4.65-4.12,4.75-4.4,10.15-9.4,15.93-9.9,2.9-.25,6.32-.51,9.74-.51,6.59,0,11.72.94,16.17,3,5,2.27,8.93,6.21,12.76,10,1.49,1.49,3,3,4.62,4.44a4.31,4.31,0,0,0,2.7,1.38c1.75,0,2.82-1.61,3.56-3,.9-1.71,1.76-3.61,2.66-5.62,2.22-4.93,4.52-10,8-13.21a11.63,11.63,0,0,1,3.55-2.26,19.46,19.46,0,0,1,7.27-1.16,78.9,78.9,0,0,1,13.55,1.64l3.1.54a17.57,17.57,0,0,0,2.82.27,6.39,6.39,0,0,0,3.4-.79c.36,13.56.44,26.81-1.86,39.84-2.4,13.58-8,26.54-13.39,39.08l-.25.56a257.31,257.31,0,0,1-31.89,54.61C648.83,581.76,625.89,594.73,601.3,594.73Z'
               variants={icon}
               initial='hidden'
@@ -390,12 +410,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='eyebrows'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(10) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M487.58,352.6a21.51,21.51,0,0,1,3.61-2.31c4.4-2.56,6.92-6.53,12.1-7.42,5.64-1,11.05-2.12,16.79-2.27,6.8-.18,13.61-.16,20.42-.1,4,0,8,0,12,0a6.78,6.78,0,0,1,1.68.14,5.36,5.36,0,0,1,1.33.56,28.31,28.31,0,0,1,6.53,4.7c3,3,2.14,4.69-1.22,7.06a7.93,7.93,0,0,1-7.45,2.11c-8.58-1.29-17.24-2.63-25.94-2.2-7.54.37-17.09,1.77-23.19,6.51-2.27,1.77-5.51,1.15-8.27,1.17-3.31,0-6.62,0-9.93,0a2.64,2.64,0,0,1-1.78-.46c-1.85-1.73,2-6.23,3.21-7.35Z'
               variants={icon}
               initial='hidden'
@@ -405,12 +427,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(10) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M675.54,329.11a3,3,0,0,0-.76-1,5,5,0,0,0-1.74-.78c-13-3.77-28.32-6.67-41.81-4.56A71.1,71.1,0,0,0,600,336c-2.45,1.83-5.61,3.6-7.5,5.9a15.47,15.47,0,0,0,15.14,1.54,135.89,135.89,0,0,1,33.79-9.52,125.67,125.67,0,0,1,21.25-.75c3.18.09,7.57,1.06,10.66.32,1.93-.47,1.73.44,2.48-1.42A4,4,0,0,0,675.54,329.11Z'
               variants={icon}
               initial='hidden'
@@ -422,7 +446,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='facial-details'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               stroke={fills.black}
               d='M526.7,483.18c-3.61-2.54-2.89-7.79-2.1-12.14,2.64-14.51,12.7-23.91,21.9-34.54'
@@ -434,7 +458,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               stroke={fills.black}
               d='M628.5,415.5c8.13,4.11,12.34,12,20.33,16.42a41.57,41.57,0,0,1,8.35,5.56c4.6,4.22,7.25,10.23,8.45,16.36s1.06,12.43.81,18.66'
@@ -446,7 +470,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               stroke={fills.black}
               d='M608.41,405.56a18.18,18.18,0,0,0,8.24,6.58c8.61,3.47-15.46,29.73-19.8,34.69-4.81,5.49-11.85,3.89-16.79.25-3.22-2.37-4.65-4.23-8.19-6s-5.32-3.94-8.4-6.56c-1.69,1.82-4.73-.37-4.94-2.82-.16-2-.38-2.93.5-4.65a7.66,7.66,0,0,1,1.12-1.58l7.27-8'
@@ -458,7 +482,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               stroke={fills.black}
               d='M500.5,389.5c6.52,2.38,11.39,4.22,18.54,4,10.38-.34,18.37-2,27.46-7'
@@ -470,7 +494,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               stroke={fills.black}
               d='M506.5,396.5c6.19-.06,12.39,0,18.59,0,3.7,0,8-.24,10.22-3.17'
@@ -482,7 +506,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               stroke={fills.black}
               d='M606.5,371.5c19.54,9,40.82,11.82,59.78-.35'
@@ -494,7 +518,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               stroke={fills.black}
               d='M497.69,379.62l4.35-7.13c3.23-5.3,9-8,14.66-10.09,8.45-3.06,16-4,24.8-1.9l7,2'
@@ -506,7 +530,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               stroke={fills.black}
               d='M611.5,349.5c4.46-3.35,8-5.43,13.57-6.63,13.81-3,28.79,2.3,40.42,9.64'
@@ -520,7 +544,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='sleeve-body'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(11) : () => ''
@@ -535,7 +559,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(11) : () => ''
@@ -552,7 +576,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='sleeve-accent'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(12) : () => ''
@@ -568,7 +592,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(12) : () => ''
@@ -586,7 +610,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='shirt-body'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(13) : () => ''
@@ -603,7 +627,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='collar-body'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(11) : () => ''
@@ -620,12 +644,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='collar-accent'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(13) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M493.29,552.42a19.91,19.91,0,0,0-2,6.55,52.12,52.12,0,0,0-.62,13.14c.49,6.65,3.63,12,6.31,18,2.89,6.41,5.47,13,9.11,19,4.36,7.25,10.33,13.33,16.45,19.1,14.58,13.75,32.75,23.22,51.79,29.19,12,3.76,24.28,4.06,36.65,5.55,8.47,1,17.17-.9,25.4-2.69,21.08-4.6,39.32-13.66,54.95-28.6,10.06-9.6,20.39-20.44,27.27-32.6a57,57,0,0,0,6.52-17.23c2-10.51-.33-22.84-5.82-32.44-1.49-2.61-4.47-1.39-4.17,1.6.21,2.1.46,4.21.64,6.32,1.31,15.28-6.12,29.08-15.17,40.9a121.28,121.28,0,0,1-31.42,28.41,139.16,139.16,0,0,1-29.83,14.29,101.64,101.64,0,0,1-22.18,5c-13,1.34-24.57-.94-36.59-5.67-13.88-5.47-27.53-11.74-40.07-19.87-11.75-7.61-23.71-16.9-30.35-29.5-4.93-9.38-7.34-20-8.17-30.47-.33-4.12-.26-8.13,1.9-11.71.44-.73.52-.88-.26-1.21a1.18,1.18,0,0,0-1.08,0C499.5,549.5,494.94,549.43,493.29,552.42Z'
               variants={icon}
               initial='hidden'
@@ -637,7 +663,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='collar-thread'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               stroke={
                 clear === 'customize' ? '#343434' : fills.shirt.band_accent
@@ -655,7 +681,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='hat_bill' data-name='hat bill'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(14) : () => ''
@@ -672,7 +698,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='hat_top' data-name='hat top'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(15) : () => ''
@@ -689,7 +715,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='glasses'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(16) : () => ''
@@ -704,7 +730,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(17) : () => ''
@@ -719,7 +745,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(18) : () => ''
@@ -734,7 +760,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(19) : () => ''
@@ -749,7 +775,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(20) : () => ''
@@ -764,7 +790,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(21) : () => ''
@@ -779,7 +805,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(21) : () => ''
@@ -794,7 +820,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               stroke={clear === 'customize' ? '#343434' : fills.glasses[6]}
               strokeWidth={clear === 'customize' ? '1px' : '2px'}
@@ -808,7 +834,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               stroke={clear === 'customize' ? '#343434' : fills.glasses[6]}
               strokeWidth={clear === 'customize' ? '1px' : '2px'}
@@ -824,7 +850,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='Layer_10' data-name='Layer 10'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               strokeWidth={clear === 'customize' ? '1px' : '0.75px'}
               stroke={fills.black}
@@ -839,12 +865,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
           <g id='mouth'>
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(22) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M537.69,476.34c2.83-1,6.74-3.15,9.83-2.48,1.63.35.88-.52,2.44-.05a147.58,147.58,0,0,0,18.3,3.93c4.57.73,9.21-.09,13.93,0,2.18.07,4.67,1,5.55,2.1.43.54.27,7-.07,7.05-4,.34-9.38-.61-13.38-1.16-7.21-1-13.59-.06-20.12-2.15l-3.55-1.73-3.16-.71C543.31,479.85,541.26,478.17,537.69,476.34Z'
               variants={icon}
               initial='hidden'
@@ -854,12 +882,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M555.55,476.77s1.53,1.72,1.68,1.94a11,11,0,0,1,1,2.31,1.55,1.55,0,0,1,.17.86c-.16.88-4.22.35-4.35-.43.05-1.13-.18-2.51.54-3.45Z'
               variants={icon}
               initial='hidden'
@@ -869,12 +899,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M560,478s1.83,1.38,2,1.57a11.39,11.39,0,0,1,1.46,2.07,1.52,1.52,0,0,1,.33.81c0,.89-4.06,1.17-4.34.44-.18-1.12-.68-2.43-.16-3.49C559.53,478.94,559.76,478.47,560,478Z'
               variants={icon}
               initial='hidden'
@@ -884,12 +916,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M565.84,477.69s1.35,1.86,1.48,2.1a12.23,12.23,0,0,1,.78,2.4,1.66,1.66,0,0,1,.08.88c-.25.85-4.23-.08-4.28-.86.15-1.13.06-2.53.87-3.38Z'
               variants={icon}
               initial='hidden'
@@ -899,12 +933,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M569,478s1.83,1.38,2,1.57a11.39,11.39,0,0,1,1.46,2.07,1.52,1.52,0,0,1,.33.81c0,.89-4.06,1.17-4.34.44-.18-1.12-.68-2.43-.16-3.49C568.53,478.94,568.76,478.47,569,478Z'
               variants={icon}
               initial='hidden'
@@ -914,12 +950,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M574.65,477.74s1.47,1.77,1.61,2a12.4,12.4,0,0,1,.94,2.35,1.55,1.55,0,0,1,.13.87c-.19.87-4.22.2-4.33-.58.09-1.13-.1-2.52.65-3.43Z'
               variants={icon}
               initial='hidden'
@@ -929,12 +967,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M578,478s1.83,1.38,2,1.57a11.39,11.39,0,0,1,1.46,2.07,1.52,1.52,0,0,1,.33.81c0,.89-4.06,1.17-4.34.44-.18-1.12-.68-2.43-.16-3.49C577.53,478.94,577.76,478.47,578,478Z'
               variants={icon}
               initial='hidden'
@@ -944,12 +984,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M582,478s1.83,1.38,2,1.57a11.39,11.39,0,0,1,1.46,2.07,1.52,1.52,0,0,1,.33.81c0,.89-4.06,1.17-4.34.44-.18-1.12-.68-2.43-.16-3.49C581.53,478.94,581.76,478.47,582,478Z'
               variants={icon}
               initial='hidden'
@@ -959,7 +1001,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(22) : () => ''
@@ -974,12 +1016,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M640.94,467.57c-.67-.63-.72-2.22-.6-3.19s.23-2,.43-2.89c.27-1.29.66-1.22,1.52-1.56a1.22,1.22,0,0,1,1.32.15c.54.44,2.07,4.49,1.83,5.12a.82.82,0,0,1-.34.37l-1.64,1.08c-.62.41-1.42,1.5-2.27,1.09A1.38,1.38,0,0,1,640.94,467.57Z'
               variants={icon}
               initial='hidden'
@@ -989,12 +1033,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M635.18,470a6.24,6.24,0,0,1,.17-.93l1.36-5.59a4.31,4.31,0,0,1,1.38-.32c.46.12.55.34.77.74.73,1.3.81,3.52,1.15,5a7.44,7.44,0,0,1-3.64,1.87C635.41,470.91,635.14,470.68,635.18,470Z'
               variants={icon}
               initial='hidden'
@@ -1004,12 +1050,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M629.55,471.52a5.58,5.58,0,0,1,.37-.87l2.58-5.15a4.5,4.5,0,0,1,1.42,0c.41.23.45.46.58.9.42,1.42,0,3.61,0,5.1a7.41,7.41,0,0,1-4,1C629.57,472.44,629.35,472.15,629.55,471.52Z'
               variants={icon}
               initial='hidden'
@@ -1019,12 +1067,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M622.18,473.81c-.65-.66-.13-1.95.38-2.71a23.52,23.52,0,0,1,1.64-2.22c.83-1,1.32-.84,2.58-.92a2.35,2.35,0,0,1,1.69.42c.54.48,1.07,4.08.52,4.54a1.36,1.36,0,0,1-.59.22l-2.56.5c-1,.19-2.43.89-3.4.36A.88.88,0,0,1,622.18,473.81Z'
               variants={icon}
               initial='hidden'
@@ -1034,12 +1084,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M616,476a10.93,10.93,0,0,1,0-1.28,1.81,1.81,0,0,1,.19-.86,2.37,2.37,0,0,1,.57-.57c.95-.72,1.88-1.37,3-1a6.64,6.64,0,0,1,2.67,2,.16.16,0,0,1-.12.27c-1.61-.06-6.23,2.08-6.2,2.16A4,4,0,0,1,616,476Z'
               variants={icon}
               initial='hidden'
@@ -1049,12 +1101,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M610,478a10.93,10.93,0,0,1,0-1.28,1.81,1.81,0,0,1,.19-.86,2.37,2.37,0,0,1,.57-.57c.95-.72,1.88-1.37,3-1a6.64,6.64,0,0,1,2.67,2,.16.16,0,0,1-.12.27c-1.61-.06-6.23,2.08-6.2,2.16A4,4,0,0,1,610,478Z'
               variants={icon}
               initial='hidden'
@@ -1064,12 +1118,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M604,480a10.93,10.93,0,0,1,0-1.28,1.81,1.81,0,0,1,.19-.86,2.37,2.37,0,0,1,.57-.57c.95-.72,1.88-1.37,3-1a6.64,6.64,0,0,1,2.67,2,.16.16,0,0,1-.12.27c-1.61-.06-6.23,2.08-6.2,2.16A4,4,0,0,1,604,480Z'
               variants={icon}
               initial='hidden'
@@ -1079,12 +1135,14 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(23) : () => ''
               }
-              stroke={clear === 'customize' ? fills.black : ''}
+              stroke={
+                clear === 'customize' || clear === 'move' ? fills.black : ''
+              }
               d='M553,481.81c.46-.66.09-1.95-.27-2.71s-.74-1.52-1.17-2.22c-.59-1-.94-.84-1.84-.92a1.33,1.33,0,0,0-1.2.42c-.38.48-.76,4.08-.36,4.54a.78.78,0,0,0,.42.22l1.81.5c.69.19,1.73.89,2.42.36A.86.86,0,0,0,553,481.81Z'
               variants={icon}
               initial='hidden'
@@ -1094,7 +1152,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(24) : () => ''
@@ -1109,7 +1167,7 @@ const Yoni = ({ clear, customColors, onCustomColor, erase }) => {
             />
             <motion.path
               className={
-                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : ''
+                clear === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move'
               }
               onClick={
                 clear === 'customize' ? () => onCustomColor(24) : () => ''

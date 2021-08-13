@@ -33,15 +33,13 @@ const Header = ({ updateMode }) => {
     <header>
       <Nav />
       <Icons updateMode={updateMode} />
-      <div className='canvas'>
-        <Background bg={bg} />
-        <Yoni
-          clear={clear}
-          customColors={customColors}
-          onCustomColor={onCustomColor}
-          erase={erase}
-        />
-      </div>
+      <Background bg={bg} />
+      <Yoni
+        clear={clear}
+        customColors={customColors}
+        onCustomColor={onCustomColor}
+        erase={erase}
+      />
       <ColoringToolBar
         clear={clear}
         setClear={setClear}

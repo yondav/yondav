@@ -1,18 +1,32 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { backgrounds } from './backgrounds';
 
 const BGSelector = ({ setBg }) => {
   return (
     <div className='bg-selector'>
-      <div className='bg-opt' onClick={() => setBg('shea')}>
-        <div className='bg-thumb-cont'>
-          <img
-            className='bg-thumbnail'
-            src='https://res.cloudinary.com/yup-schlepp/image/upload/v1628729810/yondav/background_thumbnails/shea_tk2bl8.png'
-            alt='shea'
-          />
-        </div>
-        <span>Shea</span>
-      </div>
+      {backgrounds.map((bg) => {
+        return (
+          <motion.div
+            className='bg-opt'
+            onTap={() => setBg(bg.state)}
+            initial={{ y: -600 }}
+            animate={{ y: 0 }}
+            transition={{ ease: 'easeIn', duration: 1 }}
+          >
+            <div className='bg-thumb-cont'>
+              {bg.thumbnail && (
+                <img
+                  className='bg-thumbnail'
+                  src={bg.thumbnail}
+                  alt={bg.name}
+                />
+              )}
+            </div>
+            <span>{bg.name}</span>
+          </motion.div>
+        );
+      })}
     </div>
   );
 };

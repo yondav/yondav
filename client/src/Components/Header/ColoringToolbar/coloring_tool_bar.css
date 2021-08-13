@@ -1,13 +1,12 @@
 .tool-bar {
   width: fit-content;
   position: relative;
-  bottom: 0;
+  bottom: 8rem;
   display: flex;
   flex-direction: column;
   background-color: var(--pr-white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  overflow: hidden;
 }
 
 .controls {
@@ -17,7 +16,9 @@
   justify-content: flex-end;
   color: var(--pr-white);
   background-color: var(--pr-black);
-  cursor: grab;
+  cursor: move;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 }
 
 .min {
@@ -42,6 +43,9 @@
 }
 
 .customize-btn {
+  position: absolute;
+  bottom: 27rem;
+  right: 1.5rem;
   background-color: var(--green);
   color: var(--pr-white) !important;
   transition: var(--transition);
@@ -50,7 +54,7 @@
 
 .color-selector {
   position: absolute;
-  bottom: 20rem;
+  bottom: 10rem;
   left: 2rem;
   width: fit-content;
   display: flex;
@@ -81,6 +85,12 @@
   background-color: var(--red);
 }
 
+.move-btn:hover,
+.move-btn:focus,
+.move-btn:active {
+  background-color: var(--orange);
+}
+
 .eraser-btn:hover,
 .eraser-btn:focus,
 .eraser-btn:active {
@@ -109,18 +119,31 @@
 }
 
 .bg-selector {
+  margin-top: 1rem;
+  height: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: scroll;
 }
 
 .bg-opt {
+  margin-bottom: 0.25rem;
   width: 85%;
+  height: 2rem;
   padding: 0.5rem;
   display: flex;
   align-items: center;
-  border: 1px solid var(--pr-black);
   border-radius: var(--radius);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.bg-opt:hover,
+.bg-opt:focus,
+.bg-opt:active {
+  box-shadow: var(--shadow-in);
 }
 
 .bg-thumb-cont {
@@ -145,16 +168,38 @@
   }
 }
 
+@media only screen and (max-width: 300px) {
+  .customize-btn {
+    bottom: 33rem;
+    right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 350px) {
+  .customize-btn {
+    bottom: 32rem;
+  }
+}
+
+@media only screen and (min-width: 369px) {
+  .customize-btn {
+    bottom: 35rem;
+  }
+
+  .tool-bar {
+    bottom: 5rem;
+  }
+}
+
 @media only screen and (min-width: 767px) {
   .customize-btn {
-    position: absolute;
-    bottom: 30rem;
+    bottom: 35rem;
     right: 1.5rem;
   }
 
   .tool-bar {
     position: absolute;
-    bottom: 38rem;
+    bottom: 48rem;
     right: 0.5rem;
   }
 
@@ -167,6 +212,7 @@
 @media only screen and (min-width: 989px) {
   .customize-btn {
     position: absolute;
+    bottom: 25rem;
     right: auto;
     left: 1.5rem;
   }

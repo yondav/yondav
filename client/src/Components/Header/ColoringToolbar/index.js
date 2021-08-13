@@ -9,12 +9,12 @@ import {
   MdDoNotDisturb,
   MdSettingsBackupRestore,
   FiImage,
+  RiDragMoveFill,
 } from 'react-icons/all';
 import './coloring_tool_bar.css';
 import BGSelector from './BGSelector';
 
 const ColoringToolBar = ({
-  clear,
   setClear,
   setCustomColors,
   setErase,
@@ -23,26 +23,21 @@ const ColoringToolBar = ({
 }) => {
   const [min, setMin] = useState(false);
   const [bgOpt, setBgOpt] = useState(false);
+  const [edit, setEdit] = useState(false);
 
   useEffect(() => console.log(bgOpt), [bgOpt]);
   return (
     <>
-      {clear === 'customize' ? (
+      {edit ? (
         <Draggable>
           <div className='tool-bar'>
             <div className='controls'>
               {!min ? (
-                <motion.div
-                  onClick={() => setMin(true)}
-                  onTap={() => setMin(true)}
-                >
+                <motion.div onTap={() => setMin(true)}>
                   <VscChromeMinimize style={{ cursor: 'pointer' }} />
                 </motion.div>
               ) : (
-                <motion.div
-                  onClick={() => setMin(false)}
-                  onTap={() => setMin(false)}
-                >
+                <motion.div onTap={() => setMin(false)}>
                   <AiOutlineExpandAlt style={{ cursor: 'pointer' }} />
                 </motion.div>
               )}
@@ -51,7 +46,6 @@ const ColoringToolBar = ({
               <>
                 <div className='control-panel'>
                   <motion.button
-                    onClick={() => setClear('color')}
                     onTap={() => setClear('color')}
                     className='btn original-btn control-btn'
                     title='back to original'
@@ -59,7 +53,12 @@ const ColoringToolBar = ({
                     <MdSettingsBackupRestore />
                   </motion.button>
                   <motion.button
-                    onClick={() => setCustomColors(Array(26).fill('#f4f4f4'))}
+                    className='btn move-btn control-btn'
+                    onTap={() => setClear('move')}
+                  >
+                    <RiDragMoveFill />
+                  </motion.button>
+                  <motion.button
                     onTap={() => setCustomColors(Array(26).fill('#f4f4f4'))}
                     className='btn clear-btn control-btn'
                     title='clear'
@@ -67,7 +66,6 @@ const ColoringToolBar = ({
                     <MdDoNotDisturb />
                   </motion.button>
                   <motion.button
-                    onClick={() => setErase(true)}
                     onTap={() => setErase(true)}
                     className='btn eraser-btn control-btn'
                     title='eraser'
@@ -75,11 +73,8 @@ const ColoringToolBar = ({
                     <BiEraser />
                   </motion.button>
                   <motion.button
-                    onClick={() => {
-                      setDisplayColorPicker(true);
-                      setErase(false);
-                    }}
                     onTap={() => {
+                      setClear('customize');
                       setDisplayColorPicker(true);
                       setErase(false);
                     }}
@@ -106,8 +101,7 @@ const ColoringToolBar = ({
             boxShadow: 'var(--shadow)',
             backgroundColor: 'var(--orange)',
           }}
-          onTap={() => setClear('customize')}
-          onClick={() => setClear('customize')}
+          onTap={() => setEdit(true)}
           className='btn customize-btn'
         >
           <b>crayon</b>
