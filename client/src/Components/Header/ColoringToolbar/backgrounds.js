@@ -19,7 +19,7 @@ export const backgrounds = {
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1628814769/yondav/background_thumbnails/blank_white_cb3uqn.png',
       element: {
         initial: { y: 4000 },
-        animate: { y: 0 },
+        animate: { y: 0, rotate: [10, 0, 40, 0] },
         transition: { duration: 0.5 },
         style: dimensions('#f4f4f4'),
       },
@@ -31,7 +31,7 @@ export const backgrounds = {
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1628814589/yondav/background_thumbnails/blank_black_bonp7g.png',
       element: {
         initial: { y: -4000 },
-        animate: { y: 0 },
+        animate: { y: 0, rotate: [10, 0, 40, 0] },
         transition: { duration: 0.5 },
         style: dimensions('#343434'),
       },

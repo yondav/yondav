@@ -29,7 +29,7 @@ const ColoringToolBar = ({
   return (
     <>
       {edit ? (
-        <Draggable>
+        <Draggable handle='.controls'>
           <div className='tool-bar'>
             <div className='controls'>
               {!min ? (
