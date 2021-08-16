@@ -1,7 +1,7 @@
 .tool-bar {
   width: fit-content;
   position: relative;
-  bottom: 8rem;
+  top: 25rem;
   display: flex;
   flex-direction: column;
   background-color: var(--pr-white);
@@ -175,6 +175,12 @@
   }
 }
 
+@media only screen and (max-width: 365px) {
+  .tool-bar {
+    top: 15rem;
+  }
+}
+
 @media only screen and (min-width: 350px) {
   .customize-btn {
     bottom: 32rem;
@@ -221,6 +227,7 @@
     bottom: 25rem;
     right: auto;
     left: 0.5rem;
+    height: fit-content;
   }
 
   .color-selector {
