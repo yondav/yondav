@@ -69,13 +69,25 @@ header {
 }
 
 .yoni-container {
+  /* padding: 1rem; */
   position: absolute;
   bottom: 17rem;
-  width: fit-content;
+  height: fit-content;
+  transition: var(--transition);
+  overflow: auto;
+  resize: both;
+  z-index: 50;
+}
+
+.inner-container {
+  height: 100%;
+  width: 100%;
+  padding-top: 1rem;
 }
 
 .yoni {
-  height: 50vh;
+  height: 100%;
+  width: 100%;
 }
 
 .bounce {
@@ -93,6 +105,10 @@ header {
 
 .move {
   cursor: move;
+}
+
+.resize {
+  cursor: ne-resize;
 }
 
 @keyframes bounce {
@@ -114,6 +130,7 @@ header {
   .yoni-container {
     bottom: 5rem;
   }
+
   .yoni {
     height: 73vh;
   }
@@ -121,10 +138,10 @@ header {
 
 @media only screen and (min-width: 989px) {
   .yoni-container {
-    bottom: 0;
+    bottom: -1rem;
   }
 
-  .yoni {
-    height: 88vh;
-  }
+  /* .yoni {
+    height: 83vh;
+  } */
 }

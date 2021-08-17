@@ -2,13 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { icon } from '../../../../Utils/animations';
 
-const Path = ({ tap, stroke, d, animate, transition, yoni, erase }) => {
-  const classification =
-    yoni === 'customize' ? (!erase ? 'bucket' : 'eraser') : 'move';
+const Path = ({ tap, stroke, d, animate, transition, customize, erase }) => {
+  const cursor = customize === 'color' ? (!erase ? 'bucket' : 'eraser') : '';
 
   return (
     <motion.path
-      className={classification}
+      className={cursor}
       onTap={tap}
       stroke={stroke}
       d={d}

@@ -6,9 +6,11 @@ import ColoringToolBar from './ColoringToolbar';
 import './header.css';
 import ColorSelector from './ColorSelector';
 import Background from './Backgrounds';
+import { fillsArr } from './Yoni/fills';
 
 const Header = ({ updateMode }) => {
   const [yoni, setYoni] = useState('start');
+  const [customize, setCustomize] = useState(false);
   const [customColors, setCustomColors] = useState(Array(25).fill('#f4f4f4'));
   const [currColor, setCurrColor] = useState('#11CB3C');
   const [erase, setErase] = useState(false);
@@ -39,6 +41,8 @@ const Header = ({ updateMode }) => {
         customColors={customColors}
         onCustomColor={onCustomColor}
         erase={erase}
+        customize={customize}
+        setCustomize={setCustomize}
       />
       <ColoringToolBar
         yoni={yoni}
@@ -49,6 +53,8 @@ const Header = ({ updateMode }) => {
         displayColorPicker={displayColorPicker}
         setDisplayColorPicker={setDisplayColorPicker}
         setBg={setBg}
+        customize={customize}
+        setCustomize={setCustomize}
       />
       {displayColorPicker && (
         <ColorSelector

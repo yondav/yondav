@@ -20,6 +20,8 @@ const ColoringToolBar = ({
   setErase,
   setDisplayColorPicker,
   setBg,
+  setCustomize,
+  customize,
 }) => {
   const [min, setMin] = useState(false);
   const [bgOpt, setBgOpt] = useState(false);
@@ -46,21 +48,45 @@ const ColoringToolBar = ({
               <>
                 <div className='control-panel'>
                   <motion.button
-                    onTap={() => setYoni('color')}
+                    onTap={() => {
+                      setBgOpt(false);
+                      setDisplayColorPicker(false);
+                      setCustomize(false);
+                      setYoni('color');
+                    }}
                     className='btn original-btn control-btn'
                     title='back to original'
                   >
                     <MdSettingsBackupRestore />
                   </motion.button>
                   <motion.button
-                    onTap={() => setCustomColors(Array(26).fill('#f4f4f4'))}
+                    onTap={() => {
+                      setBgOpt(false);
+                      setCustomColors(Array(25).fill('#f4f4f4'));
+                      setYoni('clear');
+                    }}
                     className='btn yoni-btn control-btn'
                     title='yoni'
                   >
                     <MdDoNotDisturb />
                   </motion.button>
                   <motion.button
-                    onTap={() => setErase(true)}
+                    onTap={() => {
+                      setBgOpt(false);
+                      setDisplayColorPicker(false);
+                      setCustomize('move');
+                    }}
+                    className='btn move-btn control-btn'
+                    title='move and resize'
+                  >
+                    <RiDragMoveFill />
+                  </motion.button>
+                  <motion.button
+                    onTap={() => {
+                      setBgOpt(false);
+                      setCustomize('color');
+                      setErase(true);
+                    }}
                     className='btn eraser-btn control-btn'
                     title='eraser'
                   >
@@ -68,7 +94,8 @@ const ColoringToolBar = ({
                   </motion.button>
                   <motion.button
                     onTap={() => {
-                      setYoni('customize');
+                      setBgOpt(false);
+                      setCustomize('color');
                       setDisplayColorPicker(true);
                       setErase(false);
                     }}
@@ -79,7 +106,11 @@ const ColoringToolBar = ({
                   </motion.button>
                   <motion.button
                     className='btn bg-btn control-btn'
-                    onTap={() => (!bgOpt ? setBgOpt(true) : setBgOpt(false))}
+                    onTap={() => {
+                      setCustomize('color');
+                      setDisplayColorPicker(true);
+                      !bgOpt ? setBgOpt(true) : setBgOpt(false);
+                    }}
                   >
                     <FiImage />
                   </motion.button>
