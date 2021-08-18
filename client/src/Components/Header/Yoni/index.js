@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Draggable from 'react-draggable';
-import { Resizable } from 'react-resizable';
 import { ImShrink2 } from 'react-icons/im';
 import { motion } from 'framer-motion';
 import { fills } from './fills';
