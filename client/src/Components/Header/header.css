@@ -74,20 +74,14 @@ header {
   bottom: 17rem;
   height: fit-content;
   transition: var(--transition);
-  overflow: auto;
-  resize: both;
-  z-index: 50;
 }
 
 .inner-container {
-  height: 100%;
-  width: 100%;
   padding-top: 1rem;
 }
 
 .yoni {
-  height: 100%;
-  width: 100%;
+  height: 50vh;
 }
 
 .bounce {
@@ -141,7 +135,7 @@ header {
     bottom: -1rem;
   }
 
-  /* .yoni {
+  .yoni {
     height: 83vh;
-  } */
+  }
 }
