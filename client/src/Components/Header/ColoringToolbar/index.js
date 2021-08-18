@@ -49,7 +49,7 @@ const ColoringToolBar = ({
                 <div className='control-panel'>
                   <motion.button
                     onTap={() => {
-                      setBgOpt(false);
+                      // setBgOpt(false);
                       setDisplayColorPicker(false);
                       setCustomize(false);
                       setYoni('color');
@@ -107,9 +107,9 @@ const ColoringToolBar = ({
                   <motion.button
                     className='btn bg-btn control-btn'
                     onTap={() => {
-                      setCustomize('color');
                       setDisplayColorPicker(true);
                       !bgOpt ? setBgOpt(true) : setBgOpt(false);
+                      customize ? setCustomize('color') : setCustomize(false);
                     }}
                   >
                     <FiImage />
