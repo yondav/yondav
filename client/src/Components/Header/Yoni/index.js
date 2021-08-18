@@ -66,9 +66,9 @@ const Yoni = ({
       <div className='yoni-container' style={customize === 'move' ? style : ''}>
         {customize === 'move' && (
           <div className='controls move' style={{ height: '1rem' }}>
-            <div className='resize'>
+            {/* <div className='resize'>
               <ImShrink2 />
-            </div>
+            </div> */}
           </div>
         )}
         <div className='inner-container'>
