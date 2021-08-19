@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Shea from './Shea';
 import { backgrounds } from '../ColoringToolbar/backgrounds';
+import './backgrounds.css';
+import Ces from './Ces';
 
 const Background = ({ bg }) => {
   const [viewPort, setViewPort] = useState(false);
@@ -60,6 +61,7 @@ const Background = ({ bg }) => {
               rect: viewPort.rect,
             })
           )}
+        {bg === 'ces' && <Ces />}
         {/* {!bg && (
           <motion.div
             initial={{ y: 4000 }}

@@ -7,6 +7,7 @@ import './header.css';
 import ColorSelector from './ColorSelector';
 import Background from './Backgrounds';
 import { fillsArr } from './Yoni/fills';
+import Shea from './Backgrounds/Shea';
 
 const Header = ({ updateMode }) => {
   const [yoni, setYoni] = useState('start');

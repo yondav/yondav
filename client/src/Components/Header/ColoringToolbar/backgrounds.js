@@ -1,4 +1,5 @@
 import Shea from '../Backgrounds/Shea';
+import Crowd from '../Backgrounds/Crowd';
 
 const dimensions = (color) => ({
   width: '100vw',
@@ -150,6 +151,13 @@ export const backgrounds = {
       thumbnail:
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1628815040/yondav/background_thumbnails/shea_rgjmaw.png',
       element: Shea,
+    },
+    {
+      name: 'ces',
+      state: 'ces',
+      thumbnail:
+        'https://res.cloudinary.com/yup-schlepp/image/upload/v1629310420/yondav/background_thumbnails/ces_lwkui8.png',
+      element: Crowd,
     },
   ],
 };

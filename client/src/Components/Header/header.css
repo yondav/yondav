@@ -1,11 +1,12 @@
 header {
   width: 100vw;
-  height: 100vh;
+  height: 102vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--pure-white);
   transition: var(--transition);
+  /* overflow: hidden; */
 }
 
 .icons {
@@ -55,7 +56,7 @@ header {
 .canvas {
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: fit-content;
   width: 100%;
 }
@@ -69,9 +70,8 @@ header {
 }
 
 .yoni-container {
-  /* padding: 1rem; */
   position: absolute;
-  bottom: 17rem;
+  bottom: 25rem;
   height: fit-content;
   transition: var(--transition);
 }
@@ -81,7 +81,7 @@ header {
 }
 
 .yoni {
-  height: 50vh;
+  height: 40vh;
 }
 
 .bounce {
@@ -114,19 +114,53 @@ header {
   }
 }
 
+@media only screen and (max-width: 320px) {
+  .yoni-container {
+    bottom: 11.5rem !important;
+  }
+}
+
 @media only screen and (max-width: 350px) {
   .yoni-container {
     bottom: 13rem;
   }
 }
 
-@media only screen and (min-width: 757px) {
+@media only screen and (width: 360px) {
   .yoni-container {
-    bottom: 5rem;
+    bottom: 13.5rem;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .yoni-container {
+    bottom: 16.5rem;
   }
 
   .yoni {
-    height: 73vh;
+    height: 40vh;
+  }
+}
+
+@media only screen and (height: 667px) {
+  .yoni-container {
+    bottom: 14.5rem;
+  }
+}
+
+@media only screen and (height: 823px) {
+  .yoni-container {
+    bottom: 23rem;
+  }
+}
+
+@media only screen and (min-width: 757px) {
+  .yoni-container {
+    bottom: 10rem;
+  }
+
+  .yoni {
+    height: 65vh;
   }
 }
 
@@ -137,5 +171,14 @@ header {
 
   .yoni {
     height: 83vh;
+  }
+}
+
+@media only screen and (min-height: 1366px) {
+  .yoni-container {
+    bottom: 15rem;
+  }
+  .yoni {
+    height: 60vh;
   }
 }

@@ -1,0 +1,69 @@
+.bg-cont {
+  width: 100%;
+}
+.bg {
+  width: 100%;
+}
+
+.cespedes {
+  position: relative;
+  top: -46rem;
+  right: 20rem;
+  width: 50rem;
+  /* z-index: 10; */
+}
+
+@media only screen and (max-width: 330px) {
+  .cespedes {
+    width: 35rem;
+    top: -39rem;
+    right: 14rem;
+    /* right: 34rem; */
+  }
+}
+
+@media only screen and (width: 360px) {
+  .cespedes {
+    top: -45rem;
+    right: 19.5rem;
+    width: 50rem;
+  }
+}
+
+@media only screen and (height: 667px) {
+  .cespedes {
+    top: -46rem;
+    right: 18rem;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .cespedes {
+    top: -46.5rem;
+    right: 15rem;
+    width: 40rem;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .cespedes {
+    top: -70rem;
+    right: 20rem;
+    width: 68rem;
+  }
+}
+
+@media only screen and (min-width: 989px) {
+  .cespedes {
+    top: -16rem;
+    right: 14rem;
+  }
+}
+
+@media only screen and (min-height: 1366px) {
+  .cespedes {
+    top: -92rem;
+    right: 22rem;
+    width: 90rem;
+  }
+}
