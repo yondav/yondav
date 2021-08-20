@@ -3,6 +3,7 @@ import Draggable from 'react-draggable';
 import { motion } from 'framer-motion';
 import {
   VscChromeMinimize,
+  VscArrowLeft,
   AiOutlineExpandAlt,
   BiEraser,
   BiColorFill,
@@ -13,12 +14,15 @@ import {
 } from 'react-icons/all';
 import './coloring_tool_bar.css';
 import BGSelector from './BGSelector';
+import ColorSelector from '../ColorSelector';
 
 const ColoringToolBar = ({
   setYoni,
   setCustomColors,
   setErase,
+  setCurrColor,
   setDisplayColorPicker,
+  displayColorPicker,
   setBg,
   setCustomize,
   customize,
@@ -32,11 +36,30 @@ const ColoringToolBar = ({
     <>
       {edit ? (
         <Draggable handle='.controls'>
-          <div className='tool-bar'>
+          <motion.div
+            layout
+            initial={{ opacity: 0, width: 0 }}
+            animate={{ opacity: 1, width: 'auto' }}
+            exit={{ opacity: 0, width: 0 }}
+            transition={{ duration: 0.8, ease: [0.04, 0.92, 0.53, 0.98] }}
+            className='tool-bar'
+          >
             <div className='controls'>
               {!min ? (
-                <motion.div onTap={() => setMin(true)}>
-                  <VscChromeMinimize style={{ cursor: 'pointer' }} />
+                <motion.div
+                  onTap={() =>
+                    !bgOpt && !displayColorPicker
+                      ? setMin(true)
+                      : bgOpt
+                      ? setBgOpt(false)
+                      : setDisplayColorPicker(false)
+                  }
+                >
+                  {!bgOpt && !displayColorPicker ? (
+                    <VscChromeMinimize style={{ cursor: 'pointer' }} />
+                  ) : (
+                    <VscArrowLeft style={{ cursor: 'pointer' }} />
+                  )}
                 </motion.div>
               ) : (
                 <motion.div onTap={() => setMin(false)}>
@@ -45,7 +68,7 @@ const ColoringToolBar = ({
               )}
             </div>
             {!min && (
-              <>
+              <div className='control-panel-btns'>
                 <div className='control-panel'>
                   <motion.button
                     onTap={() => {
@@ -107,7 +130,6 @@ const ColoringToolBar = ({
                   <motion.button
                     className='btn bg-btn control-btn'
                     onTap={() => {
-                      setDisplayColorPicker(true);
                       !bgOpt ? setBgOpt(true) : setBgOpt(false);
                       customize ? setCustomize('color') : setCustomize(false);
                     }}
@@ -115,10 +137,16 @@ const ColoringToolBar = ({
                     <FiImage />
                   </motion.button>
                 </div>
-                {bgOpt ? <BGSelector setBg={setBg} /> : null}
-              </>
+                {bgOpt && <BGSelector setBg={setBg} />}
+                {displayColorPicker && (
+                  <ColorSelector
+                    setCurrColor={setCurrColor}
+                    setErase={setErase}
+                  />
+                )}
+              </div>
             )}
-          </div>
+          </motion.div>
         </Draggable>
       ) : (
         <motion.button

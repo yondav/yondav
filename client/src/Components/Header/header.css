@@ -1,12 +1,12 @@
 header {
   width: 100vw;
-  height: 102vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--pure-white);
   transition: var(--transition);
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .icons {
@@ -53,132 +53,8 @@ header {
   color: var(--blue);
 }
 
-.canvas {
-  display: flex;
-  justify-content: center;
-  /* overflow: hidden; */
-  height: fit-content;
-  width: 100%;
-}
-
-.background-container {
-  width: fit-content;
-}
-
-.background {
-  width: 100vw;
-}
-
-.yoni-container {
-  position: absolute;
-  bottom: 25rem;
-  height: fit-content;
-  transition: var(--transition);
-}
-
-.inner-container {
-  padding-top: 1rem;
-}
-
-.yoni {
-  height: 40vh;
-}
-
-.bounce {
-  transition: var(--transition);
-  animation: bounce 1s infinite;
-}
-
-.bucket {
-  cursor: url('../../Assets/cursors/bucket.svg'), auto;
-}
-
-.eraser {
-  cursor: url('../../Assets/cursors/eraser.svg'), auto;
-}
-
-.move {
-  cursor: move;
-}
-
-.resize {
-  cursor: ne-resize;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(15%);
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .yoni-container {
-    bottom: 11.5rem !important;
-  }
-}
-
-@media only screen and (max-width: 350px) {
-  .yoni-container {
-    bottom: 13rem;
-  }
-}
-
-@media only screen and (width: 360px) {
-  .yoni-container {
-    bottom: 13.5rem;
-  }
-}
-
-@media only screen and (min-width: 400px) {
-  .yoni-container {
-    bottom: 16.5rem;
-  }
-
-  .yoni {
-    height: 40vh;
-  }
-}
-
-@media only screen and (height: 667px) {
-  .yoni-container {
-    bottom: 14.5rem;
-  }
-}
-
-@media only screen and (height: 823px) {
-  .yoni-container {
-    bottom: 23rem;
-  }
-}
-
-@media only screen and (min-width: 757px) {
-  .yoni-container {
-    bottom: 10rem;
-  }
-
-  .yoni {
-    height: 65vh;
-  }
-}
-
-@media only screen and (min-width: 989px) {
-  .yoni-container {
-    bottom: -1rem;
-  }
-
-  .yoni {
-    height: 83vh;
-  }
-}
-
-@media only screen and (min-height: 1366px) {
-  .yoni-container {
-    bottom: 15rem;
-  }
-  .yoni {
-    height: 60vh;
+@media only screen and (max-width: 411px) and (min-height: 811px) {
+  header {
+    height: 85vh;
   }
 }

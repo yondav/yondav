@@ -1,0 +1,114 @@
+.bg {
+  width: 100%;
+}
+
+.color-bg {
+  width: 100vw;
+  height: 90vh;
+}
+
+.ces-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  width: 160%;
+  height: fit-content;
+  margin: auto;
+}
+
+.cespedes {
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 649px) {
+  .ces-container {
+    width: 157%;
+  }
+}
+
+@media only screen and (min-width: 799px) {
+  .ces-container {
+    width: 140%;
+  }
+}
+
+@media only screen and (min-width: 929px) {
+  .ces-container {
+    width: 130%;
+  }
+}
+
+@media only screen and (min-width: 1119px) {
+  .ces-container {
+    width: 105%;
+  }
+}
+
+/* @media only screen and (min-width: 574px) {
+  .ces-container {
+    bottom: 17rem;
+  }
+} */
+
+/* @media only screen and (min-width: 670px) {
+  .ces-container {
+    bottom: 0;
+    width: 140%;
+  }
+} */
+
+/* @media only screen and (max-width: 330px) {
+  .cespedes {
+    width: 35rem;
+    top: -39rem;
+    right: 14rem;
+  }
+} */
+
+/* @media only screen and (width: 465px) {
+  .cespedes {
+    top: -45rem;
+    right: 19.5rem;
+    width: 50rem;
+  }
+} */
+
+/* @media only screen and (width: 540px) {
+  .cespedes {
+    bottom: 83rem !important;
+    right: 18rem;
+    width: 70rem;
+  }
+}
+
+@media only screen and (min-width: 549px) {
+  .cespedes {
+    bottom: 80rem;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .cespedes {
+    bottom: 98rem;
+    right: 25rem;
+    width: 80rem;
+  }
+}
+
+@media only screen and (min-width: 989px) {
+  .cespedes {
+    bottom: 125rem;
+    right: 22rem;
+    width: 100rem;
+  }
+} */
+
+/* @media only screen and (min-height: 1366px) {
+  .cespedes {
+    top: -92rem;
+    right: 22rem;
+    width: 90rem;
+  }
+} */
