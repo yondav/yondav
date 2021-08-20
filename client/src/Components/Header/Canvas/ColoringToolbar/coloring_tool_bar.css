@@ -1,7 +1,9 @@
 .tool-bar {
-  width: fit-content;
-  position: relative;
-  top: 25rem;
+  height: fit-content;
+  /* width: fit-content; */
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
   display: flex;
   flex-direction: column;
   background-color: var(--pr-white);
@@ -25,8 +27,13 @@
   cursor: pointer;
 }
 
+.control-panel-btns {
+  display: flex;
+}
+
 .control-panel {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   padding: 0.5rem;
 }
@@ -42,10 +49,14 @@
   cursor: pointer;
 }
 
+.control-btn {
+  margin: 0.125rem 0;
+}
+
 .customize-btn {
   position: absolute;
-  bottom: 27rem;
-  right: 1.5rem;
+  top: 20%;
+  left: 1.5rem;
   background-color: var(--green);
   color: var(--pr-white) !important;
   transition: var(--transition);
@@ -110,7 +121,8 @@
 }
 
 .color-selector-pop {
-  background: transparent !important;
+  background: none !important;
+  box-shadow: none !important;
 }
 
 .color-selector-pop > div > div > div > input,
@@ -119,8 +131,8 @@
 }
 
 .bg-selector {
-  margin-top: 1rem;
-  height: 10rem;
+  margin: 1rem;
+  height: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,7 +141,7 @@
 
 .bg-opt {
   margin-bottom: 0.25rem;
-  width: 85%;
+  width: 8rem;
   height: 2rem;
   padding: 0.5rem;
   display: flex;
@@ -168,71 +180,11 @@
   }
 }
 
-@media only screen and (max-width: 300px) {
-  .customize-btn {
-    bottom: 33rem;
-    right: 1rem;
-  }
-}
-
-@media only screen and (max-width: 365px) {
+@media only screen and (max-width: 321px) {
   .tool-bar {
-    top: 15rem;
-  }
-}
-
-@media only screen and (min-width: 350px) {
-  .customize-btn {
-    bottom: 32rem;
-  }
-}
-
-@media only screen and (min-width: 369px) {
-  .customize-btn {
-    bottom: 35rem;
-  }
-
-  .tool-bar {
-    bottom: 5rem;
-  }
-}
-
-@media only screen and (min-width: 767px) {
-  .customize-btn {
-    bottom: 35rem;
-    right: 1.5rem;
-  }
-
-  .tool-bar {
-    position: absolute;
-    bottom: 48rem;
-    right: 0.5rem;
-  }
-
-  .color-selector {
-    bottom: 32rem;
-    left: 0.5rem;
-  }
-}
-
-@media only screen and (min-width: 989px) {
-  .customize-btn {
-    position: absolute;
-    bottom: 25rem;
-    right: auto;
+    top: 0;
     left: 1.5rem;
-  }
-
-  .tool-bar {
-    bottom: 25rem;
-    right: auto;
-    left: 0.5rem;
-    height: fit-content;
-  }
-
-  .color-selector {
-    bottom: 16rem;
-    left: auto;
-    right: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

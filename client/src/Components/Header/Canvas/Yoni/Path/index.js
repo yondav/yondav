@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { icon } from '../../../../Utils/animations';
+import { icon } from '../../../../../Utils/animations';
 
 const Path = ({ tap, stroke, d, animate, transition, customize, erase }) => {
   const cursor = customize === 'color' ? (!erase ? 'bucket' : 'eraser') : '';

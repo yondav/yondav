@@ -1,0 +1,93 @@
+.canvas-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+.yoni-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: fit-content;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.yoni {
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-height: 415px) {
+  .yoni-container {
+    width: 30% !important;
+  }
+}
+
+@media only screen and (max-height: 541px) {
+  .yoni-container {
+    width: 50% !important;
+  }
+}
+
+@media only screen and (min-width: 499px) {
+  .yoni-container {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 649px) {
+  .yoni-container {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 799px) {
+  .yoni-container {
+    width: 65%;
+  }
+}
+
+@media only screen and (min-width: 921px) {
+  .yoni-container {
+    width: 55%;
+  }
+}
+
+@media only screen and (min-width: 1119px) {
+  .yoni-container {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1823px) {
+  .yoni-container {
+    width: 40% !important;
+  }
+}
+
+@media only screen and (min-width: 1223px) and (min-height: 1023px) {
+  .yoni-container {
+    width: 50%;
+  }
+}
+
+@media only screen and (width: 1024px) and (height: 1366px) {
+  .yoni-container {
+    width: 85%;
+  }
+}

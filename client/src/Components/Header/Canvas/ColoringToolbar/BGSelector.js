@@ -1,10 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { backgrounds } from './backgrounds';
+import { backgrounds } from '../Backgrounds/backgrounds';
 
 const BGSelector = ({ setBg }) => {
   return (
-    <div className='bg-selector'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: 'easeIn', duration: 1 }}
+      className='bg-selector'
+    >
       <motion.div
         className='bg-opt'
         onTap={() => setBg(backgrounds.blank.state)}
@@ -52,7 +57,7 @@ const BGSelector = ({ setBg }) => {
           <span>{bg.name}</span>
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

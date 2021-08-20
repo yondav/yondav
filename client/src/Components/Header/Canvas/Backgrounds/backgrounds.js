@@ -1,9 +1,7 @@
-import Shea from '../Backgrounds/Shea';
-import Crowd from '../Backgrounds/Crowd';
+import Shea from './Shea';
+import Crowd from './Crowd';
 
 const dimensions = (color) => ({
-  width: '100vw',
-  height: '100vh',
   backgroundColor: color,
 });
 
@@ -19,9 +17,14 @@ export const backgrounds = {
       thumbnail:
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1628814776/yondav/background_thumbnails/yellow_p3okoi.png',
       element: {
-        initial: { x: 4000 },
-        animate: { x: 0, scale: [0, 2, 1] },
-        transition: { duration: 1 },
+        initial: { x: 700 },
+        animate: {
+          x: 0,
+          scale: [0, 2, 1],
+          rotate: [0, 0, 20, 50, 0],
+          borderRadius: ['20%', '20%', '50%', '0%'],
+        },
+        transition: { duration: 1.5 },
         style: dimensions('var(--yellow)'),
       },
     },
@@ -31,9 +34,14 @@ export const backgrounds = {
       thumbnail:
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1628814769/yondav/background_thumbnails/pink_cvrcfo.png',
       element: {
-        initial: { x: -4000 },
-        animate: { x: 0, scale: [0, 2, 1] },
-        transition: { duration: 1 },
+        initial: { x: -700 },
+        animate: {
+          x: 0,
+          scale: [0, 2, 1],
+          rotate: [0, 0, 33, 10, 0],
+          borderRadius: ['20%', '20%', '0%'],
+        },
+        transition: { duration: 1.5 },
         style: dimensions('var(--pink)'),
       },
     },
@@ -44,8 +52,12 @@ export const backgrounds = {
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1628814769/yondav/background_thumbnails/purple_kkdszp.png',
       element: {
         initial: { scale: 0 },
-        animate: { scale: [0, 2, 1] },
-        transition: { duration: 1 },
+        animate: {
+          scale: [0, 1.5, 1],
+          rotate: [0, 0, 14, 13, 0],
+          borderRadius: ['20%', '50%', '0%'],
+        },
+        transition: { duration: 1.5 },
         style: dimensions('var(--purple)'),
       },
     },
@@ -72,7 +84,12 @@ export const backgrounds = {
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1628814769/yondav/background_thumbnails/red_cjurxn.png',
       element: {
         initial: { x: 4000, scale: 0 },
-        animate: { x: 0, scale: [1, 3, 1] },
+        animate: {
+          x: 0,
+          scale: [1, 3, 1],
+          rotate: [0, 0, 22, 11, 0],
+          borderRadius: ['20%', '20%', '50%', '0%'],
+        },
         transition: { duration: 1 },
         style: dimensions('var(--red)'),
       },
@@ -100,9 +117,11 @@ export const backgrounds = {
       thumbnail:
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1628814769/yondav/background_thumbnails/blue_tw7q54.png',
       element: {
-        initial: { opacity: 0 },
+        initial: { y: 900 },
         animate: {
-          opacity: 1,
+          // opacity: 1,
+          // rotate: [0, 0, 70, 0],
+          borderRadius: ['20%', '20%', '50%', '50%', '0%'],
           y: [0, 500, 0, 400, 0, 300, 0, 200, 0, 100, 0],
         },
         transition: { duration: 2.5 },
@@ -115,10 +134,10 @@ export const backgrounds = {
       thumbnail:
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1628814769/yondav/background_thumbnails/blue_alt_odd3vz.png',
       element: {
-        initial: { opacity: 0 },
+        initial: { y: -700 },
         animate: {
-          opacity: 1,
-          rotate: [0, 0, 270, 0],
+          y: 0,
+          rotate: [0, 0, 70, 0],
           scale: [1, 4, 1],
           borderRadius: ['20%', '20%', '50%', '50%', '0%'],
         },
@@ -139,7 +158,7 @@ export const backgrounds = {
           scale: [1, 4, 1],
           borderRadius: ['20%', '20%', '50%', '50%', '0%'],
         },
-        transition: { duration: 0.5 },
+        transition: { duration: 1.5 },
         style: dimensions('var(--brown)'),
       },
     },

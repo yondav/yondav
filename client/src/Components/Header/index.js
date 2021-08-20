@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../Nav';
 import Icons from './Icons';
-import Yoni from './Yoni';
-import ColoringToolBar from './ColoringToolbar';
 import './header.css';
-import ColorSelector from './ColorSelector';
-import Background from './Backgrounds';
-import { fillsArr } from './Yoni/fills';
-import Shea from './Backgrounds/Shea';
+import Canvas from './Canvas';
 
 const Header = ({ updateMode }) => {
   const [yoni, setYoni] = useState('start');
@@ -36,34 +31,22 @@ const Header = ({ updateMode }) => {
     <header>
       <Nav />
       <Icons updateMode={updateMode} />
-      <Background bg={bg} />
-      <Yoni
-        yoni={yoni}
-        customColors={customColors}
-        onCustomColor={onCustomColor}
-        erase={erase}
-        customize={customize}
-        setCustomize={setCustomize}
-      />
-      <ColoringToolBar
+      <Canvas
+        bg={bg}
+        setBg={setBg}
         yoni={yoni}
         setYoni={setYoni}
+        customColors={customColors}
         setCustomColors={setCustomColors}
+        onCustomColor={onCustomColor}
         setCurrColor={setCurrColor}
+        erase={erase}
         setErase={setErase}
         displayColorPicker={displayColorPicker}
         setDisplayColorPicker={setDisplayColorPicker}
-        setBg={setBg}
         customize={customize}
         setCustomize={setCustomize}
       />
-      {displayColorPicker && (
-        <ColorSelector
-          setCurrColor={setCurrColor}
-          setErase={setErase}
-          setDisplayColorPicker={setDisplayColorPicker}
-        />
-      )}
     </header>
   );
 };

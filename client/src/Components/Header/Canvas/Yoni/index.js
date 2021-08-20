@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Draggable from 'react-draggable';
-import { ImShrink2 } from 'react-icons/im';
 import { motion } from 'framer-motion';
 import { fills } from './fills';
-import { icon } from '../../../Utils/animations';
+import { icon } from '../../../../Utils/animations';
 import Path from './Path';
 
 const style = {
@@ -19,10 +18,6 @@ const Yoni = ({
   customize,
   setCustomize,
 }) => {
-  const [size, setSize] = useState({ width: 200, height: 200 });
-  const onResize = (event, { element, size, handle }) => {
-    setSize({ width: size.width, height: size.height });
-  };
   const trans = (defDuration, defDelay, fillDuration, fillDelay) => {
     return yoni === 'start' && customize !== 'color'
       ? {
@@ -65,11 +60,7 @@ const Yoni = ({
     <Draggable handle='.controls'>
       <div className='yoni-container' style={customize === 'move' ? style : ''}>
         {customize === 'move' && (
-          <div className='controls move' style={{ height: '1rem' }}>
-            {/* <div className='resize'>
-              <ImShrink2 />
-            </div> */}
-          </div>
+          <div className='controls move' style={{ height: '1rem' }}></div>
         )}
         <div className='inner-container'>
           <motion.svg
