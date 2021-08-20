@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Nav from '../Nav';
 import Icons from './Icons';
 import './header.css';
-import Canvas from './Canvas';
+const Canvas = React.lazy(() => import('./Canvas'));
 
 const Header = ({ updateMode }) => {
   const [yoni, setYoni] = useState('start');
@@ -31,22 +31,24 @@ const Header = ({ updateMode }) => {
     <header>
       <Nav />
       <Icons updateMode={updateMode} />
-      <Canvas
-        bg={bg}
-        setBg={setBg}
-        yoni={yoni}
-        setYoni={setYoni}
-        customColors={customColors}
-        setCustomColors={setCustomColors}
-        onCustomColor={onCustomColor}
-        setCurrColor={setCurrColor}
-        erase={erase}
-        setErase={setErase}
-        displayColorPicker={displayColorPicker}
-        setDisplayColorPicker={setDisplayColorPicker}
-        customize={customize}
-        setCustomize={setCustomize}
-      />
+      <Suspense fallback={''}>
+        <Canvas
+          bg={bg}
+          setBg={setBg}
+          yoni={yoni}
+          setYoni={setYoni}
+          customColors={customColors}
+          setCustomColors={setCustomColors}
+          onCustomColor={onCustomColor}
+          setCurrColor={setCurrColor}
+          erase={erase}
+          setErase={setErase}
+          displayColorPicker={displayColorPicker}
+          setDisplayColorPicker={setDisplayColorPicker}
+          customize={customize}
+          setCustomize={setCustomize}
+        />
+      </Suspense>
     </header>
   );
 };

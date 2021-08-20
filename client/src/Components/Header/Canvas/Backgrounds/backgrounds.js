@@ -67,10 +67,10 @@ export const backgrounds = {
       thumbnail:
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1628814769/yondav/background_thumbnails/orange_ziagmb.png',
       element: {
-        initial: { scale: 0 },
+        initial: { y: -900 },
         animate: {
-          scale: [1, 2, 2, 1, 1],
-          rotate: [0, 0, 270, 270, 0],
+          y: [100, 300, -100, 500, 0],
+          rotate: [0, 0, 170, -70, 0],
           borderRadius: ['20%', '20%', '50%', '50%', '0%'],
         },
         transition: { duration: 1.5 },
@@ -178,5 +178,12 @@ export const backgrounds = {
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1629310420/yondav/background_thumbnails/ces_lwkui8.png',
       element: Crowd,
     },
+    // {
+    //   name: 'ces',
+    //   state: 'ces',
+    //   thumbnail:
+    //     'https://res.cloudinary.com/yup-schlepp/image/upload/v1629310420/yondav/background_thumbnails/ces_lwkui8.png',
+    //   element: Crowd,
+    // },
   ],
 };

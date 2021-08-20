@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { backgrounds } from './backgrounds';
 import './backgrounds.css';
-import Ces from './Ces';
+import { backgrounds } from './backgrounds';
+const Ces = React.lazy(() => import('./Ces'));
 
 const Background = ({ bg }) => {
   const [viewPort, setViewPort] = useState(false);
@@ -62,7 +62,11 @@ const Background = ({ bg }) => {
               rect: viewPort.rect,
             })
           )}
-        {bg === 'ces' && <Ces />}
+        {bg === 'ces' && (
+          <Suspense>
+            <Ces />
+          </Suspense>
+        )}
       </div>
     </div>
   );

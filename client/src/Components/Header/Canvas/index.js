@@ -1,8 +1,8 @@
-import React from 'react';
-import Background from './Backgrounds';
-import ColoringToolBar from './ColoringToolbar';
-import Yoni from './Yoni';
+import React, { Suspense } from 'react';
 import './canvas.css';
+const Background = React.lazy(() => import('./Backgrounds'));
+const Yoni = React.lazy(() => import('./Yoni'));
+const ColoringToolBar = React.lazy(() => import('./ColoringToolbar'));
 
 const Canvas = ({
   bg,
@@ -24,28 +24,34 @@ const Canvas = ({
     <div className='canvas-container'>
       <div className='canvas'>
         <div className='bg-wrapper'>
-          <Background bg={bg} />
+          <Suspense>
+            <Background bg={bg} />
+          </Suspense>
         </div>
-        <Yoni
-          yoni={yoni}
-          customColors={customColors}
-          onCustomColor={onCustomColor}
-          erase={erase}
-          customize={customize}
-          setCustomize={setCustomize}
-        />
-        <ColoringToolBar
-          yoni={yoni}
-          setYoni={setYoni}
-          setCustomColors={setCustomColors}
-          setCurrColor={setCurrColor}
-          setErase={setErase}
-          displayColorPicker={displayColorPicker}
-          setDisplayColorPicker={setDisplayColorPicker}
-          setBg={setBg}
-          customize={customize}
-          setCustomize={setCustomize}
-        />
+        <Suspense>
+          <Yoni
+            yoni={yoni}
+            customColors={customColors}
+            onCustomColor={onCustomColor}
+            erase={erase}
+            customize={customize}
+            setCustomize={setCustomize}
+          />
+        </Suspense>
+        <Suspense>
+          <ColoringToolBar
+            yoni={yoni}
+            setYoni={setYoni}
+            setCustomColors={setCustomColors}
+            setCurrColor={setCurrColor}
+            setErase={setErase}
+            displayColorPicker={displayColorPicker}
+            setDisplayColorPicker={setDisplayColorPicker}
+            setBg={setBg}
+            customize={customize}
+            setCustomize={setCustomize}
+          />
+        </Suspense>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Draggable from 'react-draggable';
 import { motion } from 'framer-motion';
 import {
@@ -13,8 +13,8 @@ import {
   RiDragMoveFill,
 } from 'react-icons/all';
 import './coloring_tool_bar.css';
-import BGSelector from './BGSelector';
-import ColorSelector from '../ColorSelector';
+const BGSelector = React.lazy(() => import('./BGSelector'));
+const ColorSelector = React.lazy(() => import('./ColorSelector'));
 
 const ColoringToolBar = ({
   setYoni,
@@ -128,21 +128,29 @@ const ColoringToolBar = ({
                     <BiColorFill />
                   </motion.button>
                   <motion.button
-                    className='btn bg-btn control-btn'
                     onTap={() => {
-                      !bgOpt ? setBgOpt(true) : setBgOpt(false);
+                      setBgOpt(true);
                       customize ? setCustomize('color') : setCustomize(false);
+                      setDisplayColorPicker(false);
                     }}
+                    className='btn bg-btn control-btn'
+                    title='backgrounds'
                   >
                     <FiImage />
                   </motion.button>
                 </div>
-                {bgOpt && <BGSelector setBg={setBg} />}
+                {bgOpt && (
+                  <Suspense>
+                    <BGSelector setBg={setBg} />
+                  </Suspense>
+                )}
                 {displayColorPicker && (
-                  <ColorSelector
-                    setCurrColor={setCurrColor}
-                    setErase={setErase}
-                  />
+                  <Suspense>
+                    <ColorSelector
+                      setCurrColor={setCurrColor}
+                      setErase={setErase}
+                    />
+                  </Suspense>
                 )}
               </div>
             )}
