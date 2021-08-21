@@ -62,7 +62,7 @@ const Yoni = ({ yoni, customColors, onCustomColor, erase, customize }) => {
             viewBox='0 0 802.13 915.65'
             className='yoni'
           >
-            <g id='shadow'>
+            <g>
               <motion.polygon
                 className={cursor}
                 onTap={
@@ -75,32 +75,10 @@ const Yoni = ({ yoni, customColors, onCustomColor, erase, customize }) => {
                 animate={icon.visible(fill(fills.shadow, 0))}
                 transition={trans(1, 4, 2, 4)}
               />
-            </g>
-            <g id='hair'>
               <Path
                 customize={customize}
                 erase={erase}
-                group={paths.hair.paths(colorAction, fill, trans)}
-              />
-            </g>
-            <g id='skin'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.skin.paths(colorAction, fill, trans)}
-              />
-            </g>
-            <g id='skin-shadows'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.skin_shadows.paths(
-                  colorAction,
-                  fill,
-                  trans,
-                  yoni,
-                  customize
-                )}
+                group={paths(colorAction, fill, trans, yoni, customize)}
               />
               <motion.polyline
                 className={cursor}
@@ -125,148 +103,6 @@ const Yoni = ({ yoni, customColors, onCustomColor, erase, customize }) => {
                 initial='hidden'
                 animate={icon.visible(fill(fills.skin_shadow[2], 6))}
                 transition={trans(1, 7, 2, 7)}
-              />
-            </g>
-            <g id='eye-backs'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.eye_backs.paths(colorAction, fill, trans)}
-              />
-            </g>
-            <g id='Pupils'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.pupils.paths(colorAction, fill, trans)}
-              />
-            </g>
-            <g id='beard'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.beard.paths(
-                  colorAction,
-                  fill,
-                  trans,
-                  yoni,
-                  customize
-                )}
-              />
-            </g>
-            <g id='eyebrows'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.eyebrows.paths(
-                  colorAction,
-                  fill,
-                  trans,
-                  yoni,
-                  customize
-                )}
-              />
-            </g>
-            <g id='facial-details'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.facial_details.paths(trans)}
-              />
-            </g>
-            <g id='sleeve-body'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.sleeve_body.paths(colorAction, fill, trans)}
-              />
-            </g>
-            <g id='sleeve-accent'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.sleeve_accent.paths(
-                  colorAction,
-                  fill,
-                  trans,
-                  yoni,
-                  customize
-                )}
-              />
-            </g>
-            <g id='shirt-body'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.shirt_body.paths(colorAction, fill, trans)}
-              />
-            </g>
-            <g id='collar-body'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.collar_body.paths(colorAction, fill, trans)}
-              />
-            </g>
-            <g id='collar-accent'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.collar_accent.paths(
-                  colorAction,
-                  fill,
-                  trans,
-                  yoni,
-                  customize
-                )}
-              />
-            </g>
-            <g id='collar-thread'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.collar_thread.paths(trans, yoni, customize)}
-              />
-            </g>
-            <g id='hat_bill' data-name='hat bill'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.hat_bill.paths(colorAction, fill, trans)}
-              />
-            </g>
-            <g id='hat_top' data-name='hat top'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.hat_top.paths(colorAction, fill, trans)}
-              />
-            </g>
-            <g id='glasses'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.glasses.paths(colorAction, fill, trans, yoni)}
-              />
-            </g>
-            <g id='Layer_10' data-name='Layer 10'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.layer_10.paths(trans)}
-              />
-            </g>
-            <g id='mouth'>
-              <Path
-                customize={customize}
-                erase={erase}
-                group={paths.mouth.paths(
-                  colorAction,
-                  fill,
-                  trans,
-                  yoni,
-                  customize
-                )}
               />
             </g>
           </motion.svg>
