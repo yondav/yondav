@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import Draggable from 'react-draggable';
 import { motion } from 'framer-motion';
 import {
@@ -12,9 +12,9 @@ import {
   FiImage,
   RiDragMoveFill,
 } from 'react-icons/all';
+import BGSelector from './BGSelector';
+import ColorSelector from './ColorSelector';
 import './coloring_tool_bar.css';
-const BGSelector = React.lazy(() => import('./BGSelector'));
-const ColorSelector = React.lazy(() => import('./ColorSelector'));
 
 const ColoringToolBar = ({
   setYoni,
@@ -139,18 +139,12 @@ const ColoringToolBar = ({
                     <FiImage />
                   </motion.button>
                 </div>
-                {bgOpt && (
-                  <Suspense>
-                    <BGSelector setBg={setBg} />
-                  </Suspense>
-                )}
+                {bgOpt && <BGSelector setBg={setBg} />}
                 {displayColorPicker && (
-                  <Suspense>
-                    <ColorSelector
-                      setCurrColor={setCurrColor}
-                      setErase={setErase}
-                    />
-                  </Suspense>
+                  <ColorSelector
+                    setCurrColor={setCurrColor}
+                    setErase={setErase}
+                  />
                 )}
               </div>
             )}

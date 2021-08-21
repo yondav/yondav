@@ -1,9 +1,9 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 import { motion } from 'framer-motion';
-import { fills, paths } from './fills';
+import { paths } from './content';
 import { icon } from '../../../../Utils/animations';
-const Path = React.lazy(() => import('./Path'));
+const Path = React.lazy(() => import('../../../SVG/Path'));
 
 const style = {
   border: '1px dashed var(--pr-black)',
@@ -48,6 +48,7 @@ const Yoni = ({ yoni, customColors, onCustomColor, erase, customize }) => {
   };
 
   const cursor = customize === 'color' ? (!erase ? 'bucket' : 'eraser') : '';
+
   const colorAction = (i) =>
     customize === 'color' ? () => onCustomColor(i) : () => '';
   return (
@@ -63,46 +64,18 @@ const Yoni = ({ yoni, customColors, onCustomColor, erase, customize }) => {
             className='yoni'
           >
             <g>
-              <motion.polygon
-                className={cursor}
-                onTap={
-                  customize === 'color' ? () => onCustomColor(0) : () => ''
-                }
-                fill={() => fill(fills.shadow, 0)}
-                points='497.01 367 501.01 367 510.01 375 512.01 383 513.01 394 508.01 404 505.01 410 502.01 414 498.01 410 491.01 371 497.01 367'
-                variants={icon}
-                initial='hidden'
-                animate={icon.visible(fill(fills.shadow, 0))}
-                transition={trans(1, 4, 2, 4)}
-              />
               <Path
                 customize={customize}
                 erase={erase}
-                group={paths(colorAction, fill, trans, yoni, customize)}
-              />
-              <motion.polyline
-                className={cursor}
-                onTap={
-                  customize === 'color' ? () => onCustomColor(6) : () => ''
-                }
-                stroke={yoni === 'clear' || customize ? fills.black : ''}
-                points='699.01 797 730.01 797 775.01 784'
-                variants={icon}
-                initial='hidden'
-                animate={icon.visible(fill(fills.skin_shadow[2], 6))}
-                transition={trans(1, 7, 2, 7)}
-              />
-              <motion.polyline
-                className={cursor}
-                onTap={
-                  customize === 'color' ? () => onCustomColor(6) : () => ''
-                }
-                stroke={yoni === 'clear' || customize ? fills.black : ''}
-                points='29.51 841.5 52.51 845.5 64.51 843.5 88.51 845.5 90.51 848.5'
-                variants={icon}
-                initial='hidden'
-                animate={icon.visible(fill(fills.skin_shadow[2], 6))}
-                transition={trans(1, 7, 2, 7)}
+                group={paths(
+                  colorAction,
+                  fill,
+                  trans,
+                  yoni,
+                  customize,
+                  cursor,
+                  icon
+                )}
               />
             </g>
           </motion.svg>
