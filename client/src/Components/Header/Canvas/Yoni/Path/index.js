@@ -1,22 +1,29 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { icon } from '../../../../../Utils/animations';
 
-const Path = ({ tap, stroke, d, animate, transition, customize, erase }) => {
+const Path = ({ group, customize, erase }) => {
   const cursor = customize === 'color' ? (!erase ? 'bucket' : 'eraser') : '';
 
   return (
-    <motion.path
-      className={cursor}
-      onTap={tap}
-      stroke={stroke}
-      d={d}
-      variants={icon}
-      initial='hidden'
-      animate={icon.visible(animate)}
-      transition={transition}
-      transform='translate(-199.49 -165.5)'
-    ></motion.path>
+    <>
+      {group.map((path) => (
+        <Suspense>
+          <motion.path
+            className={cursor}
+            variants={icon}
+            transform='translate(-199.49 -165.5)'
+            initial='hidden'
+            //
+            onTap={path.tap ? path.tap : null}
+            stroke={path.stroke}
+            d={path.d}
+            animate={icon.visible(path.animate)}
+            transition={path.transition}
+          ></motion.path>
+        </Suspense>
+      ))}
+    </>
   );
 };
 
