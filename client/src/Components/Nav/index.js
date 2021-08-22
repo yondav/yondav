@@ -42,7 +42,7 @@ const Nav = () => {
             about
           </p> */}
         </motion.div>
-        <Suspense>
+        <Suspense fallback=''>
           <ContactModal open={open} handleClose={handleClose} />
         </Suspense>
       </div>
