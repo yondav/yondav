@@ -3,7 +3,7 @@ import Draggable from 'react-draggable';
 import { motion } from 'framer-motion';
 import { paths } from './content';
 import { icon } from '../../../../Utils/animations';
-const Path = React.lazy(() => import('../../../SVG/Path'));
+const Path = React.lazy(() => import('../../../SVG'));
 
 const style = {
   border: '1px dashed var(--pr-black)',
@@ -65,8 +65,6 @@ const Yoni = ({ yoni, customColors, onCustomColor, erase, customize }) => {
           >
             <g>
               <Path
-                customize={customize}
-                erase={erase}
                 group={paths(
                   colorAction,
                   fill,

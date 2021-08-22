@@ -2,7 +2,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './backgrounds.css';
 import { backgrounds } from './backgrounds';
-const Ces = React.lazy(() => import('./Ces'));
+const Ces = React.lazy(() => import('./Ces/Ces'));
 
 const Background = ({ bg }) => {
   const [viewPort, setViewPort] = useState(false);

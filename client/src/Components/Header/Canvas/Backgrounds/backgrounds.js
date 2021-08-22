@@ -1,5 +1,5 @@
+import Crowd from './Ces/Crowd';
 import Shea from './Shea';
-import Crowd from './Crowd';
 
 const dimensions = (color) => ({
   backgroundColor: color,

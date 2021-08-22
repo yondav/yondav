@@ -13,6 +13,8 @@ const Path = ({ group }) => {
     points: path.points,
     animate: path.animate,
     transition: path.transition,
+    fill: path.fill,
+    strokeMiterlimit: path.strokeMiterlimit,
   });
 
   return (
