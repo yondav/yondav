@@ -41,7 +41,7 @@ const ColoringToolBar = ({
             initial={{ opacity: 0, width: 0 }}
             animate={{ opacity: 1, width: 'auto' }}
             exit={{ opacity: 0, width: 0 }}
-            transition={{ duration: 0.8, ease: [0.04, 0.92, 0.53, 0.98] }}
+            transition={{ duration: 0.3, ease: 'anticipate' }}
             className='tool-bar'
           >
             <div className='controls'>

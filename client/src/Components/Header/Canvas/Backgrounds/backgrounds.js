@@ -1,4 +1,4 @@
-import Crowd from './Ces/Crowd';
+import { Crowd } from './Ces';
 import Shea from './Shea';
 
 const dimensions = (color) => ({

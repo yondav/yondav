@@ -32,6 +32,14 @@
   width: 100%;
 }
 
+.bucket {
+  cursor: url('../../../Assets/cursors/bucket.svg') 15 15, auto;
+}
+
+.eraser {
+  cursor: url('../../../Assets/cursors/eraser.svg') 15 15, auto;
+}
+
 @media only screen and (max-height: 415px) {
   .yoni-container {
     width: 30% !important;
