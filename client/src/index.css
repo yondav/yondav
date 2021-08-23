@@ -3,7 +3,7 @@
 
 :root {
   --pr-white: #f4f4f4;
-  --pure-white: #faf9fa;
+  --pure-white: #faf9fafa;
   --pr-black: #343434;
   --pr-grey: #e4e4e4;
 
@@ -28,7 +28,7 @@
 
 .dark {
   --pr-white: #343434;
-  --pure-white: #292929;
+  --pure-white: #292929f9;
   --pr-black: #f4f4f4;
 
   --yellow: rgb(215, 186, 125);

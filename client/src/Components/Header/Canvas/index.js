@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { useState, Suspense } from 'react';
 import './canvas.css';
 const Background = React.lazy(() => import('./Backgrounds'));
 const Yoni = React.lazy(() => import('./Yoni'));
@@ -20,6 +20,8 @@ const Canvas = ({
   customize,
   setCustomize,
 }) => {
+  const [edit, setEdit] = useState(false);
+
   return (
     <div className='canvas-container'>
       <div className='canvas'>
@@ -50,6 +52,8 @@ const Canvas = ({
             setBg={setBg}
             customize={customize}
             setCustomize={setCustomize}
+            edit={edit}
+            setEdit={setEdit}
           />
         </Suspense>
       </div>

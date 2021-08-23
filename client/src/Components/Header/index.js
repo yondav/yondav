@@ -7,7 +7,10 @@ const Canvas = React.lazy(() => import('./Canvas'));
 const Header = ({ updateMode }) => {
   const [yoni, setYoni] = useState('start');
   const [customize, setCustomize] = useState(false);
-  const [customColors, setCustomColors] = useState(Array(25).fill('#f4f4f4'));
+  const [customColors, setCustomColors] = useState(
+    JSON.parse(localStorage.getItem('custom_colors')) ||
+      Array(25).fill('#f4f4f4')
+  );
   const [currColor, setCurrColor] = useState('#11CB3C');
   const [erase, setErase] = useState(false);
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
@@ -24,8 +27,11 @@ const Header = ({ updateMode }) => {
       setCurrColor('#f4f4f4');
     }
 
+    localStorage.setItem('custom_colors', JSON.stringify(customColors));
+    bg && localStorage.setItem('bg', JSON.stringify(bg));
+
     console.log(bg);
-  }, [erase, bg]);
+  }, [erase, bg, customColors]);
 
   return (
     <header>

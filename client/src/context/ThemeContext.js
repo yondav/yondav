@@ -2,10 +2,6 @@ import React, { createContext, useReducer, useEffect } from 'react';
 
 export const ThemeContext = createContext();
 
-// const initialState = {
-//   darkMode: false,
-// };
-
 const initialState = JSON.parse(localStorage.getItem('theme')) || {
   darkMode: false,
 };

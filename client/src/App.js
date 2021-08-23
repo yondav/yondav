@@ -70,16 +70,18 @@ const App = () => {
 
   // for scroll location
   useEffect(() => {
-    const nav = document.querySelector('nav');
-    const navHeight = nav.getBoundingClientRect().height;
     let location = document.location.pathname;
-    let element = document.getElementById(location.slice(1));
-    let position = element.offsetTop - navHeight;
+    if (location !== '/') {
+      const nav = document.querySelector('nav');
+      const navHeight = nav.getBoundingClientRect().height;
+      let element = document.getElementById(location.slice(1));
+      let position = element.offsetTop - navHeight;
 
-    window.scrollTo({
-      left: 0,
-      top: position,
-    });
+      window.scrollTo({
+        left: 0,
+        top: position,
+      });
+    }
   }, []);
 
   const updateMode = () => {

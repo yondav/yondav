@@ -26,10 +26,12 @@ const ColoringToolBar = ({
   setBg,
   setCustomize,
   customize,
+  edit,
+  setEdit,
 }) => {
   const [min, setMin] = useState(false);
   const [bgOpt, setBgOpt] = useState(false);
-  const [edit, setEdit] = useState(false);
+  // const [edit, setEdit] = useState(false);
 
   useEffect(() => console.log(bgOpt), [bgOpt]);
   return (
@@ -155,7 +157,10 @@ const ColoringToolBar = ({
             boxShadow: 'var(--shadow)',
             backgroundColor: 'var(--orange)',
           }}
-          onTap={() => setEdit(true)}
+          onTap={() => {
+            setEdit(true);
+            setBg(JSON.parse(localStorage.getItem('bg')));
+          }}
           className='btn customize-btn'
         >
           <b>crayon</b>
