@@ -1,8 +1,10 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { ThemeContext } from './context/ThemeContext';
 import './App.css';
-// import Nav from './Components/Nav';
 import Header from './Components/Header';
+import Dev from './Components/Pages/Dev';
+import Portraits from './Components/Pages/Portraits';
+import About from './Components/Pages/About';
 
 const App = () => {
   const [isSticky, setSticky] = useState(false);
@@ -33,7 +35,8 @@ const App = () => {
   // for sticky nav
   useEffect(() => {
     const nav = document.querySelector('nav');
-    const sticky = document.querySelector('header').offsetHeight;
+    const navHeight = nav.getBoundingClientRect().height;
+    const sticky = document.querySelector('header').offsetHeight - 100;
     const scrollCallBack = window.addEventListener('scroll', () => {
       if (window.pageYOffset >= sticky) {
         setSticky(true);
@@ -43,6 +46,22 @@ const App = () => {
         nav.classList.remove('sticky');
       }
     });
+
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach((link) =>
+      link.addEventListener('click', (e) => {
+        // e.preventDefault();
+        const id = e.currentTarget.getAttribute('href').slice(1);
+        const element = document.getElementById(id);
+        let position = element.offsetTop - navHeight;
+
+        window.scrollTo({
+          left: 0,
+          top: position,
+        });
+      })
+    );
     return () => {
       window.removeEventListener('scroll', scrollCallBack);
     };
@@ -57,7 +76,11 @@ const App = () => {
   return (
     <div className='App'>
       <Header updateMode={updateMode} />
-      <main></main>
+      <main>
+        <Dev />
+        <Portraits />
+        <About />
+      </main>
     </div>
   );
 };

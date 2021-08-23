@@ -18,7 +18,6 @@ const Contact = ({ handleClose }) => {
     const statusMessage = document.querySelector('.status-message');
     const form = document.querySelector('#contact-form');
 
-    // console.log(data);
     generateContactNumber();
     sendForm('service_bru7q0r', 'template_bdy22x4', '#contact-form').then(
       (response) => {

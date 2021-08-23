@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import YDIcon from '../Icons/YD';
 import NavLink from './NavLink';
 import './nav.css';
-// import ContactModal from '../Contact_Modal';
 const ContactModal = React.lazy(() => import('../Contact_Modal'));
 
 const Nav = () => {
@@ -15,7 +14,11 @@ const Nav = () => {
   return (
     <nav>
       <div className='inner-nav'>
-        <Link to='/' style={{ textDecoration: 'none' }}>
+        <Link
+          to='/'
+          style={{ textDecoration: 'none' }}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           <YDIcon />
         </Link>
         <motion.div
@@ -38,9 +41,6 @@ const Nav = () => {
           transition={{ ease: 'easeIn', duration: 0.5, delay: 1 }}
         >
           <NavLink link='about' onClick={() => setOpen(true)} />
-          {/* <p className='nav-link' onClick={() => setOpen(true)}>
-            about
-          </p> */}
         </motion.div>
         <Suspense fallback=''>
           <ContactModal open={open} handleClose={handleClose} />

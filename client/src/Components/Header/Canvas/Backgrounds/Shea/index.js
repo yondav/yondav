@@ -24,7 +24,6 @@ const Shea = () => {
       initial={{ y: -4000 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      // className='bg'
     >
       <rect width='100%' height='100%' fill='#00b6ce' />
       <Path group={paths(trans)} />

@@ -119,8 +119,6 @@ export const backgrounds = {
       element: {
         initial: { y: 900 },
         animate: {
-          // opacity: 1,
-          // rotate: [0, 0, 70, 0],
           borderRadius: ['20%', '20%', '50%', '50%', '0%'],
           y: [0, 500, 0, 400, 0, 300, 0, 200, 0, 100, 0],
         },
@@ -178,12 +176,5 @@ export const backgrounds = {
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1629310420/yondav/background_thumbnails/ces_lwkui8.png',
       element: Crowd,
     },
-    // {
-    //   name: 'ces',
-    //   state: 'ces',
-    //   thumbnail:
-    //     'https://res.cloudinary.com/yup-schlepp/image/upload/v1629310420/yondav/background_thumbnails/ces_lwkui8.png',
-    //   element: Crowd,
-    // },
   ],
 };

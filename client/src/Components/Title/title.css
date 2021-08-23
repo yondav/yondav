@@ -1,0 +1,8 @@
+.title {
+  margin: 1rem 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 5em;
+  font-family: Calibri, sans-serif;
+  color: var(--pr-black);
+}

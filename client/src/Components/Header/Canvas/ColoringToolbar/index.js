@@ -72,7 +72,6 @@ const ColoringToolBar = ({
                 <div className='control-panel'>
                   <motion.button
                     onTap={() => {
-                      // setBgOpt(false);
                       setDisplayColorPicker(false);
                       setCustomize(false);
                       setYoni('color');

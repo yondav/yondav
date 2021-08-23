@@ -1,5 +1,4 @@
 import React from 'react';
-// import './animatedlogo.css';
 
 const AnimatedLogo = () => {
   return (
