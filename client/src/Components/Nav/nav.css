@@ -23,8 +23,10 @@ nav {
 
 .nav-link:hover,
 .nav-link:focus,
+.nav-link:focus-visible,
 .nav-link:active {
   color: var(--orange);
+  outline: none;
 }
 
 .nav-link::before {

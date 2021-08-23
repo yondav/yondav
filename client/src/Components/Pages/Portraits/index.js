@@ -6,8 +6,8 @@ const Portraits = () => {
     <section id='portraits'>
       <Title
         word={['p', 'o', 'r', 't', 'r', 'a', 'i', 't', 's']}
-        y={0.64}
-        start={0.55}
+        y={0.6}
+        start={0.56}
       />
     </section>
   );

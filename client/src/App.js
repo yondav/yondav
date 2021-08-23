@@ -52,7 +52,6 @@ const App = () => {
 
     navLinks.forEach((link) =>
       link.addEventListener('click', (e) => {
-        // e.preventDefault();
         const id = e.currentTarget.getAttribute('href').slice(1);
         const element = document.getElementById(id);
         let position = element.offsetTop - navHeight;
@@ -63,10 +62,25 @@ const App = () => {
         });
       })
     );
+
     return () => {
       window.removeEventListener('scroll', scrollCallBack);
     };
   }, [setSticky]);
+
+  // for scroll location
+  useEffect(() => {
+    const nav = document.querySelector('nav');
+    const navHeight = nav.getBoundingClientRect().height;
+    let location = document.location.pathname;
+    let element = document.getElementById(location.slice(1));
+    let position = element.offsetTop - navHeight;
+
+    window.scrollTo({
+      left: 0,
+      top: position,
+    });
+  }, []);
 
   const updateMode = () => {
     darkMode
