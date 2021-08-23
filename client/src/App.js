@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import Dev from './Components/Pages/Dev';
 import Portraits from './Components/Pages/Portraits';
 import About from './Components/Pages/About';
+import Footer from './Components/Footer';
 
 const App = () => {
   const [isSticky, setSticky] = useState(false);
@@ -81,6 +82,7 @@ const App = () => {
         <Portraits />
         <About />
       </main>
+      {isSticky && <Footer updateMode={updateMode} />}
     </div>
   );
 };

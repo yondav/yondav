@@ -1,5 +1,5 @@
 // for Yoni
-export const icon = {
+export const yoniAnimation = {
   hidden: {
     opacity: 1,
     pathLength: 0,
@@ -44,5 +44,26 @@ export const fish = {
       pathLength: 1,
       fill: fill,
     };
+  },
+};
+
+// for icons
+export const icons = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+export const icon = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
   },
 };

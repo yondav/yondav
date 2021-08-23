@@ -2,7 +2,7 @@ import React from 'react';
 import Draggable from 'react-draggable';
 import { motion } from 'framer-motion';
 import { paths } from './content';
-import { icon } from '../../../../Utils/animations';
+import { yoniAnimation } from '../../../../Utils/animations';
 const Path = React.lazy(() => import('../../../SVG'));
 
 const style = {
@@ -72,7 +72,7 @@ const Yoni = ({ yoni, customColors, onCustomColor, erase, customize }) => {
                   yoni,
                   customize,
                   cursor,
-                  icon
+                  yoniAnimation
                 )}
               />
             </g>
