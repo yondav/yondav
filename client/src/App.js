@@ -92,12 +92,14 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Header updateMode={updateMode} />
-      <main>
-        <Dev />
-        <Portraits />
-        <About />
-      </main>
+      <div className='wrapper'>
+        <Header updateMode={updateMode} />
+        <main>
+          <Dev />
+          <Portraits />
+          <About darkMode={darkMode} />
+        </main>
+      </div>
       {isSticky && <Footer updateMode={updateMode} />}
     </div>
   );

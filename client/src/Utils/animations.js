@@ -67,3 +67,5 @@ export const icon = {
     opacity: 1,
   },
 };
+
+// for scrolling

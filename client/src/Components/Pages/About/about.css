@@ -1,0 +1,67 @@
+.headshot {
+  width: 100%;
+}
+
+.headshot img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+.bio-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bio p,
+.bullets p {
+  margin: 0 0 0.5rem 0;
+  text-align: justify;
+}
+
+.tech-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tech {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: center;
+}
+
+.btn-cont {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.contact-btn {
+  width: 100%;
+  font-size: 1.2em;
+}
+
+.contact-btn:hover,
+.contact-btn:focus,
+.contact-btn:focus-visible,
+.contact-btn:active {
+  background-color: var(--orange);
+  color: #f4f4f4;
+}
+
+.contact-btn:active {
+  box-shadow: var(--shadow-in);
+}
+
+@media only screen and (min-width: 767px) {
+  .tech {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 989px) {
+  btn-cont {
+    margin: 0;
+  }
+}

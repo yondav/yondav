@@ -40,7 +40,7 @@ const Nav = () => {
           animate={{ y: 0 }}
           transition={{ ease: 'easeIn', duration: 0.5, delay: 1 }}
         >
-          <NavLink link='about' onClick={() => setOpen(true)} />
+          <NavLink link='about' />
         </motion.div>
         <Suspense fallback=''>
           <ContactModal open={open} handleClose={handleClose} />

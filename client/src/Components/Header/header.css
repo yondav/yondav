@@ -22,7 +22,7 @@ header {
 }
 
 .icon > * {
-  transition: var(--transition);
+  transition: var(--transition) !important;
   cursor: pointer;
 }
 

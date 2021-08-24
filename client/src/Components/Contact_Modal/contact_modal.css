@@ -44,11 +44,11 @@
   text-align: center;
 }
 
-.bio {
+/* .bio {
   width: 90%;
   text-align: justify;
   color: var(--pr-white);
-}
+} */
 
 .logo {
   padding: 0.5rem 2rem;
@@ -77,13 +77,13 @@ legend {
   color: var(--pr-white);
 }
 
-.tech {
+/* .tech {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: var(--pr-white);
-}
+} */
 
 @media only screen and (min-width: 767px) {
   .contact-modal {
@@ -118,7 +118,6 @@ legend {
     width: 50%;
   }
 
-  .bio,
   .icon-group {
     width: 80%;
   }

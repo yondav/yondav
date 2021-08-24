@@ -1,8 +1,14 @@
 .title {
-  margin: 1rem 1.5rem;
+  /* margin: 1rem 1.5rem;
+  padding: 0.5rem; */
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  align-self: flex-end;
   font-size: 5em;
   font-family: Calibri, sans-serif;
   color: var(--pr-black);
+}
+
+.bullets {
+  text-align: justify;
 }

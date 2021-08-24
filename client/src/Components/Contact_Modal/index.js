@@ -73,14 +73,22 @@ const ContactModal = ({ open, handleClose }) => {
               <AnimatedLogo />
               <div className='bio'>
                 <p>
-                  I'm Yoni David, New York based freelance full stack developer.
-                  I like building things and exploring web technologies. I like
-                  to resolve design problems, and create useful interfaces for
-                  an optimized user experience.
+                  I’m Yoni David - Full Stack Developer living in Queens, New
+                  York. I have a serious passion for design and animations while
+                  prioritizing intuitive and dynamic user experiences.
                 </p>
                 <p>
-                  Let's chat about tech, or about Neil Young, or about the New
-                  York Mets. Dealer's choice.
+                  I have a background in a range industries from music as a
+                  performer and audio engineer to real estate as a broker and
+                  co-founder of a boutique Brooklyn based agency.
+                </p>
+                <p>
+                  Motivated person and problem solver, independent employee and
+                  enthusiastic collaborator. My time away from the web is spent
+                  with my family, playing music or complaining about the New
+                  York Mets. Interested in the entire development spectrum and
+                  expanding my understanding of the technologies we use every
+                  day.
                 </p>
               </div>
               <div className='tech'>

@@ -5,8 +5,10 @@ import {
   RiInstagramLine,
   RiLinkedinLine,
   RiGithubLine,
-} from 'react-icons/ri';
+  FiDownload,
+} from 'react-icons/all';
 import { icons, icon } from '../../Utils/animations';
+import resume from '../../Assets/yoni_david_resume_placeholder.pdf';
 import './footer.css';
 
 const Footer = ({ updateMode }) => {
@@ -55,6 +57,16 @@ const Footer = ({ updateMode }) => {
         >
           <motion.div className='icon' variants={icon}>
             <RiLinkedinLine className='linkedin' />
+          </motion.div>
+        </a>
+        <a
+          href={resume}
+          download='yoni_david_resume_2021'
+          className='resume-link'
+          title='resume'
+        >
+          <motion.div className='icon' variants={icon}>
+            <FiDownload className='resume' />
           </motion.div>
         </a>
       </motion.div>
