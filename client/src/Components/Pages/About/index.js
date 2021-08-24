@@ -31,7 +31,7 @@ const About = ({ darkMode }) => {
   );
   return (
     <section id='about'>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box xs={{ flexGrow: 1 }}>
         <Grid
           container
           spacing={6}
@@ -41,7 +41,12 @@ const About = ({ darkMode }) => {
           }}
         >
           <Grid item xs={12}>
-            <Title word={['a', 'b', 'o', 'u', 't']} y={0.8} start={0.75} />
+            <Title
+              word={['a', 'b', 'o', 'u', 't']}
+              y={0.8}
+              start={0.75}
+              align={'flex-end'}
+            />
           </Grid>
           <Grid item xs={12} md={6}>
             <motion.div

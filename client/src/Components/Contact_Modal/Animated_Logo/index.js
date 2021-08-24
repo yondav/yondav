@@ -7,7 +7,13 @@ const AnimatedLogo = ({ mouse }) => {
   const dav = ['d', 'a', 'v'];
   return (
     <div className='logo-container'>
-      <motion.div style={{ letterSpacing: mouse * 0.1 }} className='logo'>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, delay: 1 }}
+        style={{ letterSpacing: mouse * 0.1 }}
+        className='logo'
+      >
         {yon.map((letter, i) => (
           <motion.div
             style={{

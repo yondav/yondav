@@ -8,6 +8,7 @@
 }
 
 form {
+  padding: 2rem;
   height: 100%;
   flex-basis: 100%;
   flex-grow: 2;
@@ -16,6 +17,7 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  transition: var(--transition);
 }
 
 input,
@@ -79,6 +81,7 @@ div[role='alert'] {
 }
 
 .status-message {
+  width: 100%;
   margin: 0;
   padding: 0.3rem;
   text-align: center;

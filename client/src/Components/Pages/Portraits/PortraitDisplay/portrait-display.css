@@ -1,0 +1,60 @@
+.portrait-container {
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.primary-container {
+  width: 100%;
+  height: fit-content;
+}
+
+.primary-portrait {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.portrait-gallery {
+  display: flex;
+  border-radius: var(--radius);
+  overflow: scroll;
+}
+
+.portrait-thumbnails {
+  width: 25%;
+  margin-right: 0.5rem;
+  border-radius: var(--radius);
+}
+
+@media only screen and (min-width: 959px) {
+  .portrait-container {
+    width: 100%;
+    max-height: 80vh;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .primary-container {
+    width: 100%;
+    height: max-content;
+  }
+
+  .primary-portrait {
+    width: 100%;
+    border-radius: var(--radius);
+  }
+
+  .portrait-gallery {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius);
+    overflow: scroll;
+  }
+
+  .portrait-thumbnails {
+    width: 100%;
+    margin: 0 0 0.5rem 0;
+    border-radius: var(--radius);
+  }
+}

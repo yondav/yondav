@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { init, sendForm } from 'emailjs-com';
+import { motion } from 'framer-motion';
 import './contact.css';
 init('user_jKqRAFRqj4zi7o1jMdA9Q');
 
+const fade = {
+  initial: { opacity: 0 },
+  animate: { opacity: 2 },
+  transition: { duration: 1 },
+};
 const Contact = ({ handleClose }) => {
-  const [statusMessage, setStatusMessage] = useState('Message');
+  const [statusMessage, setStatusMessage] = useState(false);
   const [contactNumber, setContactNumber] = useState('343434');
 
   const generateContactNumber = () => {
@@ -15,7 +21,7 @@ const Contact = ({ handleClose }) => {
 
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
-    const statusMessage = document.querySelector('.status-message');
+    // const statusMessage = document.querySelector('.status-message');
     const form = document.querySelector('#contact-form');
 
     generateContactNumber();
@@ -24,21 +30,36 @@ const Contact = ({ handleClose }) => {
         console.log('SUCCESS!', response.status, response.text);
         form.reset();
         setStatusMessage('Message sent!');
-        statusMessage.className = 'status-message success';
-        setTimeout(() => (statusMessage.className = 'status-message'), 3000);
+        // statusMessage.className = 'status-message success';
+        setTimeout(() => setStatusMessage(false), 3000);
         setTimeout(() => handleClose(), 2000);
       },
       (error) => {
         console.log('FAILED...', error);
         setStatusMessage('Failed to send message! Please try again later.');
-        statusMessage.className = 'status-message failure';
-        setTimeout(() => (statusMessage.className = 'status-message'), 5000);
+        // statusMessage.className = 'status-message failure';
+        setTimeout(() => setStatusMessage(false), 3000);
       }
     );
   };
   return (
     <div className='contact'>
-      <p className='status-message'>{statusMessage}</p>
+      {statusMessage && (
+        <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{ width: '100%' }}
+        >
+          {statusMessage === 'Message sent!' && (
+            <p className='status-message success'>{statusMessage}</p>
+          )}
+          {statusMessage ===
+            'Failed to send message! Please try again later.' && (
+            <p className='status-message failure'>{statusMessage}</p>
+          )}
+        </motion.div>
+      )}
       <form id='contact-form' onSubmit={handleSubmit(onSubmit)}>
         {/* <div className='name_email'> */}
         <input
@@ -52,7 +73,9 @@ const Contact = ({ handleClose }) => {
         />
         <input type='hidden' name='contact_number' value={contactNumber} />
         {errors.user_name && errors.user_name.type === 'required' && (
-          <div role='alert'>Name is required</div>
+          <motion.div {...fade} role='alert'>
+            Name is required
+          </motion.div>
         )}
         <input
           type='text'
@@ -64,7 +87,9 @@ const Contact = ({ handleClose }) => {
           style={{ borderBottom: errors.user_name && '1px solid #cc5555' }}
         />
         {errors.user_email && errors.user_email.type === 'required' && (
-          <div role='alert'>Email is required</div>
+          <motion.div {...fade} role='alert'>
+            Email is required
+          </motion.div>
         )}
         {/* </div> */}
         <textarea
@@ -77,7 +102,9 @@ const Contact = ({ handleClose }) => {
           style={{ borderBottom: errors.user_name && '1px solid #cc5555' }}
         />
         {errors.message && errors.message.type === 'required' && (
-          <div role='alert'>Message is required</div>
+          <motion.div {...fade} role='alert'>
+            Message is required
+          </motion.div>
         )}
         <div className='submit'>
           <button className='btn contact-btn' type='submit'>
