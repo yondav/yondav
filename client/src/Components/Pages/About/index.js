@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, Suspense } from 'react';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
@@ -6,7 +6,13 @@ import Title from '../../Title';
 import * as All from '../../Logos';
 import './about.css';
 
+const ContactModal = React.lazy(() => import('../../Contact_Modal'));
+
 const About = ({ darkMode }) => {
+  const [contact, setContact] = useState(false);
+
+  const handleClose = () => setContact(false);
+
   const { scrollYProgress } = useViewportScroll();
   const opacityAnim = useTransform(
     scrollYProgress,
@@ -76,7 +82,10 @@ const About = ({ darkMode }) => {
               </p>
             </motion.div>
             <div className='btn-cont'>
-              <motion.button className='btn contact-btn'>
+              <motion.button
+                className='btn contact-btn'
+                onClick={() => setContact(true)}
+              >
                 Let's Chat
               </motion.button>
             </div>
@@ -116,6 +125,11 @@ const About = ({ darkMode }) => {
           </Grid>
         </Grid>
       </Box>
+      {contact && (
+        <Suspense fallback=''>
+          <ContactModal open={contact} handleClose={handleClose} />
+        </Suspense>
+      )}
     </section>
   );
 };

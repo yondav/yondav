@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import YDIcon from '../Icons/YD';
@@ -7,10 +7,6 @@ import './nav.css';
 const ContactModal = React.lazy(() => import('../Contact_Modal'));
 
 const Nav = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleClose = () => setOpen(false);
-
   return (
     <nav>
       <div className='inner-nav'>
@@ -42,9 +38,6 @@ const Nav = () => {
         >
           <NavLink link='about' />
         </motion.div>
-        <Suspense fallback=''>
-          <ContactModal open={open} handleClose={handleClose} />
-        </Suspense>
       </div>
     </nav>
   );

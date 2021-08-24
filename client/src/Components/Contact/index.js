@@ -80,7 +80,7 @@ const Contact = ({ handleClose }) => {
           <div role='alert'>Message is required</div>
         )}
         <div className='submit'>
-          <button className='submit-btn' type='submit'>
+          <button className='btn contact-btn' type='submit'>
             send
           </button>
         </div>
