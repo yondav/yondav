@@ -47,7 +47,7 @@ const About = ({ darkMode }) => {
               }}
             >
               <img
-                src='https://res.cloudinary.com/yup-schlepp/image/upload/v1629707266/yondav/IMG_8005_2_plkqbl.jpg'
+                src='https://res.cloudinary.com/yup-schlepp/image/upload/v1629773834/yondav/IMG_8005_3_s8bzue.jpg'
                 alt='yoni'
               />
             </motion.div>
