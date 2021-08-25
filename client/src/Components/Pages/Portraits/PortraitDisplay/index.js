@@ -12,7 +12,7 @@ import './portrait-display.css';
 const PortraitThumbnail = ({ id, onExpand, anim }) => {
   return (
     <motion.img
-      src={`https://res.cloudinary.com/yup-schlepp/image/upload/v1629812976/yondav/portraits/${id}.png`}
+      src={`https://res.cloudinary.com/yup-schlepp/image/upload/${id}.jpg`}
       alt=''
       onClick={() => onExpand(id)}
       className='portrait-thumbnails'
@@ -25,37 +25,39 @@ const PortraitThumbnail = ({ id, onExpand, anim }) => {
 const PortraitDisplay = ({ position, isDesktop }) => {
   const { scrollYProgress } = useViewportScroll(0);
   const [portraitIds, setPortraitIds] = useState([
-    '00_panqf7',
-    '01_ptozfh',
-    '02_h8bok5',
-    '03_aqaqv3',
-    '04_pqqkbg',
-    '05_qpqqhc',
-    '06_vg9t9y',
-    '07_hukcvy',
-    '08_nz2spu',
-    '09_r7lalb',
-    '13_f9li8f',
-    '10_dcoscn',
-    '11_jwzxxi',
-    '12_nrgpxr',
+    'v1629905275/yondav/portraits/00_akqpcm',
+    'v1629905275/yondav/portraits/01_ewrwig',
+    'v1629905275/yondav/portraits/02_ckz8vj',
+    'v1629905275/yondav/portraits/03_vzu82h',
+    'v1629905275/yondav/portraits/04_na6wp9',
+    'v1629905275/yondav/portraits/05_jmrkbx',
+    'v1629905276/yondav/portraits/06_mf8qfj',
+    'v1629905276/yondav/portraits/07_h5mk8q',
+    'v1629905276/yondav/portraits/08_nntzbn',
+    'v1629905276/yondav/portraits/09_tqvrna',
+    'v1629905276/yondav/portraits/10_uxzm6f',
+    'v1629905276/yondav/portraits/11_rax9pf',
+    'v1629905276/yondav/portraits/12_if0q3w',
+    'v1629905276/yondav/portraits/13_xlp95i',
   ]);
-  const [portrait, setPortrait] = useState('00_panqf7');
+  const [portrait, setPortrait] = useState(
+    'v1629905275/yondav/portraits/00_akqpcm'
+  );
   const [height, setHeight] = useState();
 
   const opacityAnim = useTransform(
     scrollYProgress,
-    [0, position - 0.05, position + 0.05],
+    [0, position - 0.1, position - 0.05],
     [0, 0.3, 1]
   );
   const saturate = useTransform(
     scrollYProgress,
-    [position - 0.05, position + 0.05],
+    [position - 0.1, position - 0.05],
     ['grayscale(100%)', 'grayscale(0%)']
   );
   const xPosAnim = useTransform(
     scrollYProgress,
-    [0, position - 0.05, position + 0.05],
+    [0, position - 0.1, position - 0.05],
     [1000, 500, 0]
   );
 
@@ -101,7 +103,7 @@ const PortraitDisplay = ({ position, isDesktop }) => {
               <motion.img
                 key={portrait}
                 className='primary-portrait'
-                src={`https://res.cloudinary.com/yup-schlepp/image/upload/v1629812976/yondav/portraits/${portrait}.png`}
+                src={`https://res.cloudinary.com/yup-schlepp/image/upload/${portrait}.jpg`}
                 alt=''
                 layoutId={`portrait-${portrait}`}
                 style={{

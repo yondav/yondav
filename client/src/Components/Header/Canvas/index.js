@@ -26,11 +26,11 @@ const Canvas = ({
     <div className='canvas-container'>
       <div className='canvas'>
         <div className='bg-wrapper'>
-          <Suspense>
+          <Suspense fallback=''>
             <Background bg={bg} />
           </Suspense>
         </div>
-        <Suspense>
+        <Suspense fallback=''>
           <Yoni
             yoni={yoni}
             customColors={customColors}
@@ -40,7 +40,7 @@ const Canvas = ({
             setCustomize={setCustomize}
           />
         </Suspense>
-        <Suspense>
+        <Suspense fallback=''>
           <ColoringToolBar
             yoni={yoni}
             setYoni={setYoni}

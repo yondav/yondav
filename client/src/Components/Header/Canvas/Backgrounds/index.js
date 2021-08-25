@@ -64,7 +64,7 @@ const Background = ({ bg }) => {
             })
           )}
         {bg === 'ces' && (
-          <Suspense>
+          <Suspense fallback=''>
             <Ces />
           </Suspense>
         )}

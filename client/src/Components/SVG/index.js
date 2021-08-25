@@ -30,7 +30,7 @@ const Path = ({ group }) => {
     <>
       {group.map((path, i) => {
         return (
-          <Suspense key={i}>
+          <Suspense fallback='' key={i}>
             {path.type === 'path' && <motion.path {...attr(path)} />}
             {path.type === 'polygon' && <motion.polygon {...attr(path)} />}
             {path.type === 'polyline' && <motion.polyline {...attr(path)} />}

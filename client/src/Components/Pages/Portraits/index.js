@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
+import React, { useState, useRef, useEffect, Suspense } from 'react';
 import Title from '../../Title';
 import PortraitDisplay from './PortraitDisplay';
+
+const Box = React.lazy(() => import('@material-ui/core/Box'));
+const Grid = React.lazy(() => import('@material-ui/core/Grid'));
 
 const Portraits = ({ isDesktop }) => {
   const ref = useRef(100);
@@ -20,28 +21,30 @@ const Portraits = ({ isDesktop }) => {
   return (
     <section ref={ref} id='portraits'>
       {position !== undefined && (
-        <Box xs={{ flexGrow: 1 }}>
-          <Grid
-            container
-            spacing={6}
-            style={{
-              margin: 0,
-              width: '100%',
-            }}
-          >
-            <Grid item xs={12}>
-              <Title
-                word={['p', 'o', 'r', 't', 'r', 'a', 'i', 't', 's']}
-                y={position}
-                start={position / 1.2}
-                align={'flex-start'}
-              />
+        <Suspense fallback=''>
+          <Box xs={{ flexGrow: 1 }}>
+            <Grid
+              container
+              spacing={6}
+              style={{
+                margin: 0,
+                width: '100%',
+              }}
+            >
+              <Grid item xs={12}>
+                <Title
+                  word={['p', 'o', 'r', 't', 'r', 'a', 'i', 't', 's']}
+                  y={position}
+                  start={position / 1.2}
+                  align={'flex-start'}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <PortraitDisplay position={position} isDesktop={isDesktop} />
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <PortraitDisplay position={position} isDesktop={isDesktop} />
-            </Grid>
-          </Grid>
-        </Box>
+          </Box>
+        </Suspense>
       )}
     </section>
   );
