@@ -1,3 +1,13 @@
+import {
+  CSS,
+  HandleBars,
+  HTML,
+  Javascript,
+  Mongo,
+  MySQL,
+  Node,
+  ReactLogo,
+} from '../../Logos';
 export const data = [
   {
     id: '01',
@@ -5,6 +15,10 @@ export const data = [
     tag: 'Full Service Field Marketing Platform',
     deployed: 'https://secret-wave-01417.herokuapp.com/login',
     repo: 'https://github.com/tomekregulski/fieldist',
+    thumbnail:
+      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629917928/yondav/dev/fieldist/fieldist_logo_mfk13z.jpg',
+    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629917929/yondav/dev/fieldist/fieldist_cvcrbw.gif',
+    tech: [ReactLogo, Node, Javascript, HTML, CSS, MySQL],
     desc: () => (
       <div className='desc'>
         <p>
@@ -34,9 +48,6 @@ export const data = [
         </p>
       </div>
     ),
-    thumbnail:
-      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629917928/yondav/dev/fieldist/fieldist_logo_mfk13z.jpg',
-    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629917929/yondav/dev/fieldist/fieldist_cvcrbw.gif',
   },
   {
     id: '02',
@@ -44,6 +55,10 @@ export const data = [
     tag: 'Visual Design',
     deployed: 'https://alisonlamb.com/',
     repo: 'https://github.com/yondav/ali-portfolio',
+    thumbnail:
+      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629918649/yondav/dev/lamb/al-logo_zjan8k.jpg',
+    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629918649/yondav/dev/lamb/lamb_fomn2o.gif',
+    tech: [ReactLogo, Javascript, HTML, CSS],
     desc: () => (
       <div className='desc'>
         <p>
@@ -59,9 +74,6 @@ export const data = [
         </p>
       </div>
     ),
-    thumbnail:
-      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629918649/yondav/dev/lamb/al-logo_zjan8k.jpg',
-    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629918649/yondav/dev/lamb/lamb_fomn2o.gif',
   },
   {
     id: '03',
@@ -69,6 +81,10 @@ export const data = [
     tag: 'Beginnings of a Full Service Real Estate CRM',
     deployed: 'https://guarded-atoll-77888.herokuapp.com/',
     repo: 'https://github.com/yondav/yup-schlepp',
+    thumbnail:
+      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629919429/yondav/dev/yup/yup_f1xxtm.jpg',
+    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629922165/yondav/dev/yup/yup_nbcdqp.gif',
+    tech: [Javascript, Node, HandleBars, HTML, CSS, MySQL],
     desc: () => (
       <div className='desc'>
         <p>
@@ -84,9 +100,6 @@ export const data = [
         </p>
       </div>
     ),
-    thumbnail:
-      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629919429/yondav/dev/yup/yup_f1xxtm.jpg',
-    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629922165/yondav/dev/yup/yup_nbcdqp.gif',
   },
   {
     id: '04',
@@ -94,6 +107,10 @@ export const data = [
     tag: 'Powered By Google Books',
     deployed: 'https://yondav-21-google-books-search.herokuapp.com/',
     repo: 'https://github.com/yondav/21-google-books-search',
+    thumbnail:
+      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924470/yondav/dev/books/books_vsevky.jpg',
+    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924472/yondav/dev/books/books_j41spi.gif',
+    tech: [ReactLogo, Javascript, Node, HTML, CSS, Mongo],
     desc: () => (
       <div className='desc'>
         <p>
@@ -104,9 +121,6 @@ export const data = [
         </p>
       </div>
     ),
-    thumbnail:
-      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924470/yondav/dev/books/books_vsevky.jpg',
-    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924472/yondav/dev/books/books_j41spi.gif',
   },
   {
     id: '05',
@@ -114,6 +128,10 @@ export const data = [
     tag: 'A Look at the Opposite Side of Earth',
     deployed: 'https://yondav-21-google-books-search.herokuapp.com/',
     repo: 'https://github.com/yondav/21-google-books-search',
+    thumbnail:
+      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924528/yondav/dev/other_side/other-side_jhir94.jpg',
+    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924528/yondav/dev/other_side/other_side_p2cxkz.gif',
+    tech: [Javascript, HTML, CSS],
     desc: () => (
       <div className='desc'>
         <p>
@@ -123,15 +141,16 @@ export const data = [
         </p>
       </div>
     ),
-    thumbnail:
-      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924528/yondav/dev/other_side/other-side_jhir94.jpg',
-    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924528/yondav/dev/other_side/other_side_p2cxkz.gif',
   },
   {
     id: '06',
     app: 'Employee Tracker',
     tag: 'Command Line CMS',
     repo: 'https://github.com/yondav/12-employee-tracker',
+    thumbnail:
+      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924626/yondav/dev/employee_tracker/employee_tracker_n6qm2i.jpg',
+    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924626/yondav/dev/employee_tracker/employee_tracker_rz9zjl.gif',
+    tech: [Node, MySQL],
     desc: () => (
       <div className='desc'>
         <p>
@@ -143,8 +162,5 @@ export const data = [
         </p>
       </div>
     ),
-    thumbnail:
-      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924626/yondav/dev/employee_tracker/employee_tracker_n6qm2i.jpg',
-    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924626/yondav/dev/employee_tracker/employee_tracker_rz9zjl.gif',
   },
 ];
