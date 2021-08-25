@@ -8,10 +8,32 @@ import About from './Components/Pages/About';
 import Footer from './Components/Footer';
 
 const App = () => {
+  const [isDesktop, setDesktop] = useState(false);
   const [isSticky, setSticky] = useState(false);
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
 
+  // for desktop animations and layout
+  useEffect(() => {
+    const updateMedia = () => {
+      if (window.innerWidth >= 960) {
+        setDesktop(true);
+      } else {
+        setDesktop(false);
+      }
+    };
+
+    if (window.innerWidth) {
+      updateMedia();
+    }
+
+    window.addEventListener('resize', updateMedia);
+    window.addEventListener('scroll', updateMedia);
+    return () => {
+      window.removeEventListener('resize', updateMedia);
+      window.removeEventListener('scroll', updateMedia);
+    };
+  });
   // for dark mode
   useEffect(() => {
     const logos = document.querySelectorAll('.header-logo');
@@ -96,8 +118,8 @@ const App = () => {
         <Header updateMode={updateMode} />
         <main>
           <Dev />
-          <Portraits />
-          <About darkMode={darkMode} />
+          <Portraits isDesktop={isDesktop} />
+          <About darkMode={darkMode} isDesktop={isDesktop} />
         </main>
       </div>
       {isSticky && <Footer updateMode={updateMode} />}

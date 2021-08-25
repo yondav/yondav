@@ -22,8 +22,8 @@ const PortraitThumbnail = ({ id, onExpand, anim }) => {
   );
 };
 
-const PortraitDisplay = () => {
-  const { scrollYProgress } = useViewportScroll();
+const PortraitDisplay = ({ position, isDesktop }) => {
+  const { scrollYProgress } = useViewportScroll(0);
   const [portraitIds, setPortraitIds] = useState([
     '00_panqf7',
     '01_ptozfh',
@@ -42,21 +42,20 @@ const PortraitDisplay = () => {
   ]);
   const [portrait, setPortrait] = useState('00_panqf7');
   const [height, setHeight] = useState();
-  const [isDesktop, setDesktop] = useState(false);
 
   const opacityAnim = useTransform(
     scrollYProgress,
-    [0, 0.5, 0.55],
+    [0, position - 0.05, position + 0.05],
     [0, 0.3, 1]
   );
   const saturate = useTransform(
     scrollYProgress,
-    [0.54, 0.55],
+    [position - 0.05, position + 0.05],
     ['grayscale(100%)', 'grayscale(0%)']
   );
   const xPosAnim = useTransform(
     scrollYProgress,
-    [0, 0.5, 0.55],
+    [0, position - 0.05, position + 0.05],
     [1000, 500, 0]
   );
 
@@ -72,26 +71,18 @@ const PortraitDisplay = () => {
   };
 
   useEffect(() => {
-    const updateMedia = () => {
-      if (window.innerWidth >= 960) {
-        setDesktop(true);
-      } else {
-        setDesktop(false);
-      }
-    };
-
-    if (window.innerWidth) {
-      updateMedia();
+    const setter = () =>
       setHeight(document.querySelector('.primary-portrait').clientHeight);
-    }
 
-    window.addEventListener('resize', () => {
-      updateMedia();
-      isDesktop &&
-        setHeight(document.querySelector('.primary-portrait').clientHeight);
-      console.log(document.querySelector('.primary-portrait').clientHeight);
-    });
-    return () => window.removeEventListener('resize', updateMedia);
+    window.addEventListener('resize', setter);
+    window.addEventListener('scroll', setter);
+
+    isDesktop && setter();
+
+    return () => {
+      window.removeEventListener('resize', setter);
+      window.removeEventListener('scroll', setter);
+    };
   }, [setHeight, height, isDesktop]);
 
   return (
@@ -113,7 +104,11 @@ const PortraitDisplay = () => {
                 src={`https://res.cloudinary.com/yup-schlepp/image/upload/v1629812976/yondav/portraits/${portrait}.png`}
                 alt=''
                 layoutId={`portrait-${portrait}`}
-                style={{ opacity: opacityAnim, filter: saturate, x: xPosAnim }}
+                style={{
+                  opacity: opacityAnim,
+                  filter: saturate,
+                  x: isDesktop ? xPosAnim : 0,
+                }}
               />
             </AnimatePresence>
           </div>
