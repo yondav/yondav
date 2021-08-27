@@ -123,7 +123,10 @@ const Thumbnails = ({
               >
                 <AiOutlineClose
                   className='close'
-                  onClick={() => setFeature(false)}
+                  onClick={() => {
+                    setFeature(false);
+                    setHover(false);
+                  }}
                 />
                 <motion.div
                   className='featured-logo'
