@@ -22,6 +22,7 @@
 
   --transition: 0.3s ease;
   --shadow: rgba(0, 0, 0, 0.25) 0px 4px 16px;
+  --shadow-alt: rgba(255, 255, 255, 1) 0px 0px 50px;
   --shadow-in: inset rgba(0, 0, 0, 0.25) 0px 4px 16px;
   --radius: 0.5rem;
 }
@@ -34,6 +35,7 @@
   --yellow: rgb(215, 186, 125);
   --blue: rgb(155, 220, 254);
   --orange: rgb(206, 145, 120);
+  --shadow-alt: rgba(10, 10, 10, 0.466) 0px 0px 50px;
 }
 
 html {
@@ -68,6 +70,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 section {

@@ -15,12 +15,19 @@ const About = ({ darkMode, isDesktop }) => {
   const [position, setPosition] = useState();
 
   useEffect(() => {
-    ref.current !== 100 &&
-      setPosition(
-        (ref.current.offsetTop / document.body.clientHeight + 0.18).toFixed(2) -
-          0
-      );
-    console.log(ref.current);
+    window.addEventListener(
+      'scroll',
+      (e) =>
+        ref.current !== 100 &&
+        setPosition(
+          (ref.current.offsetTop / document.body.clientHeight + 0.18).toFixed(
+            2
+          ) - 0
+        )
+    );
+    // console.log(
+    //   (ref.current.offsetTop / document.body.clientHeight + 0.18).toFixed(2) - 0
+    // );
   }, [setPosition, position, ref]);
 
   const handleClose = () => setContact(false);
@@ -58,7 +65,7 @@ const About = ({ darkMode, isDesktop }) => {
                 <Title
                   word={['a', 'b', 'o', 'u', 't']}
                   y={position}
-                  start={position / 1.2}
+                  start={position / 2}
                   align={'flex-end'}
                 />
               </Grid>
@@ -66,7 +73,7 @@ const About = ({ darkMode, isDesktop }) => {
                 <motion.div
                   className='headshot'
                   style={{
-                    opacity: opacityAnim,
+                    opacity: !isNaN(opacityAnim) && opacityAnim,
                     filter: saturate,
                     x: isDesktop ? xPosAnim : 0,
                   }}
@@ -78,7 +85,10 @@ const About = ({ darkMode, isDesktop }) => {
                 </motion.div>
               </Grid>
               <Grid item xs={12} md={6} className='bio-cont'>
-                <motion.div className='bio' style={{ opacity: opacityAnim }}>
+                <motion.div
+                  className='bio'
+                  style={{ opacity: !isNaN(opacityAnim) && opacityAnim }}
+                >
                   <p>
                     I’m Yoni David - Full Stack Developer living in Queens, New
                     York. I'm passioniate about design and animation while I
@@ -110,7 +120,7 @@ const About = ({ darkMode, isDesktop }) => {
               <Grid item xs={12}>
                 <motion.div
                   className='bullets tech-cont'
-                  style={{ opacity: opacityAnim }}
+                  style={{ opacity: !isNaN(opacityAnim) && opacityAnim }}
                 >
                   <div className='tech'>
                     {Object.values(All).map((logo, index) =>

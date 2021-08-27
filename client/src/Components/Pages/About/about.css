@@ -5,7 +5,9 @@
 .headshot img {
   width: 100%;
   border-radius: var(--radius);
+  box-shadow: var(--shadow-alt);
 }
+
 .bio-cont {
   display: flex;
   flex-direction: column;

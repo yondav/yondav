@@ -9,14 +9,20 @@ const Portraits = ({ isDesktop }) => {
   const ref = useRef(100);
   const [position, setPosition] = useState();
 
-  useEffect(() => {
-    ref.current !== 100 &&
-      setPosition(
-        (ref.current.offsetTop / document.body.clientHeight + 0.05).toFixed(2) -
-          0
-      );
-    console.log('position: ', position, position === undefined);
-  }, [setPosition, position, ref]);
+  useEffect(
+    () =>
+      window.addEventListener(
+        'scroll',
+        (e) =>
+          ref.current !== 100 &&
+          setPosition(
+            (ref.current.offsetTop / document.body.clientHeight + 0.05).toFixed(
+              2
+            ) - 0
+          )
+      ),
+    [setPosition, position, ref]
+  );
 
   return (
     <section ref={ref} id='portraits'>
@@ -35,7 +41,7 @@ const Portraits = ({ isDesktop }) => {
                 <Title
                   word={['p', 'o', 'r', 't', 'r', 'a', 'i', 't', 's']}
                   y={position}
-                  start={position / 1.2}
+                  start={position / 2}
                   align={'flex-start'}
                 />
               </Grid>

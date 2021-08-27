@@ -10,6 +10,7 @@ import Footer from './Components/Footer';
 const App = () => {
   const [isDesktop, setDesktop] = useState(false);
   const [isSticky, setSticky] = useState(false);
+  const [mainMargin, setMainMargin] = useState(50);
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
 
@@ -92,10 +93,11 @@ const App = () => {
 
   // for scroll location
   useEffect(() => {
+    const nav = document.querySelector('nav');
+    const navHeight = nav.getBoundingClientRect().height;
+    setMainMargin(navHeight);
     let location = document.location.pathname;
     if (location !== '/') {
-      const nav = document.querySelector('nav');
-      const navHeight = nav.getBoundingClientRect().height;
       let element = document.getElementById(location.slice(1));
       let position = element.offsetTop - navHeight;
 
@@ -116,10 +118,14 @@ const App = () => {
     <div className='App'>
       <div className='wrapper'>
         <Header updateMode={updateMode} />
-        <main>
-          <Dev />
-          <Portraits isDesktop={isDesktop} />
-          <About darkMode={darkMode} isDesktop={isDesktop} />
+        <main style={{ marginTop: mainMargin }}>
+          <Dev isDesktop={isDesktop} mainMargin={mainMargin} />
+          <Portraits isDesktop={isDesktop} mainMargin={mainMargin} />
+          <About
+            darkMode={darkMode}
+            isDesktop={isDesktop}
+            mainMargin={mainMargin}
+          />
         </main>
       </div>
       {isSticky && <Footer updateMode={updateMode} />}

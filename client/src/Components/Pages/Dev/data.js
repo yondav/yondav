@@ -8,9 +8,40 @@ import {
   Node,
   ReactLogo,
 } from '../../Logos';
+import books from '../../../Assets/dev/books/books.svg';
+import employee_tracker from '../../../Assets/dev/employee_tracker/employee-tracker.svg';
+import lamb from '../../../Assets/dev/lamb/al-logo.svg';
+
 export const data = [
   {
     id: '01',
+    app: 'Alison Lamb',
+    tag: 'Visual Design',
+    deployed: 'https://alisonlamb.com/',
+    repo: 'https://github.com/yondav/ali-portfolio',
+    thumbnail:
+      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629918649/yondav/dev/lamb/al-logo_zjan8k.jpg',
+    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629918649/yondav/dev/lamb/lamb_fomn2o.gif',
+    logo: lamb,
+    tech: [ReactLogo, Javascript, HTML, CSS],
+    desc: () => (
+      <div className='desc'>
+        <p>
+          <em>
+            'The role of a visual designer is not an entirely creative one. I
+            view my work as problem resolution through visual communication. I
+            sift through concepts, ideas, sketches, and research with you to
+            help identify the true focus of the project. From there, we can
+            cleanly, efficiently, and effectively build the story. My strengths
+            are branding and presentation design and assertion, UI/UX and web
+            design, product design, and marketing design.'
+          </em>
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: '02',
     app: 'Fieldist',
     tag: 'Full Service Field Marketing Platform',
     deployed: 'https://secret-wave-01417.herokuapp.com/login',
@@ -18,6 +49,7 @@ export const data = [
     thumbnail:
       'https://res.cloudinary.com/yup-schlepp/image/upload/v1629917928/yondav/dev/fieldist/fieldist_logo_mfk13z.jpg',
     gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629917929/yondav/dev/fieldist/fieldist_cvcrbw.gif',
+    logo: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629917928/yondav/dev/fieldist/fieldist_logo_mfk13z.jpg',
     tech: [ReactLogo, Node, Javascript, HTML, CSS, MySQL],
     desc: () => (
       <div className='desc'>
@@ -50,40 +82,15 @@ export const data = [
     ),
   },
   {
-    id: '02',
-    app: 'Alison Lamb',
-    tag: 'Visual Design',
-    deployed: 'https://alisonlamb.com/',
-    repo: 'https://github.com/yondav/ali-portfolio',
-    thumbnail:
-      'https://res.cloudinary.com/yup-schlepp/image/upload/v1629918649/yondav/dev/lamb/al-logo_zjan8k.jpg',
-    gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629918649/yondav/dev/lamb/lamb_fomn2o.gif',
-    tech: [ReactLogo, Javascript, HTML, CSS],
-    desc: () => (
-      <div className='desc'>
-        <p>
-          <em>
-            'The role of a visual designer is not an entirely creative one. I
-            view my work as problem resolution through visual communication. I
-            sift through concepts, ideas, sketches, and research with you to
-            help identify the true focus of the project. From there, we can
-            cleanly, efficiently, and effectively build the story. My strengths
-            are branding and presentation design and assertion, UI/UX and web
-            design, product design, and marketing design.'
-          </em>
-        </p>
-      </div>
-    ),
-  },
-  {
     id: '03',
-    app: 'Yup',
-    tag: 'Beginnings of a Full Service Real Estate CRM',
+    app: 'Yup!',
+    tag: 'Beginnings of a Full Service Leasing CRM',
     deployed: 'https://guarded-atoll-77888.herokuapp.com/',
     repo: 'https://github.com/yondav/yup-schlepp',
     thumbnail:
       'https://res.cloudinary.com/yup-schlepp/image/upload/v1629919429/yondav/dev/yup/yup_f1xxtm.jpg',
     gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629922165/yondav/dev/yup/yup_nbcdqp.gif',
+    logo: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629919429/yondav/dev/yup/yup_f1xxtm.jpg',
     tech: [Javascript, Node, HandleBars, HTML, CSS, MySQL],
     desc: () => (
       <div className='desc'>
@@ -110,6 +117,7 @@ export const data = [
     thumbnail:
       'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924470/yondav/dev/books/books_vsevky.jpg',
     gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924472/yondav/dev/books/books_j41spi.gif',
+    logo: books,
     tech: [ReactLogo, Javascript, Node, HTML, CSS, Mongo],
     desc: () => (
       <div className='desc'>
@@ -131,6 +139,7 @@ export const data = [
     thumbnail:
       'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924528/yondav/dev/other_side/other-side_jhir94.jpg',
     gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924528/yondav/dev/other_side/other_side_p2cxkz.gif',
+    logo: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629926538/yondav/dev/other_side/other-side_nf9wez.png',
     tech: [Javascript, HTML, CSS],
     desc: () => (
       <div className='desc'>
@@ -150,6 +159,7 @@ export const data = [
     thumbnail:
       'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924626/yondav/dev/employee_tracker/employee_tracker_n6qm2i.jpg',
     gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924626/yondav/dev/employee_tracker/employee_tracker_rz9zjl.gif',
+    logo: employee_tracker,
     tech: [Node, MySQL],
     desc: () => (
       <div className='desc'>

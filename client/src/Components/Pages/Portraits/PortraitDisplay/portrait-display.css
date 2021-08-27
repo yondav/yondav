@@ -13,12 +13,14 @@
 .primary-portrait {
   width: 100%;
   border-radius: var(--radius);
+  box-shadow: var(--shadow-alt);
 }
 
 .portrait-gallery {
   display: flex;
   border-radius: var(--radius);
   overflow: scroll;
+  box-shadow: var(--shadow-alt);
 }
 
 .portrait-thumbnails {
