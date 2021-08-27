@@ -9,7 +9,6 @@ import Contact from '../Contact';
 
 const useStyles = makeStyles(() => ({
   modal: { display: 'flex', justifyContent: 'center', alignItems: 'center' },
-  paper: { width: 200, height: 200 },
 }));
 
 const ContactModal = ({ open, handleClose }) => {

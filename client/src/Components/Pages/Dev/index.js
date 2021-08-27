@@ -4,11 +4,10 @@ import Title from '../../Title';
 import { data } from './data';
 import './dev.css';
 import Thumbnails from './Thumbnails';
-
 const Box = React.lazy(() => import('@material-ui/core/Box'));
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
 
-const Dev = ({ isDesktop }) => {
+const Dev = ({ isDesktop, darkMode }) => {
   const ref = useRef();
   const [position, setPosition] = useState(100);
 
@@ -63,6 +62,8 @@ const Dev = ({ isDesktop }) => {
                 opacityAnim={opacityAnim}
                 saturate={saturate}
                 xPosAnim={xPosAnim}
+                darkMode={darkMode}
+                position={ref.current && ref.current}
               />
             ))}
           </Grid>

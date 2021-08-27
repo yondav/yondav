@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: var(--transition);
 }
 
 .thumbnail {
@@ -14,17 +15,18 @@
   align-items: center;
   box-shadow: var(--shadow-alt);
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .thumbnail img {
   width: 100%;
   border-radius: var(--radius);
+  transition: var(--transition);
 }
 
 .thumbnail-overlay {
   position: absolute;
   bottom: 0;
-  /* padding: 0.5rem; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -37,7 +39,6 @@
 
 .thumbnail-overlay > * {
   margin: 0;
-  /* padding: 0.75rem; */
 }
 
 .thumbnail-overlay h1 {
@@ -67,6 +68,106 @@
   margin: 0;
 }
 
+.featured-app {
+  position: absolute;
+  left: 0;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--pr-white);
+  overflow: scroll;
+  z-index: 1;
+}
+
+.featured-app .close {
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.featured-logo {
+  width: 12%;
+  padding: 1rem;
+}
+
+.featured-logo img {
+  width: 100%;
+}
+
+.featured-logo svg {
+  width: 100%;
+}
+
+.featured-header {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.featured-title {
+  display: flex;
+  flex-direction: column;
+  /* flex-basis: 80%; */
+}
+
+.featured-title > * {
+  margin: 0;
+  text-align: left;
+  /* align-self: flex-end; */
+}
+
+.featured-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mockup {
+  width: 100%;
+}
+
+.mockup img {
+  width: 100%;
+}
+
+.desc p {
+  text-align: justify;
+}
+
+.featured-icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featured-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-links a {
+  color: currentColor;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.featured-links a div {
+  display: flex;
+  align-items: center;
+}
+
+.featured-links a div > * {
+  margin-right: 0.25rem;
+}
+
+.featured-tech {
+  display: flex;
+}
+
 @media only screen and (min-width: 600px) {
   .thumbnail {
     max-width: 75%;
@@ -77,5 +178,46 @@
   .thumbnail:focus-visible,
   .thumbnail:active {
     max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .featured-app {
+    padding: 0 5rem;
+  }
+
+  .featured-logo {
+    align-self: flex-start;
+    max-width: 8% !important;
+  }
+
+  .featured-header {
+    justify-content: flex-start;
+  }
+
+  .featured-title > * {
+    align-self: flex-start;
+  }
+
+  .featured-title h1 {
+    font-size: 2.5em;
+  }
+
+  .featured-title h6 {
+    font-size: 1em;
+  }
+
+  .featured-body {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .mockup {
+    flex-basis: 60%;
+    margin-right: 3rem;
+  }
+
+  .desc {
+    flex-basis: 40%;
   }
 }

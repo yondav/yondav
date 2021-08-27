@@ -119,7 +119,11 @@ const App = () => {
       <div className='wrapper'>
         <Header updateMode={updateMode} />
         <main style={{ marginTop: mainMargin }}>
-          <Dev isDesktop={isDesktop} mainMargin={mainMargin} />
+          <Dev
+            isDesktop={isDesktop}
+            mainMargin={mainMargin}
+            darkMode={darkMode}
+          />
           <Portraits isDesktop={isDesktop} mainMargin={mainMargin} />
           <About
             darkMode={darkMode}

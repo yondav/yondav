@@ -14,21 +14,20 @@ const About = ({ darkMode, isDesktop }) => {
   const [contact, setContact] = useState(false);
   const [position, setPosition] = useState();
 
-  useEffect(() => {
-    window.addEventListener(
-      'scroll',
-      (e) =>
-        ref.current !== 100 &&
-        setPosition(
-          (ref.current.offsetTop / document.body.clientHeight + 0.18).toFixed(
-            2
-          ) - 0
-        )
-    );
-    // console.log(
-    //   (ref.current.offsetTop / document.body.clientHeight + 0.18).toFixed(2) - 0
-    // );
-  }, [setPosition, position, ref]);
+  useEffect(
+    () =>
+      window.addEventListener(
+        'scroll',
+        (e) =>
+          ref.current !== 100 &&
+          setPosition(
+            (ref.current.offsetTop / document.body.clientHeight + 0.18).toFixed(
+              2
+            ) - 0
+          )
+      ),
+    [setPosition, position, ref]
+  );
 
   const handleClose = () => setContact(false);
 
