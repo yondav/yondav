@@ -1,8 +1,9 @@
 import { Crowd } from './Ces';
 import Shea from './Shea';
 import BigSnow from './Big_Snow';
+import Tape from './Tape';
 
-const dimensions = (color) => ({
+const solidColor = (color) => ({
   backgroundColor: color,
 });
 
@@ -26,7 +27,7 @@ export const backgrounds = {
           borderRadius: ['20%', '20%', '50%', '0%'],
         },
         transition: { duration: 1.5 },
-        style: dimensions('var(--yellow)'),
+        style: solidColor('var(--yellow)'),
       },
     },
     {
@@ -43,7 +44,7 @@ export const backgrounds = {
           borderRadius: ['20%', '20%', '0%'],
         },
         transition: { duration: 1.5 },
-        style: dimensions('var(--pink)'),
+        style: solidColor('var(--pink)'),
       },
     },
     {
@@ -59,7 +60,7 @@ export const backgrounds = {
           borderRadius: ['20%', '50%', '0%'],
         },
         transition: { duration: 1.5 },
-        style: dimensions('var(--purple)'),
+        style: solidColor('var(--purple)'),
       },
     },
     {
@@ -75,7 +76,7 @@ export const backgrounds = {
           borderRadius: ['20%', '20%', '50%', '50%', '0%'],
         },
         transition: { duration: 1.5 },
-        style: dimensions('var(--orange)'),
+        style: solidColor('var(--orange)'),
       },
     },
     {
@@ -92,7 +93,7 @@ export const backgrounds = {
           borderRadius: ['20%', '20%', '50%', '0%'],
         },
         transition: { duration: 1 },
-        style: dimensions('var(--red)'),
+        style: solidColor('var(--red)'),
       },
     },
     {
@@ -109,7 +110,7 @@ export const backgrounds = {
           borderRadius: ['20%', '20%', '50%', '50%', '0%'],
         },
         transition: { duration: 1 },
-        style: dimensions('var(--green)'),
+        style: solidColor('var(--green)'),
       },
     },
     {
@@ -124,7 +125,7 @@ export const backgrounds = {
           y: [0, 500, 0, 400, 0, 300, 0, 200, 0, 100, 0],
         },
         transition: { duration: 2.5 },
-        style: dimensions('var(--blue)'),
+        style: solidColor('var(--blue)'),
       },
     },
     {
@@ -141,7 +142,7 @@ export const backgrounds = {
           borderRadius: ['20%', '20%', '50%', '50%', '0%'],
         },
         transition: { duration: 1.5 },
-        style: dimensions('var(--alt-blue)'),
+        style: solidColor('var(--alt-blue)'),
       },
     },
     {
@@ -158,7 +159,7 @@ export const backgrounds = {
           borderRadius: ['20%', '20%', '50%', '50%', '0%'],
         },
         transition: { duration: 1.5 },
-        style: dimensions('var(--brown)'),
+        style: solidColor('var(--brown)'),
       },
     },
   ],
@@ -181,8 +182,15 @@ export const backgrounds = {
       name: 'big snow',
       state: 'big_snow',
       thumbnail:
-        'https://res.cloudinary.com/yup-schlepp/image/upload/v1629310420/yondav/background_thumbnails/ces_lwkui8.png',
+        'https://res.cloudinary.com/yup-schlepp/image/upload/v1630639198/yondav/background_thumbnails/big_snow_x01rys.png',
       element: BigSnow,
+    },
+    {
+      name: 'tape',
+      state: 'tape',
+      thumbnail:
+        'https://res.cloudinary.com/yup-schlepp/image/upload/v1630639198/yondav/background_thumbnails/big_snow_x01rys.png',
+      element: Tape,
     },
   ],
 };

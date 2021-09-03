@@ -24,6 +24,15 @@ const Path = ({ group }) => {
     y1: path.y1,
     x2: path.x2,
     y2: path.y2,
+    cx: path.cx,
+    cy: path.cy,
+    r: path.r,
+    rx: path.rx,
+    ry: path.ry,
+    x: path.x,
+    y: path.y,
+    width: path.width,
+    height: path.height,
   });
 
   return (
@@ -35,6 +44,9 @@ const Path = ({ group }) => {
             {path.type === 'polygon' && <motion.polygon {...attr(path)} />}
             {path.type === 'polyline' && <motion.polyline {...attr(path)} />}
             {path.type === 'line' && <motion.line {...attr(path)} />}
+            {path.type === 'circle' && <motion.circle {...attr(path)} />}
+            {path.type === 'ellipse' && <motion.ellipse {...attr(path)} />}
+            {path.type === 'rect' && <motion.rect {...attr(path)} />}
           </Suspense>
         );
       })}
