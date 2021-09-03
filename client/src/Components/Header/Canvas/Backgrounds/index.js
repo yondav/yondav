@@ -50,6 +50,8 @@ const Background = ({ bg }) => {
                 transition={el.element.transition}
                 exit={{ opacity: 0 }}
                 style={el.element.style}
+                // height={viewPort.height}
+                // width={viewPort.width}
                 className='color-bg'
               />
             </AnimatePresence>
@@ -58,9 +60,10 @@ const Background = ({ bg }) => {
           illustration.map((el, index) =>
             React.createElement(el.element, {
               key: index,
-              width: viewPort.width,
-              height: viewPort.height,
-              rect: viewPort.rect,
+              // width: viewPort.width,
+              // height: viewPort.height,
+              // rect: viewPort.rect,
+              className: 'color-bg',
             })
           )}
         {bg === 'ces' && (

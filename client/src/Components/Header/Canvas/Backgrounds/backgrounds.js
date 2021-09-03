@@ -1,5 +1,6 @@
 import { Crowd } from './Ces';
 import Shea from './Shea';
+import BigSnow from './Big_Snow';
 
 const dimensions = (color) => ({
   backgroundColor: color,
@@ -175,6 +176,13 @@ export const backgrounds = {
       thumbnail:
         'https://res.cloudinary.com/yup-schlepp/image/upload/v1629310420/yondav/background_thumbnails/ces_lwkui8.png',
       element: Crowd,
+    },
+    {
+      name: 'big snow',
+      state: 'big_snow',
+      thumbnail:
+        'https://res.cloudinary.com/yup-schlepp/image/upload/v1629310420/yondav/background_thumbnails/ces_lwkui8.png',
+      element: BigSnow,
     },
   ],
 };

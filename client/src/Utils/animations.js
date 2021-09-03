@@ -68,4 +68,32 @@ export const icon = {
   },
 };
 
-// for scrolling
+// for varet
+export const varet = {
+  init: { scale: 0 },
+  anim: {
+    scale: [1.8, 0.8, 1.2, 1],
+    rotate: [5, 0, -5, 0],
+    y: [100, -100, 100, 0],
+  },
+  trans: { duration: 1 },
+};
+
+// for big snow
+export const big_snow = {
+  drop: {
+    init: { y: -4000 },
+    anim: { y: [-4000, 0, -30, 0], rotate: [15, -15, 0] },
+    trans: { duration: 1, delay: 1.5 },
+  },
+  line: {
+    init: { opacity: 0, scale: 0 },
+    anim: { opacity: 1, scale: 1 },
+    trans: { duration: 1, delay: 2 },
+  },
+  letters: {
+    init: { opacity: 0 },
+    anim: { opacity: 1 },
+    trans: { duration: 1, delay: 3.2, ease: 'easeIn' },
+  },
+};

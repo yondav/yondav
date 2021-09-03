@@ -52,7 +52,7 @@ const Yoni = ({ yoni, customColors, onCustomColor, erase, customize }) => {
   const colorAction = (i) =>
     customize === 'color' ? () => onCustomColor(i) : () => '';
   return (
-    <Draggable handle='.controls' bounds={{ top: -10 }}>
+    <Draggable handle='.controls' bounds={{ top: -100 }}>
       <div className='yoni-container' style={customize === 'move' ? style : ''}>
         {customize === 'move' && (
           <div className='controls move' style={{ height: '1rem' }}></div>
