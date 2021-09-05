@@ -2,11 +2,16 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './backgrounds.css';
 import { backgrounds } from './backgrounds';
+import { BsChevronLeft } from 'react-icons/bs';
 
 const Ces = React.lazy(() => import('./Ces/Ces/index'));
+const Joey = React.lazy(() => import('./Dogs/Joey'));
+const Leo = React.lazy(() => import('./Dogs/Leo'));
+const BGInfo = React.lazy(() => import('../BGInfo'));
 
 const Background = ({ bg }) => {
   const [viewPort, setViewPort] = useState(false);
+  const [info, setInfo] = useState(false);
 
   const updateMedia = () => {
     if (window.innerWidth > 989) {
@@ -38,6 +43,18 @@ const Background = ({ bg }) => {
     return () => window.removeEventListener('resize', updateMedia);
   }, [bg]);
 
+  useEffect(() => {
+    if (info) {
+      window.scrollTo({
+        top: document.querySelector('.canvas').offsetTop,
+        left: 0,
+      });
+      document.querySelector('body').style.overflow = 'hidden';
+    } else {
+      document.querySelector('body').style.overflow = 'auto';
+    }
+  }, [info]);
+
   return (
     <div className='background-container'>
       <div className='background'>
@@ -50,8 +67,6 @@ const Background = ({ bg }) => {
                 transition={el.element.transition}
                 exit={{ opacity: 0 }}
                 style={el.element.style}
-                // height={viewPort.height}
-                // width={viewPort.width}
                 className='color-bg'
               />
             </AnimatePresence>
@@ -60,9 +75,6 @@ const Background = ({ bg }) => {
           illustration.map((el, index) =>
             React.createElement(el.element, {
               key: index,
-              // width: viewPort.width,
-              // height: viewPort.height,
-              // rect: viewPort.rect,
               className: 'color-bg',
             })
           )}
@@ -71,6 +83,39 @@ const Background = ({ bg }) => {
             <Ces />
           </Suspense>
         )}
+        {bg === 'dogs' && (
+          <Suspense fallback=''>
+            <Joey />
+            <Leo />
+          </Suspense>
+        )}
+        {(bg === 'shea' ||
+          bg === 'ces' ||
+          bg === 'big_snow' ||
+          bg === 'tape' ||
+          bg === 'dogs') && (
+          <AnimatePresence>
+            <motion.div
+              layout
+              className='bg-info'
+              // initial={{ scale: 1 }}
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ repeat: Infinity, duration: 2, ease: 'easeIn' }}
+            >
+              <motion.div
+                style={{ display: 'flex', flexDirection: 'column' }}
+                onTap={() => setInfo(true)}
+              >
+                <BsChevronLeft />
+                <BsChevronLeft />
+                <BsChevronLeft />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        )}
+        <AnimatePresence>
+          {info && <BGInfo bg={bg} setInfo={setInfo} />}
+        </AnimatePresence>
       </div>
     </div>
   );

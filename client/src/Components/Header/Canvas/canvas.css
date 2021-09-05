@@ -41,17 +41,25 @@
   cursor: url('../../../Assets/cursors/eraser.svg') 15 15, auto;
 }
 
+.bg-feature {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pr-white);
+  z-index: 15;
+  overflow: scroll;
+}
+
 @media only screen and (max-height: 415px) {
   .yoni-container {
     width: 30% !important;
   }
 }
-
-/* @media only screen and (max-height: 541px) {
-  .yoni-container {
-    width: 50% !important;
-  }
-} */
 
 @media only screen and (min-width: 499px) {
   .yoni-container {

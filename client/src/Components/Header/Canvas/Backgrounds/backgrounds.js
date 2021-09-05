@@ -2,6 +2,7 @@ import { Crowd } from './Ces';
 import Shea from './Shea';
 import BigSnow from './Big_Snow';
 import Tape from './Tape';
+import Grass from './Dogs/Grass';
 
 const solidColor = (color) => ({
   backgroundColor: color,
@@ -189,8 +190,15 @@ export const backgrounds = {
       name: 'tape',
       state: 'tape',
       thumbnail:
-        'https://res.cloudinary.com/yup-schlepp/image/upload/v1630639198/yondav/background_thumbnails/big_snow_x01rys.png',
+        'https://res.cloudinary.com/yup-schlepp/image/upload/v1630653414/yondav/background_thumbnails/tape_yjt1b6.png',
       element: Tape,
+    },
+    {
+      name: 'dogs',
+      state: 'dogs',
+      thumbnail:
+        'https://res.cloudinary.com/yup-schlepp/image/upload/v1630678863/yondav/background_thumbnails/dogs_s1utxp.png',
+      element: Grass,
     },
   ],
 };

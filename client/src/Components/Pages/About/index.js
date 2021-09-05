@@ -52,14 +52,7 @@ const About = ({ darkMode, isDesktop }) => {
       {position !== undefined && (
         <Suspense fallback=''>
           <Box xs={{ flexGrow: 1 }}>
-            <Grid
-              container
-              spacing={6}
-              style={{
-                margin: 0,
-                width: '100%',
-              }}
-            >
+            <Grid container spacing={6} style={{ margin: 0, width: '100%' }}>
               <Grid item xs={12}>
                 <Title
                   word={['a', 'b', 'o', 'u', 't']}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { stand, left, right } from './content';
+import { stand, left, right, heads } from './content';
 import Path from '../../../../SVG';
 
 const Tape = () => {
@@ -32,6 +32,9 @@ const Tape = () => {
       >
         <Path group={right} />
       </motion.g>
+      <g>
+        <Path group={heads} />
+      </g>
     </motion.svg>
   );
 };

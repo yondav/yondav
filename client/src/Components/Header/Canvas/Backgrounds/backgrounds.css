@@ -29,6 +29,36 @@
   left: -18rem;
 }
 
+.leo-container,
+.joey-container {
+  position: absolute;
+  bottom: 10%;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: fit-content;
+  margin: auto;
+}
+
+.leo,
+.joey {
+  height: 100%;
+  width: 100%;
+}
+
+.bg-info {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: var(--pr-white);
+  z-index: 11;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 300px) {
   .big-snow-wrap {
     left: -13rem;

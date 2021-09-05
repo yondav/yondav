@@ -12,7 +12,7 @@ import './portrait-display.css';
 const PortraitThumbnail = ({ id, onExpand, anim }) => {
   return (
     <motion.img
-      src={`https://res.cloudinary.com/yup-schlepp/image/upload/${id}.jpg`}
+      src={`https://res.cloudinary.com/yup-schlepp/image/upload/${id}.png`}
       alt=''
       onClick={() => onExpand(id)}
       className='portrait-thumbnails'
@@ -25,23 +25,23 @@ const PortraitThumbnail = ({ id, onExpand, anim }) => {
 const PortraitDisplay = ({ position, isDesktop }) => {
   const { scrollYProgress } = useViewportScroll(0);
   const [portraitIds, setPortraitIds] = useState([
-    'v1629905275/yondav/portraits/00_akqpcm',
-    'v1629905275/yondav/portraits/01_ewrwig',
-    'v1629905275/yondav/portraits/02_ckz8vj',
-    'v1629905275/yondav/portraits/03_vzu82h',
-    'v1629905275/yondav/portraits/04_na6wp9',
-    'v1629905275/yondav/portraits/05_jmrkbx',
-    'v1629905276/yondav/portraits/06_mf8qfj',
-    'v1629905276/yondav/portraits/07_h5mk8q',
-    'v1629905276/yondav/portraits/08_nntzbn',
-    'v1629905276/yondav/portraits/09_tqvrna',
-    'v1629905276/yondav/portraits/10_uxzm6f',
-    'v1629905276/yondav/portraits/11_rax9pf',
-    'v1629905276/yondav/portraits/12_if0q3w',
-    'v1629905276/yondav/portraits/13_xlp95i',
+    'v1630807525/yondav/portraits/00_ev6ejz',
+    'v1630807525/yondav/portraits/01_mwwpi0',
+    'v1630807525/yondav/portraits/02_lgrckc',
+    'v1630807525/yondav/portraits/03_wevuah',
+    'v1630807525/yondav/portraits/04_xfhztn',
+    'v1630807525/yondav/portraits/05_ivydnz',
+    'v1630807526/yondav/portraits/06_ibv1d3',
+    'v1630807526/yondav/portraits/07_ekz8so',
+    'v1630807526/yondav/portraits/08_dymkeh',
+    'v1630807526/yondav/portraits/09_gejx53',
+    'v1630807526/yondav/portraits/10_misncz',
+    'v1630807526/yondav/portraits/11_qvwbh9',
+    'v1630807526/yondav/portraits/12_ecdyig',
+    'v1630807526/yondav/portraits/13_wcq7p8',
   ]);
   const [portrait, setPortrait] = useState(
-    'v1629905275/yondav/portraits/00_akqpcm'
+    'v1630807525/yondav/portraits/00_ev6ejz'
   );
   const [height, setHeight] = useState();
 
@@ -103,8 +103,8 @@ const PortraitDisplay = ({ position, isDesktop }) => {
               <motion.img
                 key={portrait}
                 className='primary-portrait'
-                src={`https://res.cloudinary.com/yup-schlepp/image/upload/${portrait}.jpg`}
-                alt=''
+                src={`https://res.cloudinary.com/yup-schlepp/image/upload/${portrait}.png`}
+                alt={portrait}
                 layoutId={`portrait-${portrait}`}
                 style={{
                   opacity: opacityAnim,
