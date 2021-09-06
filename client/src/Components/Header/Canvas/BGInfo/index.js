@@ -6,6 +6,7 @@ import './bg-info.css';
 const Box = React.lazy(() => import('@material-ui/core/Box'));
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
 const DogInfo = React.lazy(() => import('../Backgrounds/Dogs/DogInfo'));
+const CesInfo = React.lazy(() => import('../Backgrounds/Ces/CesInfo'));
 
 const BGInfo = ({ bg, setInfo }) => {
   return (
@@ -33,6 +34,7 @@ const BGInfo = ({ bg, setInfo }) => {
           >
             <AiOutlineClose className='close' onClick={() => setInfo(false)} />
             {bg === 'dogs' && <DogInfo />}
+            {bg === 'ces' && <CesInfo />}
           </Grid>
         </Box>
       </Suspense>

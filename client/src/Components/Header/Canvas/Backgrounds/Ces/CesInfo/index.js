@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { links } from './links';
-import { IoIosPaw } from 'react-icons/io';
+import YoutubeEmbed from '../../../../../YoutubeEmbed';
 
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
 
-const DogInfo = () => {
+const CesInfo = () => {
   return (
     <>
       <Grid item xs={12}>
@@ -17,7 +16,7 @@ const DogInfo = () => {
           transition={{ duration: 2 }}
           style={{ justifyContent: 'flex-end' }}
         >
-          {['d', 'o', 'g', 'd', 'a', 'z', 'e'].map((letter, i) => (
+          {['c', 'e', 's', 'p', 'e', 'd', 'e', 's'].map((letter, i) => (
             <motion.span
               key={i}
               initial={{ scale: 4.4 }}
@@ -47,10 +46,7 @@ const DogInfo = () => {
             transition: { duration: 1.5 },
           }}
         >
-          <img
-            src='https://res.cloudinary.com/yup-schlepp/image/upload/v1630818162/yondav/yoni_dog_2_vjpln7.jpg'
-            alt='joey'
-          />
+          <YoutubeEmbed embedId='69ts-dFvGGg' />
         </motion.div>
       </Grid>
       <Grid item xs={12} md={6}>
@@ -69,7 +65,7 @@ const DogInfo = () => {
                 exit={{ opacity: 0, scale: 2.2 }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
-                our furry friends are always there for us
+                <em>That guy's phone is going to blow up.</em>
               </motion.span>
             </motion.div>
             <motion.div
@@ -85,27 +81,40 @@ const DogInfo = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1, delay: 1.75 }}
               >
-                be there for them
+                'DUDE, you just got ran over by Cespedes!'
+              </motion.span>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0.5, x: 100 }}
+              transition={{ duration: 2, delay: 1.75 }}
+              className='tag'
+              style={{ justifyContent: 'flex-end' }}
+            >
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, scale: [2.2, 1] }}
+                exit={{ opacity: 0, scale: 2.2 }}
+                transition={{ duration: 1, delay: 2 }}
+              >
+                -Ron Darling
               </motion.span>
             </motion.div>
           </div>
-          <div className='adopt-links'>
-            <span className='tag'>Resources</span>
-            <ul>
-              {links.map((link, i) => (
-                <li key={i}>
-                  <IoIosPaw />
-                  <a
-                    href={link.link}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='nav-link'
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className='ces-desc'>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 1, delay: 3 } }}
+              exit={{ opacity: 0, transition: { duration: 1 } }}
+            >
+              ...and that it did. Perhaps the most personally notable moment of
+              my fandom came when star outfielder Yoenis Cespedes went diving
+              for a foul ball that should have fallen in my lap. While neither
+              of us made the play, I walked away with a <em>different</em> ball,
+              signed by La Potencia himself and I made my way onto a pretty
+              notable highlight reel that persisted through most of the season.
+            </motion.p>
           </div>
         </div>
       </Grid>
@@ -113,4 +122,4 @@ const DogInfo = () => {
   );
 };
 
-export default DogInfo;
+export default CesInfo;
