@@ -56,68 +56,69 @@ const Background = ({ bg }) => {
   }, [info]);
 
   return (
-    <div className='background-container'>
-      <div className='background'>
-        {color &&
-          color.map((el) => (
-            <AnimatePresence key={el.name}>
-              <motion.div
-                initial={el.element.initial}
-                animate={el.element.animate}
-                transition={el.element.transition}
-                exit={{ opacity: 0 }}
-                style={el.element.style}
-                className='color-bg'
-              />
-            </AnimatePresence>
-          ))}
-        {illustration &&
-          illustration.map((el, index) =>
-            React.createElement(el.element, {
-              key: index,
-              className: 'color-bg',
-            })
+    <>
+      <div className='background-container'>
+        <div className='background'>
+          {color &&
+            color.map((el) => (
+              <AnimatePresence key={el.name}>
+                <motion.div
+                  initial={el.element.initial}
+                  animate={el.element.animate}
+                  transition={el.element.transition}
+                  exit={{ opacity: 0 }}
+                  style={el.element.style}
+                  className='color-bg'
+                />
+              </AnimatePresence>
+            ))}
+          {illustration &&
+            illustration.map((el, index) =>
+              React.createElement(el.element, {
+                key: index,
+                className: 'color-bg',
+              })
+            )}
+          {bg === 'ces' && (
+            <Suspense fallback=''>
+              <Ces />
+            </Suspense>
           )}
-        {bg === 'ces' && (
-          <Suspense fallback=''>
-            <Ces />
-          </Suspense>
-        )}
-        {bg === 'dogs' && (
-          <Suspense fallback=''>
-            <Joey />
-            <Leo />
-          </Suspense>
-        )}
-        {(bg === 'shea' ||
-          bg === 'ces' ||
-          bg === 'big_snow' ||
-          bg === 'tape' ||
-          bg === 'dogs') && (
-          <AnimatePresence>
-            <motion.div
-              layout
-              className='bg-info'
-              // initial={{ scale: 1 }}
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ repeat: Infinity, duration: 2, ease: 'easeIn' }}
-            >
+          {bg === 'dogs' && (
+            <Suspense fallback=''>
+              <Joey />
+              <Leo />
+            </Suspense>
+          )}
+          {(bg === 'shea' ||
+            bg === 'ces' ||
+            bg === 'big_snow' ||
+            bg === 'tape' ||
+            bg === 'dogs') && (
+            <AnimatePresence>
               <motion.div
-                style={{ display: 'flex', flexDirection: 'column' }}
-                onTap={() => setInfo(true)}
+                layout
+                className='bg-info'
+                // animate={{ opacity: [0.5, 1, 0.5] }}
+                // transition={{ repeat: Infinity, duration: 2, ease: 'easeIn' }}
               >
-                <BsChevronLeft />
-                <BsChevronLeft />
-                <BsChevronLeft />
+                <motion.div
+                  style={{ display: 'flex', flexDirection: 'column' }}
+                  onTap={() => setInfo(true)}
+                >
+                  <BsChevronLeft />
+                  <BsChevronLeft />
+                  <BsChevronLeft />
+                </motion.div>
               </motion.div>
-            </motion.div>
-          </AnimatePresence>
-        )}
-        <AnimatePresence>
-          {info && <BGInfo bg={bg} setInfo={setInfo} />}
-        </AnimatePresence>
+            </AnimatePresence>
+          )}
+        </div>
       </div>
-    </div>
+      <AnimatePresence>
+        {info && <BGInfo bg={bg} setInfo={setInfo} />}
+      </AnimatePresence>
+    </>
   );
 };
 

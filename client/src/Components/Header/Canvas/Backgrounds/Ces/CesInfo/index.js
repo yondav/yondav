@@ -87,7 +87,7 @@ const CesInfo = () => {
             <motion.div
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0.5, x: 100 }}
+              exit={{ opacity: [0.5, 0], x: 100 }}
               transition={{ duration: 2, delay: 1.75 }}
               className='tag'
               style={{ justifyContent: 'flex-end' }}
@@ -95,7 +95,7 @@ const CesInfo = () => {
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, scale: [2.2, 1] }}
-                exit={{ opacity: 0, scale: 2.2 }}
+                exit={{ opacity: 0, scale: [1, 2.2] }}
                 transition={{ duration: 1, delay: 2 }}
               >
                 -Ron Darling
