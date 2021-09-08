@@ -128,7 +128,7 @@ export const projects = [
     ],
   },
   {
-    band: ['l', 'o', 's', 't', ' ', 'b', 'o', 'y', '?'],
+    band: ['l', 'o', 's', 't', '\xa0', 'b', 'o', 'y', '?'],
     years: '2013 - present',
     role: ['live drummer', 'engineer', 'producer'],
     photo:

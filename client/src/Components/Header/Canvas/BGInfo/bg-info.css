@@ -1,5 +1,6 @@
 .media-wrap {
   width: 100%;
+  text-align: center;
 }
 
 .media-wrap img {
@@ -35,6 +36,7 @@
   font-size: 2.5em;
 }
 
+.big-snow-desc,
 .ces-desc,
 .adopt-links {
   text-align: justify;
@@ -101,6 +103,11 @@
   transform: scale(1.1);
 }
 
+@media only screen and (max-width: 950px) {
+  .MuiGrid-grid-xs-12 {
+    padding: 0 24px 24px !important;
+  }
+}
 @media only screen and (min-width: 600px) {
   .tag,
   .tag-2,

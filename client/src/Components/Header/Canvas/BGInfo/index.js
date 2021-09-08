@@ -8,11 +8,13 @@ const Grid = React.lazy(() => import('@material-ui/core/Grid'));
 const DogInfo = React.lazy(() => import('../Backgrounds/Dogs/DogInfo'));
 const CesInfo = React.lazy(() => import('../Backgrounds/Ces/CesInfo'));
 const MusicInfo = React.lazy(() => import('../Backgrounds/Tape/MusicInfo'));
+const BigSnowInfo = React.lazy(() =>
+  import('../Backgrounds/Big_Snow/BigSnowInfo')
+);
 
 const BGInfo = ({ bg, setInfo }) => {
   return (
     <motion.div
-      // layout
       className='bg-feature'
       initial={{ opacity: 0, x: 1000 }}
       animate={{
@@ -27,7 +29,7 @@ const BGInfo = ({ bg, setInfo }) => {
       }}
     >
       <Suspense>
-        <Box xs={{ flexGrow: 1 }}>
+        <Box xs={{ flexGrow: 1 }} style={{ height: '100%' }}>
           <Grid
             container
             spacing={6}
@@ -43,6 +45,7 @@ const BGInfo = ({ bg, setInfo }) => {
             {bg === 'dogs' && <DogInfo />}
             {bg === 'ces' && <CesInfo />}
             {bg === 'tape' && <MusicInfo />}
+            {bg === 'big_snow' && <BigSnowInfo />}
           </Grid>
         </Box>
       </Suspense>

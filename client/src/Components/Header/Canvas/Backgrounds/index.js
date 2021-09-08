@@ -9,9 +9,9 @@ const Joey = React.lazy(() => import('./Dogs/Joey'));
 const Leo = React.lazy(() => import('./Dogs/Leo'));
 const BGInfo = React.lazy(() => import('../BGInfo'));
 
-const Background = ({ bg }) => {
+const Background = ({ bg, info, setInfo }) => {
   const [viewPort, setViewPort] = useState(false);
-  const [info, setInfo] = useState(false);
+  // const [info, setInfo] = useState(false);
 
   const updateMedia = () => {
     if (window.innerWidth > 989) {
@@ -115,9 +115,9 @@ const Background = ({ bg }) => {
           )}
         </div>
       </div>
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {info && <BGInfo bg={bg} setInfo={setInfo} />}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </>
   );
 };
