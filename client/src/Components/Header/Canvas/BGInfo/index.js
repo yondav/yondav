@@ -12,7 +12,7 @@ const BigSnowInfo = React.lazy(() =>
   import('../Backgrounds/Big_Snow/BigSnowInfo')
 );
 
-const BGInfo = ({ bg, setInfo }) => {
+const BGInfo = ({ bg, info, setInfo }) => {
   return (
     <motion.div
       className='bg-feature'
@@ -20,12 +20,12 @@ const BGInfo = ({ bg, setInfo }) => {
       animate={{
         opacity: 1,
         x: 0,
-        height: '100vh',
+        // height: '100vh',
         transition: { duration: 1, ease: 'anticipate' },
       }}
       exit={{
         x: 1500,
-        transition: { duration: 1, delay: 1 },
+        transition: { duration: 1, delay: 1.2 },
       }}
     >
       <Suspense>
@@ -42,10 +42,10 @@ const BGInfo = ({ bg, setInfo }) => {
                 window.scrollTo({ top: 0, left: 0 });
               }}
             />
-            {bg === 'dogs' && <DogInfo />}
-            {bg === 'ces' && <CesInfo />}
-            {bg === 'tape' && <MusicInfo />}
-            {bg === 'big_snow' && <BigSnowInfo />}
+            {info === 'dogs' && <DogInfo />}
+            {info === 'ces' && <CesInfo />}
+            {info === 'tape' && <MusicInfo />}
+            {info === 'big_snow' && <BigSnowInfo />}
           </Grid>
         </Box>
       </Suspense>

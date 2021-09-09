@@ -50,11 +50,16 @@
   position: absolute;
   top: 50%;
   right: 0;
+  padding: 1rem 0 1rem 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2em;
-  color: var(--pr-white);
+  color: var(--pr-black);
+  background-color: var(--pr-white);
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  box-shadow: var(--shadow);
   z-index: 11;
   cursor: pointer;
 }

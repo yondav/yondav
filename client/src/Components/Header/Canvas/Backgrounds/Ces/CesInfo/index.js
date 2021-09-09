@@ -11,18 +11,16 @@ const CesInfo = () => {
         <motion.div
           className='title'
           initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0.5, y: 100 }}
-          transition={{ duration: 2 }}
+          animate={{ opacity: 1, y: 0, transition: { duration: 2 } }}
+          exit={{ opacity: 0.5, y: 100, transition: { duration: 1 } }}
           style={{ justifyContent: 'flex-end' }}
         >
           {['c', 'e', 's', 'p', 'e', 'd', 'e', 's'].map((letter, i) => (
             <motion.span
               key={i}
               initial={{ scale: 4.4 }}
-              animate={{ scale: [2.2, 1] }}
-              exit={{ scale: [1, 2.2] }}
-              transition={{ duration: 2 }}
+              animate={{ scale: [2.2, 1], transition: { duration: 2 } }}
+              exit={{ scale: [1, 2.2], transition: { duration: 1 } }}
             >
               {letter}
             </motion.span>
@@ -43,7 +41,7 @@ const CesInfo = () => {
             filter: 'grayscale(100%)',
             opacity: 0,
             x: -600,
-            transition: { duration: 1.5 },
+            transition: { duration: 1.2 },
           }}
         >
           <YoutubeEmbed embedId='69ts-dFvGGg' />
@@ -54,41 +52,71 @@ const CesInfo = () => {
           <div className='tag-wrap'>
             <motion.div
               initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0.5, x: 100 }}
-              transition={{ duration: 2, delay: 0.25 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                transition: { duration: 2, delay: 0.25 },
+              }}
+              exit={{
+                opacity: 0.5,
+                x: 100,
+                transition: { duration: 1, delay: 0.2 },
+              }}
               className='tag'
             >
               <motion.span
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1, scale: [2.2, 1] }}
-                exit={{ opacity: 0, scale: 2.2 }}
-                transition={{ duration: 1, delay: 0.5 }}
+                animate={{
+                  opacity: 1,
+                  scale: [2.2, 1],
+                  transition: { duration: 1, delay: 0.5 },
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 2.2,
+                  transition: { duration: 1, delay: 0.2 },
+                }}
               >
                 <em>That guy's phone is going to blow up.</em>
               </motion.span>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0.5, x: -100 }}
-              transition={{ duration: 2, delay: 1.5 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                transition: { duration: 2, delay: 1.5 },
+              }}
+              exit={{
+                opacity: 0.5,
+                x: -100,
+                transition: { duration: 1, delay: 0.2 },
+              }}
               className='tag-2'
             >
               <motion.span
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1, delay: 1.75 }}
+                animate={{
+                  opacity: 1,
+                  transition: { duration: 1, delay: 1.75 },
+                }}
+                exit={{ opacity: 0, transition: { duration: 1, delay: 0.2 } }}
               >
                 'DUDE, you just got ran over by Cespedes!'
               </motion.span>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: [0.5, 0], x: 100 }}
-              transition={{ duration: 2, delay: 1.75 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                transition: { duration: 2, delay: 1.75 },
+              }}
+              exit={{
+                opacity: [0.5, 0],
+                x: 100,
+                transition: { duration: 1, delay: 0.2 },
+              }}
               className='tag'
               style={{ justifyContent: 'flex-end' }}
             >

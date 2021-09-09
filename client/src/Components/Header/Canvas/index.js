@@ -59,8 +59,8 @@ const Canvas = ({
             setEdit={setEdit}
           />
         </Suspense>
-        <AnimatePresence>
-          {info && <BGInfo bg={bg} setInfo={setInfo} />}
+        <AnimatePresence layout>
+          {info && <BGInfo bg={bg} info={info} setInfo={setInfo} />}
         </AnimatePresence>
       </div>
     </div>

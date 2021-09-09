@@ -10,18 +10,16 @@ const BigSnowInfo = () => {
         <motion.div
           className='title'
           initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0.5, y: 100 }}
-          transition={{ duration: 2 }}
+          animate={{ opacity: 1, y: 0, transition: { duration: 2 } }}
+          exit={{ opacity: 0.5, y: 100, transition: { duration: 1 } }}
           style={{ justifyContent: 'flex-end' }}
         >
           {['b', 'i', 'g', '\xa0', 's', 'n', 'o', 'w'].map((letter, i) => (
             <motion.span
               key={i}
               initial={{ scale: 4.4 }}
-              animate={{ scale: [2.2, 1] }}
-              exit={{ scale: [1, 2.2] }}
-              transition={{ duration: 2 }}
+              animate={{ scale: [2.2, 1], transition: { duration: 2 } }}
+              exit={{ scale: [1, 2.2], transition: { duration: 1 } }}
             >
               {letter}
             </motion.span>
@@ -42,7 +40,7 @@ const BigSnowInfo = () => {
             filter: 'grayscale(100%)',
             opacity: 0,
             x: -600,
-            transition: { duration: 1.5 },
+            transition: { duration: 1.2 },
           }}
         >
           <img
@@ -62,7 +60,7 @@ const BigSnowInfo = () => {
             In August of 2011, I signed a lease for a storefront in East
             Williamsburg with a few of my closest friends and collaborators with
             the goal of creating an all ages art space that would allow us to
-            further emmerce ourselves in a community of artists and musicians
+            further emerce ourselves in a community of artists and musicians
             throughout Brooklyn. Our goal was to provide a space that would
             embrace and prioritize artists, hosting their events and offering
             the space as a canvas at no cost to the artist. Rather we found ways
@@ -125,7 +123,7 @@ const BigSnowInfo = () => {
             filter: 'grayscale(100%)',
             opacity: 0,
             x: -600,
-            transition: { duration: 1.5 },
+            transition: { duration: 1.2 },
           }}
         >
           <img
@@ -148,7 +146,7 @@ const BigSnowInfo = () => {
             filter: 'grayscale(100%)',
             opacity: 0,
             x: -600,
-            transition: { duration: 1.5 },
+            transition: { duration: 1.2 },
           }}
         >
           <img

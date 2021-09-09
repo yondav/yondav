@@ -58,6 +58,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 
 .album-wrap {
@@ -79,6 +80,10 @@
 .album-info {
   display: flex;
   flex-direction: column;
+}
+
+.album-info > * {
+  white-space: nowrap;
 }
 
 .album-name {
@@ -105,9 +110,14 @@
 
 @media only screen and (max-width: 950px) {
   .MuiGrid-grid-xs-12 {
-    padding: 0 24px 24px !important;
+    padding: 0 1.5rem !important;
+  }
+
+  .media-wrap {
+    padding: 1.5rem 0;
   }
 }
+
 @media only screen and (min-width: 600px) {
   .tag,
   .tag-2,

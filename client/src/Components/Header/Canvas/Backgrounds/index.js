@@ -96,15 +96,12 @@ const Background = ({ bg, info, setInfo }) => {
             bg === 'tape' ||
             bg === 'dogs') && (
             <AnimatePresence>
-              <motion.div
-                layout
-                className='bg-info'
-                // animate={{ opacity: [0.5, 1, 0.5] }}
-                // transition={{ repeat: Infinity, duration: 2, ease: 'easeIn' }}
-              >
+              <motion.div className='bg-info'>
                 <motion.div
                   style={{ display: 'flex', flexDirection: 'column' }}
-                  onTap={() => setInfo(true)}
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: 'easeIn' }}
+                  onTap={() => setInfo(bg)}
                 >
                   <BsChevronLeft />
                   <BsChevronLeft />
