@@ -207,10 +207,12 @@ const SheaInfo = () => {
               animate={{ opacity: 1, transition: { duration: 1, delay: 2.3 } }}
               exit={{ opacity: 0, transition: { duration: 1 } }}
             >
-              After about two years at Big Snow, I’d suffered a major injury and
-              the folks at Shea took me in so I went back to working shows
-              there. I even moved in for a bit and later started touring with
-              The So So Glos as their tour manager.
+              Shea kept on until June of 2017. In those years, Shea’s presence
+              opened a lot of doors for me and Adam, Nora, Luke, The So So Glos
+              have become some of my closest friends, collaborators and even
+              business partners. On the last night before Shea Stadium closed,
+              Greg Fox, Shea's first resident and ordained minister performed my
+              marriage on the roof with the only witness being Adam Reich.
               <br />
               <br />
               <a
