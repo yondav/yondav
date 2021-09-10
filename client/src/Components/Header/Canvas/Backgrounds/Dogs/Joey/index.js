@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { joey } from '../../../../../../data/svg/dogs';
-import Path from '../../../../../SVG';
+
+const Path = React.lazy(() => import('../../../../../SVG'));
 
 const Joey = () => {
   return (
@@ -17,7 +18,9 @@ const Joey = () => {
         className='joey'
       >
         <g>
-          <Path group={joey} />
+          <Suspense fallback=''>
+            <Path group={joey} />
+          </Suspense>
         </g>
       </svg>
     </motion.div>

@@ -1,6 +1,7 @@
 import React, { useState, Suspense } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import './canvas.css';
+
 const Background = React.lazy(() => import('./Backgrounds'));
 const Yoni = React.lazy(() => import('./Yoni'));
 const ColoringToolBar = React.lazy(() => import('./ColoringToolbar'));
@@ -42,8 +43,6 @@ const Canvas = ({
             customize={customize}
             setCustomize={setCustomize}
           />
-        </Suspense>
-        <Suspense fallback=''>
           <ColoringToolBar
             yoni={yoni}
             setYoni={setYoni}
@@ -59,8 +58,12 @@ const Canvas = ({
             setEdit={setEdit}
           />
         </Suspense>
-        <AnimatePresence layout>
-          {info && <BGInfo bg={bg} info={info} setInfo={setInfo} />}
+        <AnimatePresence>
+          {info && (
+            <Suspense fallback=''>
+              <BGInfo bg={bg} info={info} setInfo={setInfo} />
+            </Suspense>
+          )}
         </AnimatePresence>
       </div>
     </div>

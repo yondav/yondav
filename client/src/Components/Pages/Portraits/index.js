@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, Suspense } from 'react';
 import Title from '../../Title';
-import PortraitDisplay from './PortraitDisplay';
 
+const PortraitDisplay = React.lazy(() => import('./PortraitDisplay'));
 const Box = React.lazy(() => import('@material-ui/core/Box'));
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
 

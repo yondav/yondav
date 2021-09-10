@@ -29,7 +29,7 @@ const BGInfo = ({ bg, info, setInfo }) => {
         transition: { duration: 1, delay: 1.2 },
       }}
     >
-      <Suspense>
+      <Suspense fallback=''>
         <Box xs={{ flexGrow: 1 }} style={{ height: '100%' }}>
           <Grid
             container

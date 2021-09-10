@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { shea } from '../../../../../data/svg/shea';
 
@@ -27,7 +27,9 @@ const Shea = () => {
       transition={{ duration: 0.5 }}
     >
       <rect width='100%' height='100%' fill='#00b6ce' />
-      <Path group={shea(trans)} />
+      <Suspense fallback=''>
+        <Path group={shea(trans)} />
+      </Suspense>
     </motion.svg>
   );
 };

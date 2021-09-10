@@ -3,9 +3,10 @@ import { useViewportScroll, useTransform } from 'framer-motion';
 import Title from '../../Title';
 import { data } from '../../../data/pages/dev';
 import './dev.css';
-import Thumbnails from './Thumbnails';
+
 const Box = React.lazy(() => import('@material-ui/core/Box'));
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
+const Thumbnails = React.lazy(() => import('./Thumbnails'));
 
 const Dev = ({ isDesktop, darkMode }) => {
   const ref = useRef();

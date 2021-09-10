@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Draggable from 'react-draggable';
 import { motion } from 'framer-motion';
 import { paths } from '../../../../data/svg/yoni';
 import { yoniAnimation } from '../../../../Utils/animations';
+
 const Path = React.lazy(() => import('../../../SVG'));
 
 const style = {
@@ -64,17 +65,19 @@ const Yoni = ({ yoni, customColors, onCustomColor, erase, customize }) => {
             className='yoni'
           >
             <g>
-              <Path
-                group={paths(
-                  colorAction,
-                  fill,
-                  trans,
-                  yoni,
-                  customize,
-                  cursor,
-                  yoniAnimation
-                )}
-              />
+              <Suspense fallback=''>
+                <Path
+                  group={paths(
+                    colorAction,
+                    fill,
+                    trans,
+                    yoni,
+                    customize,
+                    cursor,
+                    yoniAnimation
+                  )}
+                />
+              </Suspense>
             </g>
           </motion.svg>
         </div>

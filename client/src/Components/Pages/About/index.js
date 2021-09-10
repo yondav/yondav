@@ -176,7 +176,7 @@ const About = ({ darkMode, isDesktop }) => {
             }}
             exit={{ height: 0, transition: { duration: 1, delay: 1 } }}
           >
-            <Suspense>
+            <Suspense fallback=''>
               <Grid
                 container
                 spacing={0}

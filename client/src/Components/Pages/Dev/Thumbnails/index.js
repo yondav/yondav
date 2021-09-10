@@ -29,7 +29,7 @@ const Thumbnails = ({
   return (
     <>
       {!feature && (
-        <Suspense>
+        <Suspense fallback=''>
           <Grid item xs={12} sm={6} key={app.id}>
             <motion.div
               className='thumb-wrap'
@@ -107,7 +107,7 @@ const Thumbnails = ({
       )}
       <AnimatePresence>
         {feature && (
-          <Suspense>
+          <Suspense fallback=''>
             <Grid item xs={12}>
               <motion.div
                 ref={featured}
