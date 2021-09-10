@@ -34,11 +34,15 @@
 }
 
 .bucket {
-  cursor: url('../../../Assets/cursors/bucket.svg') 15 15, auto;
+  cursor: url('https://res.cloudinary.com/yup-schlepp/image/upload/v1631252276/yondav/cursors/bucket_myoojd.svg')
+      15 15,
+    auto;
 }
 
 .eraser {
-  cursor: url('../../../Assets/cursors/eraser.svg') 15 15, auto;
+  cursor: url('https://res.cloudinary.com/yup-schlepp/image/upload/v1631252276/yondav/cursors/eraser_g2rohi.svg')
+      15 15,
+    auto;
 }
 
 .bg-feature {

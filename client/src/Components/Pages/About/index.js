@@ -1,13 +1,19 @@
 import React, { useState, useRef, useEffect, Suspense } from 'react';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import {
+  motion,
+  AnimatePresence,
+  useViewportScroll,
+  useTransform,
+} from 'framer-motion';
+import { AiOutlineClose } from 'react-icons/ai';
 import Title from '../../Title';
 import * as All from '../../Logos';
 import './about.css';
+import Contact from './Contact';
+import AnimatedLogo from './Animated_Logo';
 
 const Box = React.lazy(() => import('@material-ui/core/Box'));
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
-
-const ContactModal = React.lazy(() => import('../../Contact_Modal'));
 
 const About = ({ darkMode, isDesktop }) => {
   const ref = useRef(100);
@@ -29,6 +35,15 @@ const About = ({ darkMode, isDesktop }) => {
     [setPosition, position, ref]
   );
 
+  useEffect(() => {
+    if (contact) {
+      window.scrollTo({ top: ref.current.offsetTop, left: 0 });
+      document.querySelector('body').style.overflow = 'hidden';
+    } else {
+      document.querySelector('body').style.overflow = 'auto';
+    }
+  }, [contact, ref]);
+
   const handleClose = () => setContact(false);
 
   const { scrollYProgress } = useViewportScroll(0);
@@ -48,110 +63,155 @@ const About = ({ darkMode, isDesktop }) => {
     [-1000, -500, 0]
   );
   return (
-    <section ref={ref} id='about'>
-      {position !== undefined && (
-        <Suspense fallback=''>
-          <Box xs={{ flexGrow: 1 }}>
-            <Grid container spacing={6} style={{ margin: 0, width: '100%' }}>
-              <Grid item xs={12}>
-                <Title
-                  word={['a', 'b', 'o', 'u', 't']}
-                  y={position}
-                  start={position / 2}
-                  align={'flex-end'}
-                />
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <motion.div
-                  className='headshot'
-                  style={{
-                    opacity: !isNaN(opacityAnim) && opacityAnim,
-                    filter: saturate,
-                    x: isDesktop ? xPosAnim : 0,
-                  }}
-                >
-                  <img
-                    src='https://res.cloudinary.com/yup-schlepp/image/upload/v1629773834/yondav/IMG_8005_3_s8bzue.jpg'
-                    alt='yoni'
+    <>
+      <section ref={ref} id='about'>
+        {position !== undefined && (
+          <Suspense fallback=''>
+            <Box xs={{ flexGrow: 1 }}>
+              <Grid container spacing={6} style={{ margin: 0, width: '100%' }}>
+                <Grid item xs={12}>
+                  <Title
+                    word={['a', 'b', 'o', 'u', 't']}
+                    y={position}
+                    start={position / 2}
+                    align={'flex-end'}
                   />
-                </motion.div>
-              </Grid>
-              <Grid item xs={12} md={6} className='bio-cont'>
-                <motion.div
-                  className='bio'
-                  style={{ opacity: !isNaN(opacityAnim) && opacityAnim }}
-                >
-                  <p>
-                    I’m Yoni David - Full Stack Developer living in Queens, New
-                    York. I'm passioniate about design and animation while I
-                    prioritize intuitive and dynamic user experiences.
-                  </p>
-                  <p>
-                    I have a background in a range industries from music as a
-                    performer and audio engineer to real estate as a broker and
-                    co-founder of a boutique Brooklyn based agency.
-                  </p>
-                  <p>
-                    Motivated person, problem solver, independent employee and
-                    enthusiastic collaborator. My time away from the web is
-                    spent with my family, playing music or complaining about the
-                    New York Mets. Interested in the entire development spectrum
-                    and expanding my understanding of the technologies we use
-                    every day.
-                  </p>
-                </motion.div>
-                <div className='btn-cont'>
-                  <motion.button
-                    className='btn contact-btn'
-                    onClick={() => setContact(true)}
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <motion.div
+                    className='headshot'
+                    style={{
+                      opacity: !isNaN(opacityAnim) && opacityAnim,
+                      filter: saturate,
+                      x: isDesktop ? xPosAnim : 0,
+                    }}
                   >
-                    Let's Chat
-                  </motion.button>
-                </div>
-              </Grid>
-              <Grid item xs={12}>
-                <motion.div
-                  className='bullets tech-cont'
-                  style={{ opacity: !isNaN(opacityAnim) && opacityAnim }}
-                >
-                  <div className='tech'>
-                    {Object.values(All).map((logo, index) =>
-                      React.createElement(logo, {
-                        key: index,
-                        width: '1.2rem',
-                        height: '1.2rem',
-                        color: false,
-                        theme: darkMode,
-                        primaryDark: '#f4f4f4',
-                        primaryWhite: '#343434',
-                        hover: 'colorize',
-                        transition: 'ease-in',
-                      })
-                    )}
-                  </div>
-                  <p>
-                    <a
-                      href='https://github.com/yondav/react-logos'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='nav-link'
+                    <img
+                      src='https://res.cloudinary.com/yup-schlepp/image/upload/v1629773834/yondav/IMG_8005_3_s8bzue.jpg'
+                      alt='yoni'
+                    />
+                  </motion.div>
+                </Grid>
+                <Grid item xs={12} md={6} className='bio-cont'>
+                  <motion.div
+                    className='bio'
+                    style={{ opacity: !isNaN(opacityAnim) && opacityAnim }}
+                  >
+                    <p>
+                      I’m Yoni David - Full Stack Developer living in Queens,
+                      New York. I'm passioniate about design and animation while
+                      I prioritize intuitive and dynamic user experiences.
+                    </p>
+                    <p>
+                      I have a background in a range industries from music as a
+                      performer and audio engineer to real estate as a broker
+                      and co-founder of a boutique Brooklyn based agency.
+                    </p>
+                    <p>
+                      Motivated person, problem solver, independent employee and
+                      enthusiastic collaborator. My time away from the web is
+                      spent with my family, playing music or complaining about
+                      the New York Mets. Interested in the entire development
+                      spectrum and expanding my understanding of the
+                      technologies we use every day.
+                    </p>
+                  </motion.div>
+                  <div className='btn-cont'>
+                    <motion.button
+                      className='btn contact-btn'
+                      onClick={() => setContact(true)}
                     >
-                      React Logo Library
-                    </a>{' '}
-                    coming soon
-                  </p>
-                </motion.div>
+                      Let's Chat
+                    </motion.button>
+                  </div>
+                </Grid>
+                <Grid item xs={12}>
+                  <motion.div
+                    className='bullets tech-cont'
+                    style={{ opacity: !isNaN(opacityAnim) && opacityAnim }}
+                  >
+                    <div className='tech'>
+                      {Object.values(All).map((logo, index) =>
+                        React.createElement(logo, {
+                          key: index,
+                          width: '1.2rem',
+                          height: '1.2rem',
+                          color: false,
+                          theme: darkMode,
+                          primaryDark: '#f4f4f4',
+                          primaryWhite: '#343434',
+                          hover: 'colorize',
+                          transition: 'ease-in',
+                        })
+                      )}
+                    </div>
+                    <p>
+                      <a
+                        href='https://github.com/yondav/react-logos'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='nav-link'
+                      >
+                        React Logo Library
+                      </a>{' '}
+                      coming soon
+                    </p>
+                  </motion.div>
+                </Grid>
               </Grid>
-            </Grid>
-          </Box>
-        </Suspense>
-      )}
-      {contact && (
-        <Suspense fallback=''>
-          <ContactModal open={contact} handleClose={handleClose} />
-        </Suspense>
-      )}
-    </section>
+            </Box>
+          </Suspense>
+        )}
+      </section>
+      <AnimatePresence>
+        {contact && (
+          <motion.div
+            className='featured-app'
+            style={{ top: ref.current.offsetTop, width: '100vw', padding: 0 }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{
+              opacity: 1,
+              height: '100vh',
+              transition: { duration: 1, ease: 'anticipate' },
+            }}
+            exit={{ height: 0, transition: { duration: 1, delay: 1 } }}
+          >
+            <Suspense>
+              <Grid
+                container
+                spacing={0}
+                style={{
+                  margin: 0,
+                  width: '100%',
+                  height: '100%',
+                }}
+              >
+                <AiOutlineClose
+                  className='close contact-close'
+                  onClick={() => setContact(false)}
+                />
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
+                  style={isDesktop ? { height: '100%' } : { height: '50%' }}
+                >
+                  <AnimatedLogo />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
+                  style={isDesktop ? { height: '100%' } : { height: '50%' }}
+                >
+                  <Contact handleClose={handleClose} />
+                </Grid>
+              </Grid>
+            </Suspense>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

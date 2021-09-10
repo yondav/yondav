@@ -8,7 +8,6 @@ import {
   Node,
   ReactLogo,
 } from '../../Logos';
-import employee_tracker from '../../../Assets/dev/employee_tracker/employee-tracker.svg';
 
 export const data = [
   {
@@ -213,7 +212,7 @@ export const data = [
     gif: 'https://res.cloudinary.com/yup-schlepp/image/upload/v1629924626/yondav/dev/employee_tracker/employee_tracker_rz9zjl.gif',
     logo: () => (
       <img
-        src={employee_tracker}
+        src='https://res.cloudinary.com/yup-schlepp/image/upload/v1631252174/yondav/dev/employee_tracker/employee-tracker_mv3yxr.svg'
         alt='Employee Tracker'
         style={{ borderRadius: '50%' }}
       />

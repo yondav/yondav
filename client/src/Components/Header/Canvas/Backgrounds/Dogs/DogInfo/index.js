@@ -111,7 +111,16 @@ const DogInfo = () => {
               </motion.span>
             </motion.div>
           </div>
-          <div className='adopt-links'>
+          <motion.div
+            className='adopt-links'
+            initial={{ opacity: 0, y: 200 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, delay: 0.75 },
+            }}
+            exit={{ opacity: 0, y: 100, transition: { duration: 1.2 } }}
+          >
             <span className='tag'>Resources</span>
             <ul>
               {links.map((link, i) => (
@@ -128,7 +137,7 @@ const DogInfo = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
       </Grid>
     </>
