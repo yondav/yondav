@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const AnimatedLogo = () => {
@@ -14,11 +14,23 @@ const AnimatedLogo = () => {
 
   const handleMouseLeave = (e) => setMouse(false);
 
-  // useEffect(() => console.log(mouse), [mouse]);
   const yon = ['.', 'y', 'o', 'n'];
   const dav = ['d', 'a', 'v'];
   return (
-    <div className='logo-container'>
+    <motion.div
+      initial={{ x: -800 }}
+      animate={{
+        x: 0,
+        rotate: [0, 5, 0],
+        transition: { duration: 1, ease: 'anticipate', delay: 1.2 },
+      }}
+      exit={{
+        x: -800,
+        rotate: [0, -5, 0],
+        transition: { duration: 1, ease: 'anticipate' },
+      }}
+      className='logo-container'
+    >
       <div
         className='about-container'
         onMouseMove={handleMouseMove}
@@ -27,7 +39,7 @@ const AnimatedLogo = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, delay: 1 }}
+          transition={{ duration: 1.5, delay: 2.2 }}
           style={{ letterSpacing: mouse * 0.1 }}
           className='logo'
         >
@@ -62,7 +74,7 @@ const AnimatedLogo = () => {
           {/* <p style={{ color: 'var(--pr-white)' }}>{mouse}</p> */}
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

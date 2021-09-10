@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const NavLink = ({ link, hide, onClick }) => {
   useEffect(
     () =>
-      document.location.pathname == `/${link}`
+      document.location.pathname === `/${link}`
         ? document.querySelector(`.${link}`).focus()
         : '',
     [link]

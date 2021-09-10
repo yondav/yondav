@@ -1,10 +1,9 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import YDIcon from '../Icons/YD';
 import NavLink from './NavLink';
 import './nav.css';
-const ContactModal = React.lazy(() => import('../Contact_Modal'));
 
 const Nav = () => {
   return (

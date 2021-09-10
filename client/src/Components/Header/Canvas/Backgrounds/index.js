@@ -7,11 +7,9 @@ import { BsChevronLeft } from 'react-icons/bs';
 const Ces = React.lazy(() => import('./Ces/Ces/index'));
 const Joey = React.lazy(() => import('./Dogs/Joey'));
 const Leo = React.lazy(() => import('./Dogs/Leo'));
-const BGInfo = React.lazy(() => import('../BGInfo'));
 
 const Background = ({ bg, info, setInfo }) => {
   const [viewPort, setViewPort] = useState(false);
-  // const [info, setInfo] = useState(false);
 
   const updateMedia = () => {
     if (window.innerWidth > 989) {
@@ -23,6 +21,8 @@ const Background = ({ bg, info, setInfo }) => {
     if (window.innerWidth < 767) {
       setViewPort({ width: 415, height: 415, rect: 1060 });
     }
+
+    console.log(viewPort);
   };
 
   let color = backgrounds.colors.filter(
@@ -34,7 +34,6 @@ const Background = ({ bg, info, setInfo }) => {
   );
 
   useEffect(() => {
-    console.log(bg, color, illustration);
     if (window.innerWidth) {
       updateMedia();
     }
@@ -112,9 +111,6 @@ const Background = ({ bg, info, setInfo }) => {
           )}
         </div>
       </div>
-      {/* <AnimatePresence>
-        {info && <BGInfo bg={bg} setInfo={setInfo} />}
-      </AnimatePresence> */}
     </>
   );
 };

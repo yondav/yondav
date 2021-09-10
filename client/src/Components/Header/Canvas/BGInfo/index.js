@@ -11,6 +11,7 @@ const MusicInfo = React.lazy(() => import('../Backgrounds/Tape/MusicInfo'));
 const BigSnowInfo = React.lazy(() =>
   import('../Backgrounds/Big_Snow/BigSnowInfo')
 );
+const SheaInfo = React.lazy(() => import('../Backgrounds/Shea/SheaInfo'));
 
 const BGInfo = ({ bg, info, setInfo }) => {
   return (
@@ -46,6 +47,7 @@ const BGInfo = ({ bg, info, setInfo }) => {
             {info === 'ces' && <CesInfo />}
             {info === 'tape' && <MusicInfo />}
             {info === 'big_snow' && <BigSnowInfo />}
+            {info === 'shea' && <SheaInfo />}
           </Grid>
         </Box>
       </Suspense>
