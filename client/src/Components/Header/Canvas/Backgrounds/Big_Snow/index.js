@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { path } from '../../../../../data/svg/big_snow';
+import Loading from '../../../../Loading';
 
 const Path = React.lazy(() => import('../../../../SVG'));
 
@@ -15,7 +16,7 @@ const BigSnow = () => {
         viewBox='0 0 1060 1900'
       >
         <g>
-          <Suspense fallback=''>
+          <Suspense fallback={<Loading />}>
             <Path group={path} />
           </Suspense>
         </g>

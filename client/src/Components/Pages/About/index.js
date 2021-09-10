@@ -11,6 +11,7 @@ import * as All from '../../Logos';
 import './about.css';
 import Contact from './Contact';
 import AnimatedLogo from './Animated_Logo';
+import Loading from '../../Loading';
 
 const Box = React.lazy(() => import('@material-ui/core/Box'));
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
@@ -66,7 +67,7 @@ const About = ({ darkMode, isDesktop }) => {
     <>
       <section ref={ref} id='about'>
         {position !== undefined && (
-          <Suspense fallback=''>
+          <Suspense fallback={<Loading />}>
             <Box xs={{ flexGrow: 1 }}>
               <Grid container spacing={6} style={{ margin: 0, width: '100%' }}>
                 <Grid item xs={12}>
@@ -176,7 +177,7 @@ const About = ({ darkMode, isDesktop }) => {
             }}
             exit={{ height: 0, transition: { duration: 1, delay: 1 } }}
           >
-            <Suspense fallback=''>
+            <Suspense fallback={<Loading />}>
               <Grid
                 container
                 spacing={0}

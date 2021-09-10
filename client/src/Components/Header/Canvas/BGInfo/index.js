@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { AiOutlineClose } from 'react-icons/ai';
+import Loading from '../../../Loading';
 import './bg-info.css';
 
 const Box = React.lazy(() => import('@material-ui/core/Box'));
@@ -29,7 +30,7 @@ const BGInfo = ({ bg, info, setInfo }) => {
         transition: { duration: 1, delay: 1.2 },
       }}
     >
-      <Suspense fallback=''>
+      <Suspense fallback={<Loading />}>
         <Box xs={{ flexGrow: 1 }} style={{ height: '100%' }}>
           <Grid
             container

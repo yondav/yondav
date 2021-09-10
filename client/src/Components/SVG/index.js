@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
+import Loading from '../Loading';
 
 const Path = ({ group }) => {
   const attr = (path) => ({
@@ -39,7 +40,7 @@ const Path = ({ group }) => {
     <>
       {group.map((path, i) => {
         return (
-          <Suspense fallback='' key={i}>
+          <Suspense fallback={<Loading />} key={i}>
             {path.type === 'path' && <motion.path {...attr(path)} />}
             {path.type === 'polygon' && <motion.polygon {...attr(path)} />}
             {path.type === 'polyline' && <motion.polyline {...attr(path)} />}

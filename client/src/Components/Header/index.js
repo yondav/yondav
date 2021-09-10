@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import Nav from '../Nav';
+import Loading from '../Loading';
 import './header.css';
 
 const Icons = React.lazy(() => import('./Icons'));
@@ -37,7 +38,7 @@ const Header = ({ updateMode }) => {
   return (
     <header>
       <Nav />
-      <Suspense fallback={''}>
+      <Suspense fallback={<Loading />}>
         <Icons updateMode={updateMode} />
         <Canvas
           bg={bg}

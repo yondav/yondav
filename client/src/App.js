@@ -6,6 +6,7 @@ import Dev from './Components/Pages/Dev';
 import Portraits from './Components/Pages/Portraits';
 import About from './Components/Pages/About';
 import Footer from './Components/Footer';
+import Loading from './Components/Loading';
 
 const App = () => {
   const [isDesktop, setDesktop] = useState(false);

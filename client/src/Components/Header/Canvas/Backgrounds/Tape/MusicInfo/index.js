@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { projects } from '../../../../../../data/pages/music';
+import Loading from '../../../../../Loading';
 
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
 
@@ -8,7 +9,7 @@ const MusicInfo = () => {
   return (
     <>
       {projects.map((project, i) => (
-        <Suspense fallback='' key={i}>
+        <Suspense fallback={<Loading />} key={i}>
           <Grid item xs={12}>
             <Grid container spacing={6} style={{ margin: 0, width: '100%' }}>
               <Grid item xs={12}>

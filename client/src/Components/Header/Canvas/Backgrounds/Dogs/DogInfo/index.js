@@ -2,13 +2,14 @@ import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { links } from '../../../../../../data/pages/dogs';
 import { IoIosPaw } from 'react-icons/io';
+import Loading from '../../../../../Loading';
 
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
 
 const DogInfo = () => {
   return (
     <>
-      <Suspense fallback=''>
+      <Suspense fallback={<Loading />}>
         <Grid item xs={12}>
           <motion.div
             className='title'

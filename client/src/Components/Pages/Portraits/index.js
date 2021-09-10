@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, Suspense } from 'react';
 import Title from '../../Title';
+import Loading from '../../Loading';
 
 const PortraitDisplay = React.lazy(() => import('./PortraitDisplay'));
 const Box = React.lazy(() => import('@material-ui/core/Box'));
@@ -27,7 +28,7 @@ const Portraits = ({ isDesktop }) => {
   return (
     <section ref={ref} id='portraits'>
       {position !== undefined && (
-        <Suspense fallback=''>
+        <Suspense fallback={<Loading />}>
           <Box xs={{ flexGrow: 1 }}>
             <Grid
               container

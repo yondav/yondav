@@ -5,7 +5,7 @@ const YDIcon = () => {
   return (
     <div className='circle'>
       <span className='y'>y</span>
-      <div className='d'>d</div>
+      <span className='d'>d</span>
     </div>
   );
 };

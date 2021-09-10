@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
+import Loading from '../../../../../Loading';
 
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
 const YoutubeEmbed = React.lazy(() => import('../../../../../YoutubeEmbed'));
@@ -7,7 +8,7 @@ const YoutubeEmbed = React.lazy(() => import('../../../../../YoutubeEmbed'));
 const CesInfo = () => {
   return (
     <>
-      <Suspense fallback=''>
+      <Suspense fallback={<Loading />}>
         <Grid item xs={12}>
           <motion.div
             className='title'

@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { shea } from '../../../../../data/svg/shea';
+import Loading from '../../../../Loading';
 
 const Path = React.lazy(() => import('../../../../SVG'));
 
@@ -27,7 +28,7 @@ const Shea = () => {
       transition={{ duration: 0.5 }}
     >
       <rect width='100%' height='100%' fill='#00b6ce' />
-      <Suspense fallback=''>
+      <Suspense fallback={<Loading />}>
         <Path group={shea(trans)} />
       </Suspense>
     </motion.svg>

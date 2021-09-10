@@ -12,6 +12,7 @@ import {
   FiImage,
   RiDragMoveFill,
 } from 'react-icons/all';
+import Loading from '../../../Loading';
 import './coloring_tool_bar.css';
 
 const BGSelector = React.lazy(() => import('./BGSelector'));
@@ -141,7 +142,7 @@ const ColoringToolBar = ({
                     <FiImage />
                   </motion.button>
                 </div>
-                <Suspense fallback=''>
+                <Suspense fallback={<Loading />}>
                   {bgOpt && <BGSelector setBg={setBg} />}
                   {displayColorPicker && (
                     <ColorSelector

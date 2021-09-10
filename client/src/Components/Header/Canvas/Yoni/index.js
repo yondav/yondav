@@ -3,6 +3,7 @@ import Draggable from 'react-draggable';
 import { motion } from 'framer-motion';
 import { paths } from '../../../../data/svg/yoni';
 import { yoniAnimation } from '../../../../Utils/animations';
+import Loading from '../../../Loading';
 
 const Path = React.lazy(() => import('../../../SVG'));
 
@@ -65,7 +66,7 @@ const Yoni = ({ yoni, customColors, onCustomColor, erase, customize }) => {
             className='yoni'
           >
             <g>
-              <Suspense fallback=''>
+              <Suspense fallback={<Loading />}>
                 <Path
                   group={paths(
                     colorAction,

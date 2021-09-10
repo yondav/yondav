@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RiGithubLine, VscLinkExternal, AiOutlineClose } from 'react-icons/all';
+import Loading from '../../../Loading';
 
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
 
@@ -29,7 +30,7 @@ const Thumbnails = ({
   return (
     <>
       {!feature && (
-        <Suspense fallback=''>
+        <Suspense fallback={<Loading />}>
           <Grid item xs={12} sm={6} key={app.id}>
             <motion.div
               className='thumb-wrap'
@@ -107,7 +108,7 @@ const Thumbnails = ({
       )}
       <AnimatePresence>
         {feature && (
-          <Suspense fallback=''>
+          <Suspense fallback={<Loading />}>
             <Grid item xs={12}>
               <motion.div
                 ref={featured}

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './backgrounds.css';
 import { backgrounds } from './backgrounds';
 import { BsChevronLeft } from 'react-icons/bs';
+import Loading from '../../../Loading';
 
 const Ces = React.lazy(() => import('./Ces/Ces/index'));
 const Joey = React.lazy(() => import('./Dogs/Joey'));
@@ -79,12 +80,12 @@ const Background = ({ bg, info, setInfo }) => {
               })
             )}
           {bg === 'ces' && (
-            <Suspense fallback=''>
+            <Suspense fallback={<Loading />}>
               <Ces />
             </Suspense>
           )}
           {bg === 'dogs' && (
-            <Suspense fallback=''>
+            <Suspense fallback={<Loading />}>
               <Joey />
               <Leo />
             </Suspense>

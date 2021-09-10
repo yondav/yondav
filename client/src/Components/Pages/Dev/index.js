@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, Suspense } from 'react';
 import { useViewportScroll, useTransform } from 'framer-motion';
 import Title from '../../Title';
 import { data } from '../../../data/pages/dev';
+import Loading from '../../Loading';
 import './dev.css';
 
 const Box = React.lazy(() => import('@material-ui/core/Box'));
@@ -44,7 +45,7 @@ const Dev = ({ isDesktop, darkMode }) => {
 
   return (
     <section ref={ref} id='dev'>
-      <Suspense fallback=''>
+      <Suspense fallback={<Loading />}>
         <Box xs={{ flexGrow: 1 }}>
           <Grid container spacing={6} style={{ margin: 0, width: '100%' }}>
             <Grid item xs={12}>

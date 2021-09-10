@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { crowd } from '../../../../../../data/svg/ces';
+import Loading from '../../../../../Loading';
 
 const Path = React.lazy(() => import('../../../../../SVG'));
 
@@ -13,7 +14,7 @@ const Crowd = () => {
       transition={{ duration: 0.5 }}
       viewBox='0 0 1060 1900'
     >
-      <Suspense fallback=''>
+      <Suspense fallback={<Loading />}>
         <Path group={crowd} />
       </Suspense>
     </motion.svg>

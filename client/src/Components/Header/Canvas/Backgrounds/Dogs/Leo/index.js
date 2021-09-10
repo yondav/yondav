@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { leo } from '../../../../../../data/svg/dogs';
+import Loading from '../../../../../Loading';
 
 const Path = React.lazy(() => import('../../../../../SVG'));
 
@@ -17,7 +18,7 @@ const Leo = () => {
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 1060 1900'
       >
-        <Suspense fallback=''>
+        <Suspense fallback={<Loading />}>
           <Path group={leo} />
         </Suspense>
       </svg>
