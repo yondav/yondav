@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { paths } from './content';
+import { ces } from '../../../../../../data/svg/ces';
 const Path = React.lazy(() => import('../../../../../SVG'));
 
 const Ces = () => {
@@ -16,7 +16,7 @@ const Ces = () => {
         viewBox='0 0 1060 1060'
         className='cespedes'
       >
-        <Path group={paths} />
+        <Path group={ces} />
       </motion.svg>
     </motion.div>
   );

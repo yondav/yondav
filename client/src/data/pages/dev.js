@@ -7,7 +7,7 @@ import {
   MySQL,
   Node,
   ReactLogo,
-} from '../../Logos';
+} from '../../Components/Logos';
 
 export const data = [
   {

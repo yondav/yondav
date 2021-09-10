@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, Suspense } from 'react';
 import { useViewportScroll, useTransform } from 'framer-motion';
 import Title from '../../Title';
-import { data } from './data';
+import { data } from '../../../data/pages/dev';
 import './dev.css';
 import Thumbnails from './Thumbnails';
 const Box = React.lazy(() => import('@material-ui/core/Box'));

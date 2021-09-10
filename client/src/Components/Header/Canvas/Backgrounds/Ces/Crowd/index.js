@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { paths } from './content';
+import { crowd } from '../../../../../../data/svg/ces';
 const Path = React.lazy(() => import('../../../../../SVG'));
 
 const Crowd = () => {
@@ -12,7 +12,7 @@ const Crowd = () => {
       transition={{ duration: 0.5 }}
       viewBox='0 0 1060 1900'
     >
-      <Path group={paths} />
+      <Path group={crowd} />
     </motion.svg>
   );
 };

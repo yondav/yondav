@@ -1,6 +1,6 @@
-import { letters, fish } from '../../../../../Utils/animations';
+import { letters, fish } from '../../Utils/animations';
 
-export const paths = (trans) => [
+export const shea = (trans) => [
   {
     initial: letters.hidden,
     animate: letters.visible,

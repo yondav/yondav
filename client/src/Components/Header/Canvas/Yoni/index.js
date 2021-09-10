@@ -1,7 +1,7 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 import { motion } from 'framer-motion';
-import { paths } from './content';
+import { paths } from '../../../../data/svg/yoni';
 import { yoniAnimation } from '../../../../Utils/animations';
 const Path = React.lazy(() => import('../../../SVG'));
 

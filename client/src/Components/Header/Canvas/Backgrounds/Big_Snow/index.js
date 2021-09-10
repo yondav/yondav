@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { path } from './content';
+import { path } from '../../../../../data/svg/big_snow';
 const Path = React.lazy(() => import('../../../../SVG'));
 
 const BigSnow = () => {

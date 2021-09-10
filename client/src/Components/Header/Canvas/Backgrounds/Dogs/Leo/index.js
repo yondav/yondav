@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { path } from './content';
+import { leo } from '../../../../../../data/svg/dogs';
 
 const Path = React.lazy(() => import('../../../../../SVG'));
 
@@ -17,7 +17,7 @@ const Leo = () => {
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 1060 1900'
       >
-        <Path group={path} />
+        <Path group={leo} />
       </svg>
     </motion.div>
   );

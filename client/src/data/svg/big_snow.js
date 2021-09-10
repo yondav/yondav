@@ -1,4 +1,4 @@
-import { varet, big_snow } from '../../../../../Utils/animations';
+import { varet, big_snow } from '../../Utils/animations';
 
 export const path = [
   {

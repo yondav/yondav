@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { path } from './content';
+import { joey } from '../../../../../../data/svg/dogs';
 import Path from '../../../../../SVG';
 
 const Joey = () => {
@@ -17,7 +17,7 @@ const Joey = () => {
         className='joey'
       >
         <g>
-          <Path group={path} />
+          <Path group={joey} />
         </g>
       </svg>
     </motion.div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { stand, left, right, heads } from './content';
+import { stand, left, right, heads } from '../../../../../data/svg/tape';
 import Path from '../../../../SVG';
 
 const Tape = () => {

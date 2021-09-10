@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { projects } from './content';
+import { projects } from '../../../../../../data/pages/music';
 
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
 
