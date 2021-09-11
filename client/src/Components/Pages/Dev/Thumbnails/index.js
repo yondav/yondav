@@ -40,19 +40,13 @@ const Thumbnails = ({
                 x: isDesktop ? xPosAnim : 0,
               }}
             >
-              <div
-                className='thumbnail'
-                onClick={() => setFeature(true)}
-                onMouseEnter={(e) => {
-                  e.currentTarget.firstChild.src = app.gif;
-                  setHover(true);
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.firstChild.src = app.thumbnail;
-                  setHover(false);
-                }}
-              >
-                <img src={app.thumbnail} alt={app.app} />
+              <div className='thumbnail' onClick={() => setFeature(true)}>
+                <img
+                  src={!hover ? app.thumbnail : app.gif}
+                  alt={app.app}
+                  onMouseEnter={() => setHover(true)}
+                  onMouseLeave={() => setHover(false)}
+                />
                 <AnimatePresence>
                   {hover && (
                     <>
@@ -77,23 +71,26 @@ const Thumbnails = ({
                         exit={{ height: 0, opacity: 0 }}
                         transition={{
                           duration: 1.2,
-                          delay: 0.25,
                           ease: 'anticipate',
                         }}
                       >
                         <motion.h1
                           initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 1, delay: 1 }}
+                          animate={{
+                            opacity: 1,
+                            transition: { duration: 1, delay: 1 },
+                          }}
+                          exit={{ opacity: 0, transition: { duration: 1 } }}
                         >
                           {app.app}
                         </motion.h1>
                         <motion.h2
                           initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 1, delay: 1.2 }}
+                          animate={{
+                            opacity: 1,
+                            transition: { duration: 1, delay: 1.2 },
+                          }}
+                          exit={{ opacity: 0, transiotion: { duration: 1 } }}
                         >
                           <em>{app.tag}</em>
                         </motion.h2>
@@ -120,7 +117,7 @@ const Thumbnails = ({
                   height: '100vh',
                   transition: { duration: 1, ease: 'anticipate' },
                 }}
-                exit={{ y: 800, transition: { duration: 1, delay: 1 } }}
+                exit={{ y: 800, transition: { duration: 1, delay: 0.5 } }}
               >
                 <AiOutlineClose
                   className='close'
@@ -132,18 +129,23 @@ const Thumbnails = ({
                 <motion.div
                   className='featured-logo'
                   initial={{ opacity: 0, scale: 4 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ scale: 4, opacity: 0 }}
-                  transition={{ duration: 1, delay: 0.5 }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    transition: { duration: 1, delay: 0.5 },
+                  }}
+                  exit={{ scale: 4, opacity: 0, transition: { duration: 1 } }}
                 >
                   {app.logo()}
                 </motion.div>
 
                 <motion.div
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1, delay: 0.5 }}
+                  animate={{
+                    opacity: 1,
+                    transition: { duration: 1, delay: 0.5 },
+                  }}
+                  exit={{ opacity: 0, transition: { duration: 1 } }}
                   className='featured-body'
                 >
                   <div className='mockup'>
@@ -158,16 +160,17 @@ const Thumbnails = ({
                             opacity: 1,
                             transition: { duration: 1, delay: 0.5 },
                           }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 1 }}
+                          exit={{ opacity: 0, transition: { duration: 1 } }}
                         >
                           {app.app}
                         </motion.h1>
                         <motion.h6
                           initial={{ x: 1000 }}
-                          animate={{ x: 0 }}
-                          exit={{ x: 1000 }}
-                          transition={{ duration: 1, delay: 0.5 }}
+                          animate={{
+                            x: 0,
+                            transition: { duration: 1, delay: 0.5 },
+                          }}
+                          exit={{ x: 1000, transition: { duration: 1 } }}
                         >
                           <em>{app.tag}</em>
                         </motion.h6>
@@ -178,9 +181,11 @@ const Thumbnails = ({
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1, delay: 0.5 }}
+                  animate={{
+                    opacity: 1,
+                    transition: { duration: 1, delay: 0.5 },
+                  }}
+                  exit={{ opacity: 0, transition: { duration: 1 } }}
                   className='featured-icons'
                 >
                   <div className='featured-links'>

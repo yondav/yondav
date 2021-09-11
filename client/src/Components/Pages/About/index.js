@@ -175,7 +175,7 @@ const About = ({ darkMode, isDesktop }) => {
               height: '100vh',
               transition: { duration: 1, ease: 'anticipate' },
             }}
-            exit={{ height: 0, transition: { duration: 1, delay: 1 } }}
+            exit={{ height: 0, transition: { duration: 1, delay: 0.5 } }}
           >
             <Suspense fallback={<Loading />}>
               <Grid

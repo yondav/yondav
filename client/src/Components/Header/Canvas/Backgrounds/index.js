@@ -96,7 +96,7 @@ const Background = ({ bg, info, setInfo }) => {
             bg === 'tape' ||
             bg === 'dogs') && (
             <AnimatePresence>
-              <motion.div className='bg-info'>
+              <motion.div className='bg-info' onTap={() => setInfo(bg)}>
                 <motion.div
                   style={{ display: 'flex', flexDirection: 'column' }}
                   animate={{ opacity: [0.5, 1, 0.5] }}
