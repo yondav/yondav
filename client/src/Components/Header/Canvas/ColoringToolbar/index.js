@@ -1,22 +1,17 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, Suspense } from 'react';
 import Draggable from 'react-draggable';
 import { motion } from 'framer-motion';
 import {
   VscChromeMinimize,
   VscArrowLeft,
   AiOutlineExpandAlt,
-  BiEraser,
-  BiColorFill,
-  MdDoNotDisturb,
-  MdSettingsBackupRestore,
-  FiImage,
-  RiDragMoveFill,
 } from 'react-icons/all';
 import Loading from '../../../Loading';
 import './coloring_tool_bar.css';
 
-const BGSelector = React.lazy(() => import('./BGSelector'));
-const ColorSelector = React.lazy(() => import('./ColorSelector'));
+const ControlPanel = React.lazy(() => import('../ControlPanel'));
+const BGSelector = React.lazy(() => import('../BGSelector'));
+const ColorSelector = React.lazy(() => import('../ColorSelector'));
 
 const ColoringToolBar = ({
   setYoni,
@@ -33,9 +28,7 @@ const ColoringToolBar = ({
 }) => {
   const [min, setMin] = useState(false);
   const [bgOpt, setBgOpt] = useState(false);
-  // const [edit, setEdit] = useState(false);
 
-  // useEffect(() => console.log(bgOpt), [bgOpt]);
   return (
     <>
       {edit ? (
@@ -74,73 +67,15 @@ const ColoringToolBar = ({
             {!min && (
               <div className='control-panel-btns'>
                 <div className='control-panel'>
-                  <motion.button
-                    onTap={() => {
-                      setDisplayColorPicker(false);
-                      setCustomize(false);
-                      setYoni('color');
-                    }}
-                    className='btn original-btn control-btn'
-                    title='back to original'
-                  >
-                    <MdSettingsBackupRestore />
-                  </motion.button>
-                  <motion.button
-                    onTap={() => {
-                      setBgOpt(false);
-                      setCustomColors(Array(25).fill('#f4f4f4'));
-                      setYoni('clear');
-                    }}
-                    className='btn yoni-btn control-btn'
-                    title='yoni'
-                  >
-                    <MdDoNotDisturb />
-                  </motion.button>
-                  <motion.button
-                    onTap={() => {
-                      setBgOpt(false);
-                      setDisplayColorPicker(false);
-                      setCustomize('move');
-                    }}
-                    className='btn move-btn control-btn'
-                    title='move and resize'
-                  >
-                    <RiDragMoveFill />
-                  </motion.button>
-                  <motion.button
-                    onTap={() => {
-                      setBgOpt(false);
-                      setCustomize('color');
-                      setErase(true);
-                    }}
-                    className='btn eraser-btn control-btn'
-                    title='eraser'
-                  >
-                    <BiEraser />
-                  </motion.button>
-                  <motion.button
-                    onTap={() => {
-                      setBgOpt(false);
-                      setCustomize('color');
-                      setDisplayColorPicker(true);
-                      setErase(false);
-                    }}
-                    className='btn fill-btn control-btn'
-                    title='fill'
-                  >
-                    <BiColorFill />
-                  </motion.button>
-                  <motion.button
-                    onTap={() => {
-                      setBgOpt(true);
-                      customize ? setCustomize('color') : setCustomize(false);
-                      setDisplayColorPicker(false);
-                    }}
-                    className='btn bg-btn control-btn'
-                    title='backgrounds'
-                  >
-                    <FiImage />
-                  </motion.button>
+                  <ControlPanel
+                    setDisplayColorPicker={setDisplayColorPicker}
+                    setCustomize={setCustomize}
+                    customize={customize}
+                    setYoni={setYoni}
+                    setBgOpt={setBgOpt}
+                    setCustomColors={setCustomColors}
+                    setErase={setErase}
+                  />
                 </div>
                 <Suspense fallback={<Loading />}>
                   {bgOpt && <BGSelector setBg={setBg} />}

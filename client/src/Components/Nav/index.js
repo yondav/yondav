@@ -5,6 +5,11 @@ import YDIcon from '../Icons/YD';
 import NavLink from './NavLink';
 import './nav.css';
 
+const links = [
+  { name: 'dev', delay: 0 },
+  { name: 'portraits', delay: 0.5 },
+  { name: 'about', delay: 1 },
+];
 const Nav = () => {
   return (
     <nav>
@@ -16,27 +21,16 @@ const Nav = () => {
         >
           <YDIcon />
         </Link>
-        <motion.div
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          transition={{ ease: 'easeIn', duration: 0.5, delay: 0 }}
-        >
-          <NavLink link='dev' />
-        </motion.div>
-        <motion.div
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          transition={{ ease: 'easeIn', duration: 0.5, delay: 0.5 }}
-        >
-          <NavLink link='portraits' />
-        </motion.div>
-        <motion.div
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          transition={{ ease: 'easeIn', duration: 0.5, delay: 1 }}
-        >
-          <NavLink link='about' />
-        </motion.div>
+        {links.map((link, i) => (
+          <motion.div
+            key={i}
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ ease: 'easeIn', duration: 0.5, delay: link.delay }}
+          >
+            <NavLink link={link.name} />
+          </motion.div>
+        ))}
       </div>
     </nav>
   );
