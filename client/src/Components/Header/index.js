@@ -3,7 +3,7 @@ import Nav from '../Nav';
 import Loading from '../Loading';
 import './header.css';
 
-const Icons = React.lazy(() => import('./Icons'));
+const Icons = React.lazy(() => import('../Icons/Icons'));
 const Canvas = React.lazy(() => import('./Canvas'));
 
 const Header = ({ updateMode }) => {
@@ -31,15 +31,13 @@ const Header = ({ updateMode }) => {
 
     localStorage.setItem('custom_colors', JSON.stringify(customColors));
     bg && localStorage.setItem('bg', JSON.stringify(bg));
-
-    console.log(bg);
   }, [erase, bg, customColors]);
 
   return (
     <header>
       <Nav />
       <Suspense fallback={<Loading />}>
-        <Icons updateMode={updateMode} />
+        <Icons updateMode={updateMode} className='icons' />
         <Canvas
           bg={bg}
           setBg={setBg}

@@ -109,7 +109,7 @@
 }
 
 @media only screen and (max-width: 950px) {
-  .MuiGrid-grid-xs-12 {
+  .pt-0 {
     padding: 0 1.5rem !important;
   }
 

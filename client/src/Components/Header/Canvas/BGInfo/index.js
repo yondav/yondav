@@ -14,7 +14,7 @@ const BigSnowInfo = React.lazy(() =>
 );
 const SheaInfo = React.lazy(() => import('../Backgrounds/Shea/SheaInfo'));
 
-const BGInfo = ({ bg, info, setInfo }) => {
+const BGInfo = ({ info, setInfo }) => {
   return (
     <motion.div
       className='bg-feature'
@@ -22,7 +22,6 @@ const BGInfo = ({ bg, info, setInfo }) => {
       animate={{
         opacity: 1,
         x: 0,
-        // height: '100vh',
         transition: { duration: 1, ease: 'anticipate' },
       }}
       exit={{

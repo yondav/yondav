@@ -186,6 +186,12 @@
   display: flex;
 }
 
+@media only screen and (width: 320px) {
+  .mockup img {
+    width: 80%;
+  }
+}
+
 @media only screen and (min-width: 600px) {
   .thumbnail {
     max-width: 75%;
@@ -199,7 +205,7 @@
   }
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 850px) {
   .featured-app {
     padding: 0 5rem;
   }

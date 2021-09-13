@@ -9,7 +9,6 @@
   font-size: 1.9em;
   border-radius: 100%;
   transition: var(--transition);
-  /* box-shadow: var(--shadow); */
   cursor: pointer;
   text-decoration: none;
 }

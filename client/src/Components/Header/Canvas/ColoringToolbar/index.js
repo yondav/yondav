@@ -35,7 +35,7 @@ const ColoringToolBar = ({
   const [bgOpt, setBgOpt] = useState(false);
   // const [edit, setEdit] = useState(false);
 
-  useEffect(() => console.log(bgOpt), [bgOpt]);
+  // useEffect(() => console.log(bgOpt), [bgOpt]);
   return (
     <>
       {edit ? (

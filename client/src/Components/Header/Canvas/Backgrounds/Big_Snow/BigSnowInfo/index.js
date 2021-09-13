@@ -51,7 +51,7 @@ const BigSnowInfo = () => {
             />
           </motion.div>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} className='pt-0'>
           <div className='text-content' style={{ justifyContent: 'center' }}>
             <motion.p
               className='big-snow-desc'
@@ -113,7 +113,7 @@ const BigSnowInfo = () => {
             </motion.p>
           </div>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} className='pt-0'>
           <motion.div
             className='media-wrap'
             initial={{ filter: 'grayscale(100%)', opacity: 0, x: -400 }}
@@ -136,7 +136,7 @@ const BigSnowInfo = () => {
             />
           </motion.div>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} className='pt-0'>
           <motion.div
             className='media-wrap'
             initial={{ filter: 'grayscale(100%)', opacity: 0, x: -400 }}
@@ -160,7 +160,7 @@ const BigSnowInfo = () => {
             />
           </motion.div>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} className='pt-0'>
           <div className='text-content' style={{ justifyContent: 'center' }}>
             <motion.p
               className='big-snow-desc'
