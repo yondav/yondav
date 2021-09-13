@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
+import { Document, Page } from 'react-pdf/dist/umd/entry.webpack';
 import resume from '../../Assets/yondav-dev-resume-2021.pdf';
 
 const Resume = () => {
