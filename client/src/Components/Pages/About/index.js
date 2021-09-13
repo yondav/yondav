@@ -102,7 +102,7 @@ const About = ({ darkMode, isDesktop, resume, setResume }) => {
                   >
                     <p>
                       I’m Yoni David - Full Stack Developer living in Queens,
-                      New York. I'm passioniate about design and animation while
+                      New York. I'm passionate about design and animation while
                       I prioritize intuitive and dynamic user experiences.
                     </p>
                     <p>
