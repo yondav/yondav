@@ -220,6 +220,7 @@ const SheaInfo = () => {
                 target='_blank'
                 rel='noopener noreferrer'
                 className='nav-link'
+                style={{ textDecoration: 'underline' }}
               >
                 Shea Forever
               </a>

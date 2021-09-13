@@ -5,13 +5,12 @@ import {
   RiInstagramLine,
   RiLinkedinLine,
   RiGithubLine,
-  FiDownload,
+  MdPictureAsPdf,
 } from 'react-icons/all';
 import { icons, icon } from '../../Utils/animations';
-import resume from '../../Assets/yoni_david_resume_placeholder.pdf';
 import './footer.css';
 
-const Footer = ({ updateMode }) => {
+const Footer = ({ updateMode, setResume }) => {
   return (
     <motion.footer
       layout
@@ -26,7 +25,12 @@ const Footer = ({ updateMode }) => {
         initial='hidden'
         animate='visible'
       >
-        <motion.div variants={icon} className='icon' onClick={updateMode}>
+        <motion.div
+          variants={icon}
+          className='icon'
+          onClick={updateMode}
+          title='contrast'
+        >
           <RiContrastLine />
         </motion.div>
         <a
@@ -35,7 +39,7 @@ const Footer = ({ updateMode }) => {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <motion.div variants={icon} className='icon'>
+          <motion.div variants={icon} className='icon' title='github'>
             <RiGithubLine className='github' />
           </motion.div>
         </a>
@@ -45,7 +49,7 @@ const Footer = ({ updateMode }) => {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <motion.div className='icon' variants={icon}>
+          <motion.div className='icon' variants={icon} title='instagram'>
             <RiInstagramLine className='instagram' />
           </motion.div>
         </a>
@@ -55,20 +59,18 @@ const Footer = ({ updateMode }) => {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <motion.div className='icon' variants={icon}>
+          <motion.div className='icon' variants={icon} title='linkedin'>
             <RiLinkedinLine className='linkedin' />
           </motion.div>
         </a>
-        <a
-          href={resume}
-          download='yoni_david_resume_2021'
-          className='resume-link'
+        <motion.div
+          className='icon'
+          variants={icon}
           title='resume'
+          onTap={() => setResume(true)}
         >
-          <motion.div className='icon' variants={icon}>
-            <FiDownload className='resume' />
-          </motion.div>
-        </a>
+          <MdPictureAsPdf className='resume' />
+        </motion.div>
       </motion.div>
     </motion.footer>
   );

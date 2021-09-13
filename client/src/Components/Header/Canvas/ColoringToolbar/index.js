@@ -42,8 +42,8 @@ const ColoringToolBar = ({
         <Draggable handle='.controls'>
           <motion.div
             layout
-            initial={{ opacity: 0, width: 0 }}
-            animate={{ opacity: 1, width: 'auto' }}
+            initial={{ width: 0 }}
+            animate={{ width: 'auto' }}
             exit={{ opacity: 0, width: 0 }}
             transition={{ duration: 0.3, ease: 'anticipate' }}
             className='tool-bar'

@@ -192,6 +192,7 @@ const BigSnowInfo = () => {
                 target='_blank'
                 rel='noopener noreferrer'
                 className='nav-link'
+                style={{ textDecoration: 'underline' }}
               >
                 here
               </a>

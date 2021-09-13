@@ -5,18 +5,20 @@ import {
   useViewportScroll,
   useTransform,
 } from 'framer-motion';
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose, FiDownload } from 'react-icons/all';
 import Title from '../../Title';
 import * as All from '../../Logos';
 import './about.css';
 import Contact from './Contact';
 import AnimatedLogo from './Animated_Logo';
 import Loading from '../../Loading';
+import res from '../../../Assets/yondav-dev-resume-2021.pdf';
 
+const Resume = React.lazy(() => import('../../Resume'));
 const Box = React.lazy(() => import('@material-ui/core/Box'));
 const Grid = React.lazy(() => import('@material-ui/core/Grid'));
 
-const About = ({ darkMode, isDesktop }) => {
+const About = ({ darkMode, isDesktop, resume, setResume }) => {
   const ref = useRef(100);
   const [contact, setContact] = useState(false);
   const [position, setPosition] = useState();
@@ -37,13 +39,13 @@ const About = ({ darkMode, isDesktop }) => {
   );
 
   useEffect(() => {
-    if (contact) {
+    if (contact || resume) {
       window.scrollTo({ top: ref.current.offsetTop, left: 0 });
       document.querySelector('body').style.overflow = 'hidden';
     } else {
       document.querySelector('body').style.overflow = 'auto';
     }
-  }, [contact, ref]);
+  }, [contact, resume, ref]);
 
   const handleClose = () => setContact(false);
 
@@ -208,6 +210,35 @@ const About = ({ darkMode, isDesktop }) => {
                   <Contact handleClose={handleClose} />
                 </Grid>
               </Grid>
+            </Suspense>
+          </motion.div>
+        )}
+        {resume && (
+          <motion.div
+            className='featured-app'
+            style={{ top: ref.current.offsetTop, width: '100vw', padding: 0 }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{
+              opacity: 1,
+              height: '100vh',
+              transition: { duration: 1, ease: 'anticipate' },
+            }}
+            exit={{ height: 0, transition: { duration: 1, delay: 0.5 } }}
+          >
+            <AiOutlineClose
+              className='close'
+              onClick={() => setResume(false)}
+            />
+            <a
+              href={res}
+              download='yoni_david_resume_2021'
+              className='resume-link'
+              title='resume'
+            >
+              <FiDownload className='download' />
+            </a>
+            <Suspense fallback={<Loading />}>
+              <Resume />
             </Suspense>
           </motion.div>
         )}

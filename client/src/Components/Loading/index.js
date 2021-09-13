@@ -4,7 +4,14 @@ import { motion } from 'framer-motion';
 const Loading = () => {
   return (
     <motion.div
-      style={{ display: 'flex', justifyContent: 'center', fontSize: '5em' }}
+      style={{
+        height: '100vh',
+        width: '100vw',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: '5em',
+      }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}

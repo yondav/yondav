@@ -6,12 +6,13 @@ import Dev from './Components/Pages/Dev';
 import Portraits from './Components/Pages/Portraits';
 import About from './Components/Pages/About';
 import Footer from './Components/Footer';
-import Loading from './Components/Loading';
+import Resume from './Components/Resume';
 
 const App = () => {
   const [isDesktop, setDesktop] = useState(false);
   const [isSticky, setSticky] = useState(false);
   const [mainMargin, setMainMargin] = useState(50);
+  const [resume, setResume] = useState(false);
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
 
@@ -116,25 +117,29 @@ const App = () => {
   };
 
   return (
-    <div className='App'>
-      <div className='wrapper'>
-        <Header updateMode={updateMode} />
-        <main style={{ marginTop: mainMargin }}>
-          <Dev
-            isDesktop={isDesktop}
-            mainMargin={mainMargin}
-            darkMode={darkMode}
-          />
-          <Portraits isDesktop={isDesktop} mainMargin={mainMargin} />
-          <About
-            darkMode={darkMode}
-            isDesktop={isDesktop}
-            mainMargin={mainMargin}
-          />
-        </main>
+    <>
+      <div className='App'>
+        <div className='wrapper'>
+          <Header updateMode={updateMode} />
+          <main style={{ marginTop: mainMargin }}>
+            <Dev
+              isDesktop={isDesktop}
+              mainMargin={mainMargin}
+              darkMode={darkMode}
+            />
+            <Portraits isDesktop={isDesktop} mainMargin={mainMargin} />
+            <About
+              darkMode={darkMode}
+              isDesktop={isDesktop}
+              mainMargin={mainMargin}
+              resume={resume}
+              setResume={setResume}
+            />
+          </main>
+        </div>
+        {isSticky && <Footer updateMode={updateMode} setResume={setResume} />}
       </div>
-      {isSticky && <Footer updateMode={updateMode} />}
-    </div>
+    </>
   );
 };
 

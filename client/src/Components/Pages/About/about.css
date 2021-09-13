@@ -98,6 +98,10 @@
   color: var(--pr-white);
 }
 
+.resume-link {
+  color: var(--pr-black);
+}
+
 @media only screen and (min-width: 767px) {
   .tech {
     width: 100%;

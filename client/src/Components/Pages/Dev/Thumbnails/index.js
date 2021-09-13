@@ -25,7 +25,6 @@ const Thumbnails = ({
     } else {
       document.querySelector('body').style.overflow = 'auto';
     }
-    // feature && window.scrollTo({ top: position.offsetTop - 90, left: 0 });
   }, [feature, position]);
   return (
     <>
