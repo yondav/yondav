@@ -14,18 +14,24 @@
   </a>
 </div>
 
+<br />
+
 <div>
-<p>
-I’m Yoni David - Full Stack Developer living in Queens, New York. I'm passionate about design and animation while I prioritize intuitive and dynamic user experiences.
-
-I have a background in a range industries from music as a performer and audio engineer to real estate as a broker and co-founder of a boutique Brooklyn based agency.
-
-Motivated person, problem solver, independent employee and enthusiastic collaborator. My time away from the web is spent with my family, playing music or complaining about the New York Mets. Interested in the entire development spectrum and expanding my understanding of the technologies we use every day.
-
-</p>
-<img src='./readme/gifs/coloring_book.gif' alt='coloring book>
+  <div>
+    <img src='./readme/gifs/coloring_book.gif' alt='coloring book' width='50%' style='float: right; margin-left: 16px'>
+  </div>
+  <div style='width: 50%; text-align: justify'>
+    <p>
+    I’m Yoni David - Full Stack Developer living in Queens, New York. I create all sorts of stuff on the web.
+    </p>
+    <p>
+    I have a background in a range industries from music as a performer and audio engineer to real estate as a broker and co-founder of a boutique Brooklyn agency.
+    </p>
+    <p>
+    I like solving problems and collaborating. My time away from the web is spent with my family, playing music or complaining about the New York Mets. Interested in the entire development spectrum and expanding my understanding of the technologies we use every day.
+    </p>
+  </div>
 </div>
-
 <!--
 [![yondav's GitHub stats](https://github-readme-stats.vercel.app/api?username=yondav&show_icons=true&theme=onedark)](https://github.com/yondav/github-readme-stats)
 title_color - Card's title color (hex color)
@@ -51,4 +57,4 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
--->
+  -->
