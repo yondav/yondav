@@ -20,7 +20,7 @@ const Yoni = ({ yoni, customColors, onCustomColor, erase, customize }) => {
           fill: {
             duration: fillDuration,
             ease: [1, 0, 0.8, 0],
-            delay: fillDelay,
+            delay: fillDelay / 4,
           },
         }
       : {

@@ -7,8 +7,8 @@ import './nav.css';
 
 const links = [
   { name: 'dev', delay: 0 },
-  { name: 'portraits', delay: 0.5 },
-  { name: 'about', delay: 1 },
+  { name: 'portraits', delay: 0.2 },
+  { name: 'about', delay: 0.4 },
 ];
 const Nav = () => {
   return (
