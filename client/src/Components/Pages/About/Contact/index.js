@@ -46,7 +46,7 @@ const Contact = ({ handleClose }) => {
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          style={{ width: '100%' }}
+          style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
         >
           {statusMessage === 'Message sent!' && (
             <p className='status-message success'>{statusMessage}</p>
