@@ -51,6 +51,42 @@ I like solving problems and collaborating. My time away from the web is spent wi
   - an interactive showcase of who I am, what I do and where I come from.
 </p>
 </div>
+<br/>
+
+---
+
+## Let's Chat
+
+<br/>
+<p>
+  about tech or about The Mets or about Neil Young...
+</p>
+<a href="mailto:yoni@yondav.us">yoni@yupny.us</a>
+<br/>
+<br/>
+
+---
+
+<br/>
+
+<div align=center>
+<img src='./readme/icons/html.svg'>
+<img src='./readme/icons/css.svg'>
+<img src='./readme/icons/javascript.svg'>
+<img src='./readme/icons/nodejs-icon.svg'>
+<img src='./readme/icons/react.svg'>
+<img src='./readme/icons/mysql.svg'>
+<img src='./readme/icons/mongodb.svg'>
+<img src='./readme/icons/handlebars.svg'>
+<img src='./readme/icons/illustrator.svg'>
+<img src='./readme/icons/indesign.svg'>
+<img src='./readme/icons/acrobat.svg'>
+<img src='./readme/icons/photoshop.svg'>
+</div>
+
+<br/>
+
+  <p align=center>Copyright &copy; 2021, Yoni David<p>
 
 <!--
 [![yondav's GitHub stats](https://github-readme-stats.vercel.app/api?username=yondav&show_icons=true&theme=onedark)](https://github.com/yondav/github-readme-stats)
