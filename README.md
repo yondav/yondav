@@ -36,26 +36,21 @@ I like solving problems and collaborating. My time away from the web is spent wi
 
 <br />
 
-<div>
-<a 
-  href='https://www.yondav.us/' target='_blank' rel='noopener noreferrer'>
-    <img src='./readme/icons/web.svg' />
-    <span style='font-size: 26px; margin-left: 16px'>-</span>
-  <span style='font-size: 26px; margin-left: 16px'>Color Me Yon</span>
-  </a>
-  </div>
+## Color Me Yon
 
 <br/>
-<div style='text-align: center'>
+<div align='center'>
   <img src='./readme/gifs/coloring_book.gif' alt='coloring book' width='70%'>
-</div>
 </br>
-<p style='text-align: center'>
-  <a href='https://www.yondav.us/' target='_blank' rel='noopener noreferrer'>
+</br>
+<p>
+<a 
+  href='https://www.yondav.us/' target='_blank' rel='noopener noreferrer'>
   yondav.us
   </a>
   - an interactive showcase of who I am, what I do and where I come from.
 </p>
+</div>
 
 <!--
 [![yondav's GitHub stats](https://github-readme-stats.vercel.app/api?username=yondav&show_icons=true&theme=onedark)](https://github.com/yondav/github-readme-stats)
