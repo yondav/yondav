@@ -77,7 +77,7 @@ const ColoringToolBar = ({
                     setErase={setErase}
                   />
                 </div>
-                <Suspense fallback={<Loading />}>
+                <Suspense fallback=''>
                   {bgOpt && <BGSelector setBg={setBg} />}
                   {displayColorPicker && (
                     <ColorSelector
