@@ -14,7 +14,7 @@ export const data = [
     id: '01',
     app: 'Alison Lamb',
     tag: 'Visual Design',
-    deployed: 'https://alisonlamb.com/',
+    deployed: 'https://65e7909f76a2246dc08fd2a6--super-rugelach-ea3602.netlify.app/presentation_design',
     repo: 'https://github.com/yondav/ali-portfolio',
     thumbnail:
       'https://res.cloudinary.com/yup-schlepp/image/upload/v1629918649/yondav/dev/lamb/al-logo_zjan8k.jpg',
