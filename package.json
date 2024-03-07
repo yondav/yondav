@@ -1,0 +1,39 @@
+{
+  "name": "yondav",
+  "version": "2.0.1",
+  "packageManager": "yarn@3.6.1",
+  "author": {
+    "name": "Yoni David",
+    "email": "yoni@yondav.us",
+    "url": "https:yondav.us"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yondav/yondav"
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "export": "next build && next start",
+    "fix": "yarn lint:fix && yarn format",
+    "format": "prettier --write .",
+    "git:alias-commit": "git config alias.cz 'npx cz'",
+    "preinstall": "yarn git:alias-commit",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  }
+}
