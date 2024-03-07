@@ -5,6 +5,7 @@ import Container from '@/components/Container';
 
 const App = () => (
   <Container $hasBackground>
+    v2
     <Button $variant='primary'>Submit</Button>
     <Button $variant='secondary'>Cancel</Button>
     <Button $isSmall>Close</Button>
