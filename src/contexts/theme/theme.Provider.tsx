@@ -1,5 +1,6 @@
-import { useReducer, type ReactNode, useCallback, useMemo } from 'react';
+import { useReducer, type ReactNode, useCallback, useMemo, useState } from 'react';
 
+import { Logo } from '../../components/Logo';
 import { useIsomorphicLayoutEffect } from '../../hooks';
 
 import { contrastAction, paletteAction } from './theme.actions';
@@ -8,6 +9,8 @@ import { reducer } from './theme.reducer';
 import type { State } from './theme.types';
 
 export function Provider(props: { children: ReactNode }) {
+  const [initialized, setInitialized] = useState<boolean>(false);
+
   const [state, dispatch] = useReducer(reducer, initialState.state);
 
   const htmlClass = useCallback((classNames: State) => {
@@ -42,6 +45,8 @@ export function Provider(props: { children: ReactNode }) {
   const checkLocalPref = useCallback(() => {
     const browserPref = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (browserPref) contrastAction(dispatch)('dark');
+
+    setInitialized(true);
   }, []);
 
   useIsomorphicLayoutEffect(() => {
@@ -51,7 +56,7 @@ export function Provider(props: { children: ReactNode }) {
   return (
     <ContextState.Provider value={contextValue.state}>
       <ContextActions.Provider value={contextValue.actions}>
-        {props.children}
+        {initialized ? <>{props.children}</> : <></>}
       </ContextActions.Provider>
     </ContextState.Provider>
   );
