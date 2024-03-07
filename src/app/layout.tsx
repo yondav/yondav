@@ -1,9 +1,9 @@
-import GlobalStyles from '@/styles/GlobalStyles'
-import StyledComponentsRegistry from '@/lib/registry'
+import StyledComponentsRegistry from '@/lib/registry';
+import GlobalStyles from '@/styles/GlobalStyles';
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
         <StyledComponentsRegistry>
           <GlobalStyles />
@@ -11,5 +11,5 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         </StyledComponentsRegistry>
       </body>
     </html>
-  )
+  );
 }
