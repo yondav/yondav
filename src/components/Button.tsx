@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
-import tw, { styled, css, theme } from 'twin.macro'
+import tw, { styled, css, theme } from 'twin.macro';
 
 interface ButtonProps {
-  $variant?: 'primary' | 'secondary'
-  $isSmall?: boolean
+  $variant?: 'primary' | 'secondary';
+  $isSmall?: boolean;
 }
 
 export const Button = styled.button<ButtonProps>(({ $variant, $isSmall }) => [
@@ -32,4 +32,4 @@ export const Button = styled.button<ButtonProps>(({ $variant, $isSmall }) => [
   css`
     color: ${theme`colors.white`};
   `,
-])
+]);
