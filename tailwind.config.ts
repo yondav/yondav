@@ -1,9 +1,20 @@
 import { type Config } from 'tailwindcss';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   content: ['*'],
   theme: {
     extend: {
+      boxShadow: {
+        'colored-sm':
+          '.25rem .25rem 0 var(--primary-500), -.25rem -.25rem 0 var(--secondary-200)',
+        'colored-md':
+          '.5rem .5rem 0 var(--primary-500), -.5rem -.5rem 0 var(--secondary-200)',
+        'colored-lg':
+          '.75rem .75rem 0 var(--primary-500), -.75rem -.75rem 0 var(--secondary-200)',
+        'colored-xl':
+          '1rem 1rem 0 var(--primary-500), -1rem -1rem 0 var(--secondary-200)',
+      },
       colors: {
         fg: 'var(--fg)',
         bg: 'var(--bg)',
@@ -44,4 +55,4 @@ export default {
     },
   },
   plugins: [],
-} satisfies Config;
+};
