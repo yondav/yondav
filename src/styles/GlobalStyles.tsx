@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro';
+import tw, { GlobalStyles as BaseStyles } from 'twin.macro';
 
 import { generateColorVariables } from './constants/themes';
 
@@ -20,8 +20,7 @@ const CustomStyles = createGlobalStyle({
   'tape.dark': generateColorVariables('tape', 'dark'),
 
   body: {
-    WebkitTapHighlightColor: theme`colors.purple.500`,
-    ...tw`antialiased`,
+    ...tw`antialiased bg-neutral-200 to-primary-100`,
   },
 });
 
