@@ -1,16 +1,4 @@
 {
-  "name": "yondav",
-  "version": "2.0.1",
-  "packageManager": "yarn@3.6.1",
-  "author": {
-    "name": "Yoni David",
-    "email": "yoni@yondav.us",
-    "url": "https:yondav.us"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yondav/yondav"
-  },
   "babelMacros": {
     "twin": {
       "preset": "styled-components"
@@ -22,23 +10,35 @@
     }
   },
   "scripts": {
-    "build": "next build",
     "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "export": "next build && next start",
     "fix": "yarn lint:fix && yarn format",
     "format": "prettier --write .",
     "git:alias-commit": "git config alias.cz 'npx cz'",
-    "preinstall": "yarn git:alias-commit",
+    "preinstall": "yarn git:hookspath && yarn git:alias-commit",
     "lint": "eslint \"**/*.{ts,tsx}\"",
-    "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
-    "start": "next start"
+    "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix"
+  },
+  "dependencies": {
+    "next": "^14.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/plugin-syntax-typescript": "^7.23.3",
+    "@types/node": "20.11.5",
+    "@types/react": "18.2.48",
+    "@types/react-dom": "18.2.18",
+    "babel-loader": "^9.1.3",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "^2.1.4",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^14.1.3",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-react": "^7.34.0",
-    "prettier": "^3.2.5"
+    "tailwindcss": "^3.4.1",
+    "twin.macro": "^3.4.1",
+    "typescript": "5.3.3"
   }
 }
