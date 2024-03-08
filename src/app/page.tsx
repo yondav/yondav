@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import tw from 'twin.macro';
 
 import { PortraitComponent, SiteHeader } from '../components';
 import Container from '../components/Container';
@@ -11,17 +12,6 @@ const App = () => {
       <SiteHeader />
       <Container>
         <PortraitComponent />
-        {/* v2
-        <Button
-          $variant='primary'
-          onClick={() => {
-            SET_PALETTE('shea');
-          }}
-        >
-          Submit
-        </Button>
-        <Button $variant='secondary'>Cancel</Button>
-        <Button $isSmall>Close</Button> */}
       </Container>
     </>
   );

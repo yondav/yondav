@@ -1,4 +1,4 @@
-import { ThemeContext } from '../contexts';
+import { PortraitContext, ThemeContext } from '../contexts';
 import StyledComponentsRegistry from '../lib/registry';
 import GlobalStyles from '../styles/GlobalStyles';
 
@@ -8,8 +8,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       <body>
         <StyledComponentsRegistry>
           <ThemeContext.Provider>
-            <GlobalStyles />
-            {props.children}
+            <PortraitContext.Provider>
+              <GlobalStyles />
+              {props.children}
+            </PortraitContext.Provider>
           </ThemeContext.Provider>
         </StyledComponentsRegistry>
       </body>
