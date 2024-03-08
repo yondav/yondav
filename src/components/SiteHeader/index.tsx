@@ -32,7 +32,7 @@ export function SiteHeader() {
       <LogoContainer onClick={handleScrollTop}>
         <Logo />
       </LogoContainer>
-      <div css={{ ...tw`flex gap-2 text-neutral-800` }}>
+      <div css={tw`flex gap-2 text-neutral-800`}>
         <a
           href='https://github.com/yondav'
           target='_blank'
