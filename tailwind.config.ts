@@ -5,7 +5,13 @@ export default {
   content: ['*'],
   theme: {
     extend: {
+      cursor: {
+        bucket: `url('https://res.cloudinary.com/yup-schlepp/image/upload/v1631252276/yondav/cursors/bucket_myoojd.svg')
+      15 15,
+    auto`,
+      },
       boxShadow: {
+        control: '0.5px 6px 0px 0 rgb(0 0 0 / 0.35),0 1.5px 0px 0px rgb(0 0 0 / 1.1)',
         'colored-sm':
           '.25rem .25rem 0 var(--primary-500), -.25rem -.25rem 0 var(--secondary-200)',
         'colored-md':
