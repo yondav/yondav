@@ -1,58 +1,31 @@
 import { AnimatePresence, motion, useCycle } from 'framer-motion';
 import { useCallback } from 'react';
-import { MdOutlineFormatPaint, MdOutlineSettingsBackupRestore } from 'react-icons/md';
+import type { ColorResult } from 'react-color';
+import { MdOutlineSettingsBackupRestore } from 'react-icons/md';
 import {
   RiTShirt2Line,
   RiShuffleFill,
   RiPaletteFill,
   RiContrastFill,
+  RiPaintFill,
 } from 'react-icons/ri';
 import tw, { styled, theme } from 'twin.macro';
 
-import { PortraitContext, ThemeContext } from '../../contexts';
-import type { palettes } from '../../styles/constants/themes';
-import { themeColorTitles } from '../../styles/constants/themes';
+import { usePortraitContext } from '../../contexts/portrait';
 
-type HandlerType =
-  | 'default'
-  | 'custom'
-  | 'color'
-  | 'random'
-  | 'contrast'
-  | 'theme'
-  | keyof Omit<PortraitContext.AssembledPortrait, 'skin'>;
-
-const {
-  usePortraitContext,
-  defaultAttributeFills,
-  eyeTypes,
-  eyebrowTypes,
-  facialHairTypes,
-  glassesTypes,
-  hairTypes,
-  hatTypes,
-  mouthTypes,
-  shirtTypes,
-} = PortraitContext;
+import { ColorPicker } from './Portrait.ColorPicker';
+import { MenuButton } from './Portrait.MenuButton';
 
 const PlaygroundMenuIndicatorContainer = styled(motion.div).attrs({
   variants: {
     active: {
-      bottom: [92, 90, 94, 90],
-      transition: {
-        bottom: {
-          duration: 0.3,
-        },
-      },
+      bottom: [0, 6, 10, 0],
+      transition: { bottom: { duration: 0.3 } },
     },
     inactive: {
-      bottom: [32, 30, 34, 30],
+      bottom: [2, 0, 4, 0],
       transition: {
-        filter: {
-          duration: 0.3,
-          repeat: Infinity,
-          repeatType: 'mirror',
-        },
+        filter: { repeat: Infinity, repeatType: 'mirror' },
         bottom: { repeat: Infinity, repeatDelay: 1 },
       },
     },
@@ -60,29 +33,22 @@ const PlaygroundMenuIndicatorContainer = styled(motion.div).attrs({
 })(tw`w-fit p-4 absolute left-1/2 -translate-x-1/2 z-50 cursor-pointer transition-all`);
 
 const PlaygroundMenuIndicator = styled(motion.div).attrs({
-  variants: {
-    inactive: { width: theme`width.40` },
-    active: { width: theme`width.80` },
-  },
+  variants: { inactive: { width: theme`width.20` }, active: { width: theme`width.48` } },
 })(
   tw`h-0.5 bg-neutral-500 rounded-full shadow-2xl shadow-bg transition-all hover:(brightness-150 scale-x-105 shadow-2xl shadow-neutral-50)`
 );
 
 const PlaygroundMenu = styled(motion.div).attrs({
   initial: { bottom: '-5rem' },
-  animate: { bottom: '3rem' },
+  animate: { bottom: '2rem' },
   exit: { bottom: '-5rem' },
-})<{ $expanded: boolean }>(({ $expanded }) => [
-  tw`bg-gradient-to-b from-neutral-50 to-neutral-100 rounded-md absolute left-1/2 -translate-x-1/2 bottom-16 p-0.5 z-50 shadow-control transition-all duration-300`,
-  $expanded && tw`w-full sm:w-fit translate-y-10`,
-]);
+})<{ $expanded: boolean; $dropped?: boolean }>(({ $expanded, $dropped }) => [
+  tw`bg-gradient-to-b from-neutral-50 to-neutral-100 rounded-lg shadow-control`,
+  tw`transition-all duration-300 -translate-x-1/2 `,
+  tw`absolute left-1/2 bottom-16 p-0.5 z-50`,
 
-const ControlButton = styled.button<{ $text?: boolean }>(({ $text }) => [
-  tw`relative m-0.5 min-w-[2rem] px-2 py-2 lg:(p-4) bg-gradient-to-b from-neutral-100 to-neutral-200 text-neutral-500 rounded transform duration-75 overflow-hidden shadow-control`,
-  tw`hocus:(after:(bg-neutral-700) text-neutral-900 scale-y-110 -translate-y-1 shadow-sm outline-0)`,
-  tw`after:(absolute left-0 top-0 w-full h-1/6 bg-neutral-300)`,
-  $text &&
-    tw`min-w-[4.7rem] w-full sm:w-fit text-xs font-bold uppercase col-span-2 sm:col-span-1`,
+  $expanded && tw`w-full sm:w-fit`,
+  $dropped && tw`translate-y-2`,
 ]);
 
 export function PortraitMenu() {
@@ -93,113 +59,15 @@ export function PortraitMenu() {
   }, [toggleActive]);
 
   const {
-    actions: { RANDOMIZE, SET_SINGLE_ATTRIBUTE, SET_TO_DEFAULT, SET_VIEW },
-    state: { attributes, view },
+    state: { currentColor, view },
+    actions: { SET_CURRENT_COLOR },
   } = usePortraitContext();
-  const {
-    state: { contrast, palette },
-    actions: { SET_CONTRAST, SET_PALETTE },
-  } = ThemeContext.useThemeContext();
 
-  const handler = useCallback(
-    (task: HandlerType) => {
-      const attributeHandler =
-        <T extends keyof Omit<PortraitContext.AttributeTypeAssociations, 'skin'>>(
-          type: T,
-          styles: PortraitContext.AttributeTypeAssociations[T][]
-        ) =>
-        () => {
-          const numberOfTypes = styles.length - 1;
-          const currentIndex = styles.indexOf(
-            attributes[type].type as PortraitContext.AttributeTypeAssociations[T]
-          );
-          const nextIndex = currentIndex + 1;
-          const fill = (num: number) => defaultAttributeFills[type][styles[num]];
-
-          SET_SINGLE_ATTRIBUTE(
-            numberOfTypes === currentIndex
-              ? { [type]: { fill: fill(0), type: styles[0] } }
-              : { [type]: { fill: fill(nextIndex), type: styles[nextIndex] } }
-          );
-        };
-
-      const defaultHandler = () => {
-        SET_TO_DEFAULT();
-        SET_VIEW('default');
-      };
-
-      const viewHandler = (target: PortraitContext.View) => () => {
-        view === target ? SET_VIEW('default') : SET_VIEW(target);
-      };
-
-      const randomHandler = () => {
-        SET_VIEW('default');
-        RANDOMIZE();
-      };
-
-      const contrastHandler = () => {
-        SET_CONTRAST(contrast === 'dark' ? 'light' : 'dark');
-      };
-
-      const themeHandler = () => {
-        const themes = Object.entries(themeColorTitles) as Array<
-          [keyof typeof palettes, string]
-        >;
-
-        const currentTheme = themes.find(([k]) => k === palette);
-        const currentThemeIndex = currentTheme ? themes.indexOf(currentTheme) : 0;
-        const nextTheme =
-          currentThemeIndex === themes.length - 1
-            ? themes[0]
-            : themes[currentThemeIndex + 1];
-
-        SET_VIEW('default');
-        SET_PALETTE(nextTheme[0]);
-      };
-
-      switch (task) {
-        case 'default':
-          return defaultHandler;
-        case 'custom':
-          return viewHandler('custom');
-        case 'color':
-          return viewHandler('color');
-        case 'random':
-          return randomHandler;
-        case 'contrast':
-          return contrastHandler;
-        case 'theme':
-          return themeHandler;
-        case 'eyebrows':
-          return attributeHandler('eyebrows', eyebrowTypes);
-        case 'eyes':
-          return attributeHandler('eyes', eyeTypes);
-        case 'facialHair':
-          return attributeHandler('facialHair', facialHairTypes);
-        case 'glasses':
-          return attributeHandler('glasses', glassesTypes);
-        case 'hair':
-          return attributeHandler('hair', hairTypes);
-        case 'hat':
-          return attributeHandler('hat', hatTypes);
-        case 'mouth':
-          return attributeHandler('mouth', mouthTypes);
-        case 'shirt':
-          return attributeHandler('shirt', shirtTypes);
-      }
+  const handleColorPicker = useCallback(
+    (color: ColorResult) => {
+      SET_CURRENT_COLOR(color.hex);
     },
-    [
-      RANDOMIZE,
-      SET_CONTRAST,
-      SET_PALETTE,
-      SET_SINGLE_ATTRIBUTE,
-      SET_TO_DEFAULT,
-      SET_VIEW,
-      attributes,
-      contrast,
-      palette,
-      view,
-    ]
+    [SET_CURRENT_COLOR]
   );
 
   return (
@@ -213,26 +81,17 @@ export function PortraitMenu() {
       </PlaygroundMenuIndicatorContainer>
       <AnimatePresence>
         {active === 'active' && (
-          <PlaygroundMenu $expanded={view === 'custom'}>
+          <PlaygroundMenu
+            $expanded={view === 'custom'}
+            $dropped={view === 'custom' || view === 'color'}
+          >
             <div css={tw`flex w-fit mx-auto`}>
-              <ControlButton onClick={handler('default')}>
-                <MdOutlineSettingsBackupRestore />
-              </ControlButton>
-              <ControlButton onClick={handler('contrast')}>
-                <RiContrastFill />
-              </ControlButton>
-              <ControlButton onClick={handler('theme')}>
-                <RiPaletteFill />
-              </ControlButton>
-              <ControlButton onClick={handler('custom')}>
-                <RiTShirt2Line />
-              </ControlButton>
-              <ControlButton onClick={handler('color')}>
-                <MdOutlineFormatPaint />
-              </ControlButton>
-              <ControlButton onClick={handler('random')}>
-                <RiShuffleFill />
-              </ControlButton>
+              <MenuButton task='default' icon={MdOutlineSettingsBackupRestore} />
+              <MenuButton task='contrast' icon={RiContrastFill} />
+              <MenuButton task='theme' icon={RiPaletteFill} />
+              <MenuButton task='custom' icon={RiTShirt2Line} />
+              <MenuButton task='color' icon={RiPaintFill} />
+              <MenuButton task='random' icon={RiShuffleFill} />
             </div>
 
             {view === 'custom' && (
@@ -240,30 +99,20 @@ export function PortraitMenu() {
                 key='attributes'
                 css={tw`sm:(w-[40rem]) p-1 w-full h-fit grid grid-cols-8 gap-0.5`}
               >
-                <ControlButton $text onClick={handler('hat')}>
-                  lid
-                </ControlButton>
-                <ControlButton $text onClick={handler('eyes')}>
-                  eyes
-                </ControlButton>
-                <ControlButton $text onClick={handler('shirt')}>
-                  threads
-                </ControlButton>
-                <ControlButton $text onClick={handler('glasses')}>
-                  specs
-                </ControlButton>
-                <ControlButton $text onClick={handler('facialHair')}>
-                  beard
-                </ControlButton>
-                <ControlButton $text onClick={handler('eyebrows')}>
-                  brows
-                </ControlButton>
-                <ControlButton $text onClick={handler('mouth')}>
-                  mouth
-                </ControlButton>
-                <ControlButton $text onClick={handler('hair')}>
-                  hair
-                </ControlButton>
+                <MenuButton task='hat' copy='lid' />
+                <MenuButton task='eyes' copy='eyes' />
+                <MenuButton task='shirt' copy='threads' />
+                <MenuButton task='glasses' copy='specs' />
+                <MenuButton task='facialHair' copy='beard' />
+                <MenuButton task='eyebrows' copy='brows' />
+                <MenuButton task='mouth' copy='mouth' />
+                <MenuButton task='hair' copy='hair' />
+              </div>
+            )}
+
+            {view === 'color' && (
+              <div key='colors' css={tw`p-1 w-full h-fit`}>
+                <ColorPicker color={currentColor} onChange={handleColorPicker} />
               </div>
             )}
           </PlaygroundMenu>
