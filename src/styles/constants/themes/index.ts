@@ -28,8 +28,8 @@ export const themeColorTitles: { [key in keyof typeof palettes]: string } = {
 export const generateColorVariables = (palette: Palette, contrast: Contrast) => {
   if (contrast === 'dark')
     return {
-      '--fg': palettes[palette].fg,
-      '--bg': palettes[palette].bg,
+      '--fg': palettes[palette].bg,
+      '--bg': palettes[palette].fg,
 
       '--neutral-50': palettes[palette].neutral[900],
       '--neutral-100': palettes[palette].neutral[800],
