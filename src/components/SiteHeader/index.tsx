@@ -1,8 +1,11 @@
+'use client';
+
 import { motion } from 'framer-motion';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import tw, { styled } from 'twin.macro';
 
 import type { Social } from '../../../sanity/lib';
+import { useIsomorphicLayoutEffect } from '../../hooks';
 import { iconMap } from '../../styles/constants';
 import { Logo } from '../Logo';
 
@@ -40,7 +43,7 @@ export function SiteHeader({ socials }: SiteHeaderProps) {
     setIsSticky(position > 80);
   }, []);
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     window.addEventListener('scroll', handleSticky, { passive: true });
 
     return () => {

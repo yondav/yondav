@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext } from 'react';
 
 import { defaultAttributeFills, defaultColors } from './portrait.constants';
