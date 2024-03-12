@@ -28,19 +28,19 @@ export const themeColorTitles: { [key in keyof typeof palettes]: string } = {
 export const generateColorVariables = (palette: Palette, contrast: Contrast) => {
   if (contrast === 'dark')
     return {
-      '--fg': palettes[palette].bg,
-      '--bg': palettes[palette].fg,
+      // '--fg': palettes[palette].bg,
+      // '--bg': palettes[palette].fg,
 
-      '--neutral-50': palettes[palette].neutral[900],
-      '--neutral-100': palettes[palette].neutral[800],
-      '--neutral-200': palettes[palette].neutral[700],
-      '--neutral-300': palettes[palette].neutral[600],
-      '--neutral-400': palettes[palette].neutral[500],
-      '--neutral-500': palettes[palette].neutral[400],
-      '--neutral-600': palettes[palette].neutral[300],
-      '--neutral-700': palettes[palette].neutral[200],
-      '--neutral-800': palettes[palette].neutral[100],
-      '--neutral-900': palettes[palette].neutral[50],
+      // '--neutral-50': palettes[palette].neutral[900],
+      // '--neutral-100': palettes[palette].neutral[800],
+      // '--neutral-200': palettes[palette].neutral[700],
+      // '--neutral-300': palettes[palette].neutral[600],
+      // '--neutral-400': palettes[palette].neutral[500],
+      // '--neutral-500': palettes[palette].neutral[400],
+      // '--neutral-600': palettes[palette].neutral[300],
+      // '--neutral-700': palettes[palette].neutral[200],
+      // '--neutral-800': palettes[palette].neutral[100],
+      // '--neutral-900': palettes[palette].neutral[50],
 
       '--primary-100': palettes[palette].primary[500],
       '--primary-200': palettes[palette].primary[400],
@@ -62,19 +62,19 @@ export const generateColorVariables = (palette: Palette, contrast: Contrast) => 
     };
 
   return {
-    '--fg': palettes[palette].fg,
-    '--bg': palettes[palette].bg,
+    // '--fg': palettes[palette].fg,
+    // '--bg': palettes[palette].bg,
 
-    '--neutral-50': palettes[palette].neutral[50],
-    '--neutral-100': palettes[palette].neutral[100],
-    '--neutral-200': palettes[palette].neutral[200],
-    '--neutral-300': palettes[palette].neutral[300],
-    '--neutral-400': palettes[palette].neutral[400],
-    '--neutral-500': palettes[palette].neutral[500],
-    '--neutral-600': palettes[palette].neutral[600],
-    '--neutral-700': palettes[palette].neutral[700],
-    '--neutral-800': palettes[palette].neutral[800],
-    '--neutral-900': palettes[palette].neutral[900],
+    // '--neutral-50': palettes[palette].neutral[50],
+    // '--neutral-100': palettes[palette].neutral[100],
+    // '--neutral-200': palettes[palette].neutral[200],
+    // '--neutral-300': palettes[palette].neutral[300],
+    // '--neutral-400': palettes[palette].neutral[400],
+    // '--neutral-500': palettes[palette].neutral[500],
+    // '--neutral-600': palettes[palette].neutral[600],
+    // '--neutral-700': palettes[palette].neutral[700],
+    // '--neutral-800': palettes[palette].neutral[800],
+    // '--neutral-900': palettes[palette].neutral[900],
 
     '--primary-100': palettes[palette].primary[100],
     '--primary-200': palettes[palette].primary[200],
