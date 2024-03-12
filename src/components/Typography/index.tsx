@@ -17,7 +17,7 @@ export const Banner = styled(motion.h1).attrs({
     ],
   },
 })(() => [
-  tw`text-center font-header text-7xl md:text-9xl font-black`,
+  tw`text-center font-aux text-7xl md:text-9xl font-black`,
   tw`text-primary-400`,
   tw`w-full -skew-x-12 -rotate-12`,
 ]);

@@ -8,6 +8,7 @@ export default {
       fontFamily: {
         header: 'var(--font-header)',
         body: 'var(--font-body)',
+        aux: 'var(--font-aux)',
       },
       boxShadow: {
         control: '0.5px 6px 0px 0 rgb(0 0 0 / 0.35),0 1.5px 0px 0px rgb(0 0 0 / 1.1)',

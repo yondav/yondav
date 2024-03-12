@@ -15,8 +15,8 @@ import { Banner, RichText } from '../Typography';
 import { ContactForm } from './MainView.ContactForm';
 
 const BioSection = styled.section(() => [
-  tw`py-28 px-4 mx-auto flex flex-col`,
-  tw`sm:px-12 md:px-24`,
+  tw`pb-28 px-4 mx-auto flex flex-col`,
+  tw`sm:px-12 md:(px-24 py-28)`,
   tw`bg-gradient-to-b from-fg to-transparent`,
 ]);
 

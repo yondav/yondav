@@ -1,17 +1,22 @@
 'use client';
-import { Inter, Sarpanch } from 'next/font/google';
+import { Fugaz_One, Inter, Sarpanch, Zilla_Slab } from 'next/font/google';
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import tw, { GlobalStyles as BaseStyles } from 'twin.macro';
 
 import { generateColorVariables, palettes } from './constants/themes';
 
-const sarpanch = Sarpanch({
+const fugaz = Fugaz_One({
   subsets: ['latin'],
-  weight: ['600', '700', '800'],
+  weight: ['400'],
 });
 
 const inter = Inter({ subsets: ['latin'] });
+
+const zilla = Zilla_Slab({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+});
 
 const CustomStyles = createGlobalStyle({
   ':root': {
@@ -29,8 +34,9 @@ const CustomStyles = createGlobalStyle({
     '--neutral-900': palettes.stripes.neutral[900],
     '--neutral-950': palettes.stripes.neutral[950],
 
-    '--font-header': sarpanch.style.fontFamily,
+    '--font-header': zilla.style.fontFamily,
     '--font-body': inter.style.fontFamily,
+    '--font-aux': fugaz.style.fontFamily,
 
     '--portrait-menu-bottom': '8rem',
   },
