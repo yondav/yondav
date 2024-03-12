@@ -1,4 +1,8 @@
+'use client';
+
+import { PortableText } from '@portabletext/react';
 import { motion } from 'framer-motion';
+import type { PortableTextBlock } from 'sanity';
 import tw, { styled, theme } from 'twin.macro';
 
 export const Banner = styled(motion.h1).attrs({
@@ -17,3 +21,23 @@ export const Banner = styled(motion.h1).attrs({
   tw`text-primary-400`,
   tw`w-full -skew-x-12 -rotate-12`,
 ]);
+
+export const RichText = ({ value }: { value: PortableTextBlock }) => (
+  <PortableText
+    value={value}
+    components={{
+      marks: {
+        link: ({ children, value }) => {
+          const href = value.href.startsWith('https://' || 'http://')
+            ? value.href
+            : `https://${value.href}`;
+          return (
+            <a href={href} target='_blank'>
+              {children}
+            </a>
+          );
+        },
+      },
+    }}
+  />
+);
