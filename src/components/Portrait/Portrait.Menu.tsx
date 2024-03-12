@@ -37,7 +37,7 @@ const PlaygroundMenuIndicatorContainer = styled(motion.div).attrs({
 const PlaygroundMenuIndicator = styled(motion.div).attrs({
   variants: { inactive: { width: theme`width.20` }, active: { width: theme`width.48` } },
 })(
-  tw`h-0.5 bg-neutral-500 rounded-full shadow-2xl shadow-bg transition-all hover:(brightness-150 scale-x-105 shadow-2xl shadow-neutral-50)`
+  tw`h-0.5 bg-neutral-500 rounded-full shadow-2xl shadow-neutral-50 transition-all hover:(brightness-150 scale-x-105 shadow-2xl shadow-neutral-50)`
 );
 
 const PlaygroundMenu = styled(motion.div).attrs({

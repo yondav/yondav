@@ -12,7 +12,7 @@ import { PortraitMenu } from './Portrait.Menu';
 const PlaygroundContainer = styled.div(() => [
   tw`w-full min-h-[calc(100vh - 5rem)]`,
   tw`relative flex justify-between`,
-  tw`overflow-hidden md:(shadow shadow-neutral-50)`,
+  tw`overflow-hidden bg-gradient-to-b from-transparent to-fg`,
 ]);
 
 const BackgroundContainer = styled.div(() => [
