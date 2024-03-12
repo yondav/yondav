@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { Toaster } from 'react-hot-toast';
+import { theme } from 'twin.macro';
 
 import { PortraitContext, ThemeContext } from '../contexts';
 import StyledComponentsRegistry from '../lib/registry';
@@ -58,6 +60,25 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <StyledComponentsRegistry>
           <ThemeContext.Provider>
             <PortraitContext.Provider>
+              <Toaster
+                position='bottom-left'
+                toastOptions={{
+                  duration: 5000,
+                  style: {
+                    background: theme`colors.neutral.200`,
+                    color: theme`colors.neutral.950`,
+                    boxShadow: theme`boxShadow.control`,
+                  },
+
+                  error: {
+                    duration: 5000,
+                    style: {
+                      background: theme`colors.red.300`,
+                      color: theme`colors.red.900`,
+                    },
+                  },
+                }}
+              />
               <GlobalStyles />
               {props.children}
             </PortraitContext.Provider>
