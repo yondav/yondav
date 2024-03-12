@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext } from 'react';
 
 import type { Actions, State } from './theme.types';

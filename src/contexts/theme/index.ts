@@ -1,5 +1,3 @@
-'use client';
-
 import { Provider } from './theme.Provider';
 
 export * from './theme.hooks';

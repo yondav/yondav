@@ -15,7 +15,7 @@ export const constructFills = ({ primary, secondary, tertiary }: AttributeFills)
 export const getRandomColor = (solid = true) => {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
 
-  if (!solid) return `#${randomColor.padStart(6, '0')}`
+  if (!solid) return `#${randomColor.padStart(6, '0')}`;
   return `#${randomColor.padStart(6, '0')}`;
 };
 
@@ -28,6 +28,6 @@ export const getRandomAttribute = <T>(attributes: Array<T>): AttributeObject<T> 
       primary: getRandomColor(),
       secondary: getRandomColor(),
       tertiary: getRandomColor(),
-    }
-  }
+    },
+  };
 };

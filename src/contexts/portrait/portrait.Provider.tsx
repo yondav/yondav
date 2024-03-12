@@ -1,3 +1,5 @@
+'use client';
+
 import { useReducer, type ReactNode, useMemo } from 'react';
 
 import {

@@ -1,5 +1,3 @@
-'use client';
-
 import { Provider } from './portrait.Provider';
 
 export * from './portrait.constants';

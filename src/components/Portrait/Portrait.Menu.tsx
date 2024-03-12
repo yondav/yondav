@@ -30,7 +30,9 @@ const PlaygroundMenuIndicatorContainer = styled(motion.div).attrs({
       },
     },
   },
-})(tw`w-fit p-4 absolute left-1/2 -translate-x-1/2 z-50 cursor-pointer transition-all`);
+})(
+  tw`hidden md:block w-fit p-4 absolute left-1/2 -translate-x-1/2 z-40 cursor-pointer transition-all`
+);
 
 const PlaygroundMenuIndicator = styled(motion.div).attrs({
   variants: { inactive: { width: theme`width.20` }, active: { width: theme`width.48` } },
@@ -40,15 +42,15 @@ const PlaygroundMenuIndicator = styled(motion.div).attrs({
 
 const PlaygroundMenu = styled(motion.div).attrs({
   initial: { bottom: '-5rem' },
-  animate: { bottom: '2rem' },
+  animate: { bottom: 'var(--portrait-menu-bottom)' },
   exit: { bottom: '-5rem' },
 })<{ $expanded: boolean; $dropped?: boolean }>(({ $expanded, $dropped }) => [
-  tw`bg-gradient-to-b from-neutral-50 to-neutral-100 rounded-lg shadow-control`,
-  tw`transition-all duration-300 -translate-x-1/2 `,
-  tw`absolute left-1/2 bottom-16 p-0.5 z-50`,
+  tw`bg-gradient-to-b from-neutral-200 to-neutral-100 rounded-lg shadow-control`,
+  tw`md:(transition-all duration-300) -translate-x-1/2 `,
+  tw`absolute left-1/2 p-0.5 z-40`,
 
   $expanded && tw`w-full sm:w-fit`,
-  $dropped && tw`translate-y-2`,
+  $dropped && tw`translate-y-24 md:translate-y-2`,
 ]);
 
 export function PortraitMenu() {
@@ -86,12 +88,16 @@ export function PortraitMenu() {
             $dropped={view === 'custom' || view === 'color'}
           >
             <div css={tw`flex w-fit mx-auto`}>
-              <MenuButton task='default' icon={MdOutlineSettingsBackupRestore} />
-              <MenuButton task='contrast' icon={RiContrastFill} />
-              <MenuButton task='theme' icon={RiPaletteFill} />
-              <MenuButton task='custom' icon={RiTShirt2Line} />
-              <MenuButton task='color' icon={RiPaintFill} />
-              <MenuButton task='random' icon={RiShuffleFill} />
+              <MenuButton
+                size='md'
+                task='default'
+                icon={MdOutlineSettingsBackupRestore}
+              />
+              <MenuButton size='md' task='contrast' icon={RiContrastFill} />
+              <MenuButton size='md' task='theme' icon={RiPaletteFill} />
+              <MenuButton size='md' task='custom' icon={RiTShirt2Line} />
+              <MenuButton size='md' task='color' icon={RiPaintFill} />
+              <MenuButton size='md' task='random' icon={RiShuffleFill} />
             </div>
 
             {view === 'custom' && (

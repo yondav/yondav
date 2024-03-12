@@ -27,10 +27,8 @@ const ColorPickerContainer = styled.div(() => [
 const HueSaturationContainer = styled.div(tw`w-full flex flex-col gap-0.5`);
 
 const HueSaturation = styled.div<{ $variant: 'hue' | 'saturation' }>(({ $variant }) => [
-  tw`relative overflow-hidden lg:w-56`,
-  $variant === 'hue'
-    ? tw`rounded-b h-2 md:h-1 lg:h-2`
-    : tw`rounded-t h-6 sm:h-10 md:h-20 lg:h-28`,
+  tw`relative overflow-hidden`,
+  $variant === 'hue' ? tw`rounded-b h-2 md:h-1 lg:h-2` : tw`rounded-t h-20 lg:h-28`,
 ]);
 
 /**

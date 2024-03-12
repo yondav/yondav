@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import tw, { styled } from 'twin.macro';
 
 interface ButtonProps {
@@ -5,7 +6,7 @@ interface ButtonProps {
   $size?: 'sm' | 'md' | 'lg';
 }
 
-export const Button = styled.button<ButtonProps>(({ $size = 'md', $variant }) => [
+export const Button = styled(motion.button)<ButtonProps>(({ $size = 'md', $variant }) => [
   /***  base styles ***/
 
   // layout
@@ -13,13 +14,13 @@ export const Button = styled.button<ButtonProps>(({ $size = 'md', $variant }) =>
   //spacing
   tw`pb-2.5 pt-4 px-4`,
   // design
-  tw`bg-gradient-to-b from-neutral-100 to-neutral-200 text-neutral-500 rounded shadow-control`,
+  tw`bg-gradient-to-b from-neutral-100 to-neutral-200 text-neutral-700 rounded shadow-control`,
   // font
   tw`text-sm md:text-base font-bold uppercase`,
   // after
-  tw`after:(absolute left-0 top-0 w-full h-1/6 bg-neutral-300)`,
+  tw`after:(absolute left-0 top-0 w-full h-1/6 bg-neutral-700)`,
   // hover / focus
-  tw`hocus:(after:(bg-neutral-700) text-neutral-900 scale-y-110 -translate-y-1 shadow-sm outline-0)`,
+  tw`hocus:(after:(bg-neutral-950) text-neutral-950 scale-y-110 -translate-y-1 shadow-sm outline-0)`,
 
   /***  viarants ***/
 

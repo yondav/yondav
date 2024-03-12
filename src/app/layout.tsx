@@ -1,20 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter, Sarpanch } from 'next/font/google';
 
 import { PortraitContext, ThemeContext } from '../contexts';
 import StyledComponentsRegistry from '../lib/registry';
 import GlobalStyles from '../styles/GlobalStyles';
 
-const sarpanch = Sarpanch({
-  subsets: ['latin'],
-  weight: ['600', '700', '800'],
-});
-
-const inter = Inter({ subsets: ['latin'] });
-
-const title = 'Yoni David on the World Wide Web';
+const title = 'Yoni David | Full Stack Developer';
 const description =
-  'Looking for a developer? Yoni David provides expertise in a wide range of technologies, aiding in the delivery of high-quality applications, scalable solutions and productive development environments.';
+  'Providing expertise in a range of technologies, delivering high-quality applications, scalable solutions and productive development environments.';
 
 export const metadata: Metadata = {
   title,
@@ -62,7 +54,7 @@ export const metadata: Metadata = {
 export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={`${sarpanch.className} ${inter.className}`}>
+      <body>
         <StyledComponentsRegistry>
           <ThemeContext.Provider>
             <PortraitContext.Provider>

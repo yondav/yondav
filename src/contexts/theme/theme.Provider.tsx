@@ -1,6 +1,7 @@
+'use client';
+
 import { useReducer, type ReactNode, useCallback, useMemo, useState } from 'react';
 
-import { Logo } from '../../components/Logo';
 import { useIsomorphicLayoutEffect } from '../../hooks';
 
 import { contrastAction, paletteAction } from './theme.actions';
