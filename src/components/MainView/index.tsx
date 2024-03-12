@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { RiFileList2Fill, RiGithubFill, RiLinkedinBoxFill } from 'react-icons/ri';
-import tw, { styled } from 'twin.macro';
+import tw, { styled, theme } from 'twin.macro';
 
 import type { ProfileResult } from '../../../sanity/lib';
 import { animations, iconMap } from '../../styles/constants';
@@ -11,10 +12,12 @@ import { Layout } from '../Layout';
 import { PortraitComponent } from '../Portrait';
 import { Banner, RichText } from '../Typography';
 
+import { ContactForm } from './MainView.ContactForm';
+
 const BioSection = styled.section(() => [
   tw`py-28 px-4 mx-auto flex flex-col`,
   tw`sm:px-12 md:px-24`,
-  tw`bg-gradient-to-b from-white/20 to-transparent`,
+  tw`bg-gradient-to-b from-fg to-transparent`,
 ]);
 
 const BioContent = styled(motion.div).attrs({ ...animations.parallax() })(() => [
@@ -23,7 +26,7 @@ const BioContent = styled(motion.div).attrs({ ...animations.parallax() })(() => 
 ]);
 
 const ButtonGroup = styled(motion.div).attrs({ ...animations.parallax() })(() => [
-  tw`flex gap-0.5 ml-auto`,
+  tw`w-fit flex gap-0.5 ml-auto`,
 ]);
 
 const BioButton = styled(Button).attrs({
@@ -70,17 +73,29 @@ export function MainView({ data: { profile } }: { data: { profile: ProfileResult
           </CompetenciesGrid>
         </CompetenciesContent>
       </CompetenciesSection>
-      <ButtonGroup>
-        <BioButton href={profile.resumeURL}>
-          <RiFileList2Fill size='1.5rem' />
-        </BioButton>
-        {profile.socials.map(s => (
-          <BioButton key={s._key} href={s.link}>
-            {iconMap[s.entity]({ size: '1.5rem' })}
-          </BioButton>
-        ))}
-      </ButtonGroup>
-      <Banner>More soon...</Banner>
+      <CompetenciesSection>
+        <CompetenciesContent>
+          <h1>Say Hi</h1>
+          <ContactForm profileImg={profile.photoURL} />
+        </CompetenciesContent>
+      </CompetenciesSection>
+      <section
+        css={tw`pb-4 px-4 mx-auto sm:px-12 md:px-24 bg-gradient-to-b from-transparent to-fg`}
+      >
+        <Banner>More soon...</Banner>
+        <BioContent css={tw`mt-32`}>
+          <ButtonGroup>
+            <BioButton href={profile.resumeURL}>
+              <RiFileList2Fill size='1.5rem' />
+            </BioButton>
+            {profile.socials.map(s => (
+              <BioButton key={s._key} href={s.link}>
+                {iconMap[s.entity]({ size: '1.5rem' })}
+              </BioButton>
+            ))}
+          </ButtonGroup>
+        </BioContent>
+      </section>
     </Layout>
   );
 }
