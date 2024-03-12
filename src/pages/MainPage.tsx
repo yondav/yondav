@@ -20,7 +20,7 @@ const BioContent = styled(motion.div).attrs({ ...parallax() })(() => [
   tw`lg:max-w-screen-md`,
 ]);
 
-const ButtonGroup = styled(motion.div).attrs({ ...parallax(true, true) })(() => [
+const ButtonGroup = styled(motion.div).attrs({ ...parallax() })(() => [
   tw`flex gap-0.5 ml-auto`,
 ]);
 
@@ -38,7 +38,11 @@ const CompetenciesContent = styled.div(() => [tw`lg:max-w-screen-md mx-auto`]);
 
 const CompetenciesGrid = styled.div(() => [tw`grid grid-cols-8 sm:grid-cols-12 gap-12`]);
 
-export function MainPage({ data: { profile } }: { data: { profile: ProfileResult } }) {
+export default function MainPage({
+  data: { profile },
+}: {
+  data: { profile: ProfileResult };
+}) {
   return (
     <Layout socials={profile.socials}>
       <PortraitComponent />
