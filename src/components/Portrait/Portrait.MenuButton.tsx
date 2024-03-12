@@ -7,13 +7,11 @@ import type { palettes } from '../../styles/constants/themes';
 import { themeColorTitles } from '../../styles/constants/themes';
 import { Button } from '../Button';
 
-const StyledButton = styled(Button).attrs({ $size: 'sm' })<{ $text?: boolean }>(
-  ({ $text }) => [
-    tw`m-0.5 min-w-[2rem]`,
-    $text &&
-      tw`min-w-[4.7rem] w-full sm:w-fit text-xs font-bold uppercase col-span-2 sm:col-span-1`,
-  ]
-);
+const StyledButton = styled(Button)<{ $text?: boolean }>(({ $text }) => [
+  tw`m-0.5 min-w-[2rem]`,
+  $text &&
+    tw`min-w-[4.7rem] w-full sm:w-fit text-xs font-bold uppercase col-span-2 sm:col-span-1`,
+]);
 
 interface MenuButtonProps {
   task:
@@ -24,6 +22,7 @@ interface MenuButtonProps {
     | 'contrast'
     | 'theme'
     | keyof Omit<PortraitContext.AssembledPortrait, 'skin'>;
+  size?: 'sm' | 'md' | 'lg';
   icon?: IconType;
   copy?: string | number | ReactNode;
 }
@@ -41,7 +40,7 @@ const {
   usePortraitContext,
 } = PortraitContext;
 
-export function MenuButton({ task, icon, copy }: MenuButtonProps) {
+export function MenuButton({ task, icon, copy, size = 'sm' }: MenuButtonProps) {
   const {
     actions: { RANDOMIZE, SET_SINGLE_ATTRIBUTE, SET_TO_DEFAULT, SET_VIEW },
     state: { attributes, view },
@@ -152,7 +151,7 @@ export function MenuButton({ task, icon, copy }: MenuButtonProps) {
   ]);
 
   return (
-    <StyledButton $text={!!copy} onClick={handler()}>
+    <StyledButton $size={size} $text={!!copy} onClick={handler()}>
       {icon ? icon({}) : ''}
       {copy ? `${icon ? ` ${copy}` : copy}` : ''}
     </StyledButton>
