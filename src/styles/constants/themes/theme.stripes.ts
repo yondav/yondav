@@ -1,6 +1,6 @@
 export const stripes = {
-  fg: '#000000',
-  bg: '#ffffff',
+  fg: 'rgba(0, 0, 3,0.1)',
+  bg: 'rgba(241,243,247,0.1)',
   neutral: {
     50: '#f1f3f7',
     100: '#e5e5e5',
