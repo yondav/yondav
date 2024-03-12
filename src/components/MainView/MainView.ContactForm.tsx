@@ -20,11 +20,15 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ profileImg }: ContactFormProps) {
-  const { register, handleSubmit, formState } = useForm<ContactFormData>();
+  const { register, handleSubmit, formState, reset } = useForm<ContactFormData>();
 
-  const onSubmit = useCallback((data: ContactFormData) => {
-    sendEmail(data);
-  }, []);
+  const onSubmit = useCallback(
+    async (data: ContactFormData) => {
+      await sendEmail(data);
+      reset();
+    },
+    [reset]
+  );
 
   return (
     <Form.Base $grid onSubmit={handleSubmit(onSubmit)}>
