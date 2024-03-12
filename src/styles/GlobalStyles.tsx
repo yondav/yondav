@@ -15,8 +15,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 const CustomStyles = createGlobalStyle({
   ':root': {
-    '--fg': '#000000',
-    '--bg': '#ffffff',
+    '--fg': palettes.stripes.fg,
+    '--bg': palettes.stripes.bg,
     '--neutral-50': palettes.stripes.neutral[50],
     '--neutral-100': palettes.stripes.neutral[100],
     '--neutral-200': palettes.stripes.neutral[200],
@@ -35,8 +35,8 @@ const CustomStyles = createGlobalStyle({
     '--portrait-menu-bottom': '8rem',
   },
   '.dark': {
-    '--fg': '#ffffff',
-    '--bg': '#000000',
+    '--fg': palettes.stripes.bg,
+    '--bg': palettes.stripes.fg,
     '--neutral-50': palettes.stripes.neutral[950],
     '--neutral-100': palettes.stripes.neutral[900],
     '--neutral-200': palettes.stripes.neutral[800],
