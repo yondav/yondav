@@ -64,7 +64,7 @@
         for tech in self.technologies:
             icon_file_name = tech.lower() + '.svg'
             icon_path = os.path.join('./readme-assets/icons', icon_file_name)
-            icon_markdown = f"<img src='{icon_path}' width='50' alt='{tech}'>"
+            icon_markdown = f"<img src='{icon_path}' width='50' style="margin:0 8px;" alt='{tech}'>"
             icons_markdown_list.append(icon_markdown)
         return " ".join(icons_markdown_list)
 ```
@@ -89,24 +89,7 @@ Outside of programming, my primary interests are
 
 ## yondav.tech_icons()
 
-<img src='./readme-assets/icons/javascript.svg' width='50' alt='JavaScript'>
-<img src='./readme-assets/icons/typescript.svg' width='50' alt='TypeScript'>
-<img src='./readme-assets/icons/python.svg' width='50' alt='Python'> <img src='./readme-assets/icons/bash.svg' width='50' alt='Bash'>
-<img src='./readme-assets/icons/git.svg' width='50' alt='Git'>
-<img src='./readme-assets/icons/rust.svg' width='50' alt='Rust'>
-<img src='./readme-assets/icons/solidity.svg' width='50' alt='Solidity'>
-<img src='./readme-assets/icons/aws.svg' width='50' alt='AWS'>
-<img src='./readme-assets/icons/reactjs.svg' width='50' alt='ReactJS'>
-<img src='./readme-assets/icons/nextjs.svg' width='50' alt='NextJS'>
-<img src='./readme-assets/icons/gatsby.svg' width='50' alt='Gatsby'>
-<img src='./readme-assets/icons/css.svg' width='50' alt='CSS'>
-<img src='./readme-assets/icons/tailwindcss.svg' width='50' alt='TailwindCSS'> <img src='./readme-assets/icons/nodejs.svg' width='50' alt='NodeJS'>
-<img src='./readme-assets/icons/expressjs.svg' width='50' alt='ExpressJS'>
-<img src='./readme-assets/icons/nestjs.svg' width='50' alt='NestJS'>
-<img src='./readme-assets/icons/prisma.svg' width='50' alt='Prisma'>
-<img src='./readme-assets/icons/mongodb.svg' width='50' alt='MongoDB'>
-<img src='./readme-assets/icons/mysql.svg' width='50' alt='MySQL'>
-<img src='./readme-assets/icons/postgresql.svg' width='50' alt='PostgreSQL'>
+<img src='./readme-assets/icons/javascript.svg' width='50' style="margin:0 8px;" alt='JavaScript'><img src='./readme-assets/icons/typescript.svg' width='50' style="margin:0 8px;" alt='TypeScript'><img src='./readme-assets/icons/python.svg' width='50' style="margin:0 8px;" alt='Python'> <img src='./readme-assets/icons/bash.svg' width='50' style="margin:0 8px;" alt='Bash'><img src='./readme-assets/icons/git.svg' width='50' style="margin:0 8px;" alt='Git'><img src='./readme-assets/icons/rust.svg' width='50' style="margin:0 8px;" alt='Rust'><img src='./readme-assets/icons/solidity.svg' width='50' style="margin:0 8px;" alt='Solidity'><img src='./readme-assets/icons/aws.svg' width='50' style="margin:0 8px;" alt='AWS'><img src='./readme-assets/icons/reactjs.svg' width='50' style="margin:0 8px;" alt='ReactJS'><img src='./readme-assets/icons/nextjs.svg' width='50' style="margin:0 8px;" alt='NextJS'><img src='./readme-assets/icons/gatsby.svg' width='50' style="margin:0 8px;" alt='Gatsby'><img src='./readme-assets/icons/css.svg' width='50' style="margin:0 8px;" alt='CSS'><img src='./readme-assets/icons/tailwindcss.svg' width='50' style="margin:0 8px;" alt='TailwindCSS'><img src='./readme-assets/icons/nodejs.svg' width='50' style="margin:0 8px;" alt='NodeJS'><img src='./readme-assets/icons/expressjs.svg' width='50' style="margin:0 8px;" alt='ExpressJS'><img src='./readme-assets/icons/nestjs.svg' width='50' style="margin:0 8px;" alt='NestJS'><img src='./readme-assets/icons/prisma.svg' width='50' style="margin:0 8px;" alt='Prisma'><img src='./readme-assets/icons/mongodb.svg' width='50' style="margin:0 8px;" alt='MongoDB'><img src='./readme-assets/icons/mysql.svg' width='50' style="margin:0 8px;" alt='MySQL'><img src='./readme-assets/icons/postgresql.svg' width='50' style="margin:0 8px;" alt='PostgreSQL'>
 
 ##
 
