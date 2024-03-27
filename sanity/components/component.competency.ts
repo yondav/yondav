@@ -1,6 +1,6 @@
 import { defineType } from 'sanity';
 
-export const competencySchema = defineType({
+export const competencyComponent = defineType({
   name: 'competency',
   type: 'object',
   fields: [

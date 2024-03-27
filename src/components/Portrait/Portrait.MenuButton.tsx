@@ -7,11 +7,16 @@ import type { palettes } from '../../styles/constants/themes';
 import { themeColorTitles } from '../../styles/constants/themes';
 import { Button } from '../Button';
 
-const StyledButton = styled(Button)<{ $text?: boolean }>(({ $text }) => [
-  tw`m-0.5 min-w-[2rem]`,
-  $text &&
-    tw`min-w-[4.7rem] w-full sm:w-fit text-xs font-bold uppercase col-span-2 sm:col-span-1`,
-]);
+const StyledButton = styled(Button)<{ $text?: boolean; $active?: boolean }>(
+  ({ $text, $active }) => [
+    tw`m-0.5 min-w-[2rem]`,
+    $text &&
+      tw`min-w-[4.7rem] w-full sm:w-fit text-xs font-bold uppercase col-span-2 sm:col-span-1`,
+
+    $active &&
+      tw`after:(bg-accent-300) text-neutral-950 scale-y-110 -translate-y-1 shadow-control hover:(after:bg-accent-300)`,
+  ]
+);
 
 interface MenuButtonProps {
   task:
@@ -25,6 +30,7 @@ interface MenuButtonProps {
   size?: 'sm' | 'md' | 'lg';
   icon?: IconType;
   copy?: string | number | ReactNode;
+  active?: boolean;
 }
 
 const {
@@ -40,7 +46,7 @@ const {
   usePortraitContext,
 } = PortraitContext;
 
-export function MenuButton({ task, icon, copy, size = 'sm' }: MenuButtonProps) {
+export function MenuButton({ task, icon, copy, size = 'sm', active }: MenuButtonProps) {
   const {
     actions: { RANDOMIZE, SET_SINGLE_ATTRIBUTE, SET_TO_DEFAULT, SET_VIEW },
     state: { attributes, view },
@@ -151,7 +157,7 @@ export function MenuButton({ task, icon, copy, size = 'sm' }: MenuButtonProps) {
   ]);
 
   return (
-    <StyledButton $size={size} $text={!!copy} onClick={handler()}>
+    <StyledButton $size={size} $text={!!copy} $active={active} onClick={handler()}>
       {icon ? icon({}) : ''}
       {copy ? `${icon ? ` ${copy}` : copy}` : ''}
     </StyledButton>

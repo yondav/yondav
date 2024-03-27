@@ -8,9 +8,12 @@ export default {
       fontFamily: {
         header: 'var(--font-header)',
         body: 'var(--font-body)',
+        aux: 'var(--font-aux)',
       },
       boxShadow: {
-        control: '0.5px 6px 0px 0 rgb(0 0 0 / 0.35),0 1.5px 0px 0px rgb(0 0 0 / 1.1)',
+        control: '0 6px 0 0 rgb(0 0 0 / 0.35)',
+      },
+      textShadow: {
         'colored-sm':
           '.25rem .25rem 0 var(--primary-500), -.25rem -.25rem 0 var(--secondary-200)',
         'colored-md':
@@ -51,11 +54,11 @@ export default {
           500: 'var(--secondary-500)',
         },
         accent: {
-          100: 'var(--accent-primary-100)',
-          200: 'var(--accent-primary-200)',
-          300: 'var(--accent-primary-300)',
-          400: 'var(--accent-primary-400)',
-          500: 'var(--accent-primary-500)',
+          100: 'var(--accent-100)',
+          200: 'var(--accent-200)',
+          300: 'var(--accent-300)',
+          400: 'var(--accent-400)',
+          500: 'var(--accent-500)',
         },
       },
     },
