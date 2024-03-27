@@ -1,8 +1,6 @@
 import { IoIosInformationCircle as icon } from 'react-icons/io';
 import { defineType } from 'sanity';
 
-import { socialLinkSchema } from '../components';
-
 export const profileSchema = defineType({
   name: 'profile',
   title: 'Profile',
@@ -33,13 +31,19 @@ export const profileSchema = defineType({
     },
     {
       name: 'resume',
-      type: 'file',
       title: 'Resume',
+      type: 'file',
     },
     {
       name: 'competencies',
+      title: 'Competencies',
       type: 'array',
       of: [{ type: 'competency' }],
+    },
+    {
+      name: 'brand',
+      title: 'Brand',
+      type: 'brand',
     },
   ],
 });
