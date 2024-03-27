@@ -4,7 +4,7 @@ const baseStyle = (error: boolean) => [
   tw`w-full py-3 px-6`,
   tw`border border-neutral-300 bg-neutral-50 text-base text-neutral-700 outline-none`,
   tw`rounded-md transition-all duration-300`,
-  tw`focus:(border-primary-500 shadow-control)`,
+  tw`focus:(border-accent-300 shadow-control)`,
 
   error && tw`border-red-600 bg-red-500/10`,
 ];
@@ -12,7 +12,7 @@ const baseStyle = (error: boolean) => [
 export const Base = styled.form<{ $grid?: boolean }>(({ $grid }) => [
   tw`w-full`,
   $grid && {
-    ...tw`grid grid-cols-6 gap-y-12 lg:gap-x-12`,
+    ...tw`grid grid-cols-6 gap-y-8 lg:gap-x-8`,
     gridTemplateRows: 'auto 1fr auto',
   },
 ]);

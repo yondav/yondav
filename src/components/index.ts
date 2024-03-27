@@ -6,6 +6,5 @@ export * from './Form';
 export * from './Layout';
 export * from './Logo';
 export * from './Portrait';
-export * from './SiteHeader';
 export * from './Typography';
 export * from './MainView';

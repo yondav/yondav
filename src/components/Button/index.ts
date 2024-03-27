@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import tw, { styled } from 'twin.macro';
 
 interface ButtonProps {
-  $variant?: 'primary' | 'secondary';
+  $variant?: 'primary' | 'secondary' | 'accent' | 'neutral';
   $size?: 'sm' | 'md' | 'lg';
 }
 
@@ -20,18 +20,32 @@ export const Button = styled(motion.button)<ButtonProps>(({ $size = 'md', $varia
   // after
   tw`after:(absolute left-0 top-0 w-full h-1/6 bg-neutral-700)`,
   // hover / focus
-  tw`hocus:(after:(bg-neutral-950) text-neutral-950 scale-y-110 -translate-y-1 shadow-sm outline-0)`,
+  tw`hover:(after:(bg-neutral-950) text-neutral-950 scale-y-110 -translate-y-1 shadow-control outline-0)`,
 
   /***  viarants ***/
 
+  $variant && tw`transition-all duration-300 py-2.5`,
+
   $variant === 'primary' &&
     tw`bg-gradient-to-b from-primary-100 to-primary-200 text-primary-500`,
-  $variant === 'primary' && tw`after:(bg-primary-300) hocus:(after:(bg-primary-500))`,
+  $variant === 'primary' && tw`after:(bg-primary-300) hover:(after:(bg-primary-500))`,
 
   $variant === 'secondary' &&
     tw`bg-gradient-to-b from-secondary-100 to-secondary-200 text-secondary-500`,
   $variant === 'secondary' &&
-    tw`after:(bg-secondary-300) hocus:(after:(bg-secondary-500))`,
+    tw`after:(bg-secondary-300) hover:(after:(bg-secondary-500))`,
+
+  $variant === 'accent' &&
+    tw`bg-gradient-to-b from-neutral-100 to-neutral-100 brightness-125 shadow-none border border-neutral-100`,
+  $variant === 'accent' &&
+    tw`after:(absolute left-0 top-0 w-0 h-0) hocus:(brightness-100 text-accent-300 scale-y-100 -translate-y-0 shadow-control outline-0)`,
+
+  $variant === 'neutral' &&
+    tw`bg-gradient-to-b from-neutral-300 to-neutral-200 shadow-none border border-neutral-100`,
+  $variant === 'neutral' &&
+    tw`after:(absolute left-0 top-0 w-0 h-0) hocus:(brightness-110 scale-y-100 -translate-y-0 shadow-control outline-0)`,
+
+  // $variant === 'accent' && tw`after:(bg-secondary-300) hover:(after:(bg-secondary-500))`,
 
   /***  sizes ***/
   $size === 'sm' && tw`text-xs md:text-sm pb-1 pt-2.5 px-2.5`,
