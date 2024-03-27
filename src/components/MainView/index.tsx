@@ -1,16 +1,12 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { RiFileList2Fill, RiGithubFill, RiLinkedinBoxFill } from 'react-icons/ri';
-import tw, { styled, theme } from 'twin.macro';
+import tw, { styled } from 'twin.macro';
 
 import type { ProfileResult } from '../../../sanity/lib';
-import { animations, iconMap } from '../../styles/constants';
-import { Button } from '../Button';
+import { animations } from '../../styles/constants';
 import { Layout } from '../Layout';
 import { PortraitComponent } from '../Portrait';
-import { Banner, RichText } from '../Typography';
+import { Heading, RichText } from '../Typography';
 
 import { ContactForm } from './MainView.ContactForm';
 
@@ -25,16 +21,6 @@ const BioContent = styled(motion.div).attrs({ ...animations.parallax() })(() => 
   tw`lg:max-w-screen-md`,
 ]);
 
-const ButtonGroup = styled(motion.div).attrs({ ...animations.parallax() })(() => [
-  tw`w-fit flex gap-0.5 ml-auto`,
-]);
-
-const BioButton = styled(Button).attrs({
-  as: 'a',
-  target: '_blank',
-  rel: 'noopener noreferrer',
-})({});
-
 const CompetenciesSection = styled(motion.section).attrs({ ...animations.parallax() })(
   () => [tw`pb-28 px-4 sm:px-12 md:px-24`]
 );
@@ -45,7 +31,7 @@ const CompetenciesGrid = styled.div(() => [tw`grid grid-cols-8 sm:grid-cols-12 g
 
 export function MainView({ data: { profile } }: { data: { profile: ProfileResult } }) {
   return (
-    <Layout socials={profile.socials}>
+    <Layout socials={profile.socials} resume={profile.resumeURL}>
       <PortraitComponent />
       <BioSection>
         <BioContent>
@@ -56,7 +42,7 @@ export function MainView({ data: { profile } }: { data: { profile: ProfileResult
       </BioSection>
       <CompetenciesSection>
         <CompetenciesContent>
-          <h1>Competencies</h1>
+          <Heading>Competencies</Heading>
           <CompetenciesGrid>
             {profile.competencies.map(c => (
               <div key={c._key} css={tw`col-span-4 lg:col-span-3`}>
@@ -75,27 +61,21 @@ export function MainView({ data: { profile } }: { data: { profile: ProfileResult
       </CompetenciesSection>
       <CompetenciesSection>
         <CompetenciesContent>
-          <h1>Say Hi</h1>
-          <ContactForm profileImg={profile.photoURL} />
+          <Heading>Say Hi</Heading>
+          <ContactForm />
         </CompetenciesContent>
       </CompetenciesSection>
-      <section
-        css={tw`pb-4 px-4 mx-auto sm:px-12 md:px-24 bg-gradient-to-b from-transparent to-fg`}
-      >
-        <Banner>More soon...</Banner>
-        <BioContent css={tw`mt-32`}>
-          <ButtonGroup>
-            <BioButton href={profile.resumeURL}>
-              <RiFileList2Fill size='1.5rem' />
-            </BioButton>
-            {profile.socials.map(s => (
-              <BioButton key={s._key} href={s.link}>
-                {iconMap[s.entity]({ size: '1.5rem' })}
-              </BioButton>
-            ))}
-          </ButtonGroup>
-        </BioContent>
-      </section>
+      <CompetenciesSection css={tw`relative bg-gradient-to-b from-transparent to-fg`}>
+        <Image
+          priority
+          width={0}
+          height={0}
+          sizes='100vw'
+          src={profile.photoURL}
+          alt='yoni david'
+          css={tw`max-w-md w-full h-auto mx-auto rounded-md relative`}
+        />
+      </CompetenciesSection>
     </Layout>
   );
 }
