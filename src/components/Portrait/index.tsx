@@ -1,7 +1,8 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import tw, { styled } from 'twin.macro';
 
 import { ThemeContext } from '../../contexts';
+import { useIsomorphicLayoutEffect } from '../../hooks';
 import { LogoCurtain } from '../Logo';
 
 import { backgrounds } from './Backgrounds';
@@ -27,9 +28,18 @@ const PortraitContainer = styled(BackgroundContainer)(() => [
 ]);
 
 export function PortraitComponent() {
+  const [initialized, setInitialized] = useState(false);
+
   const {
     state: { palette },
   } = ThemeContext.useThemeContext();
+
+  useIsomorphicLayoutEffect(() => {
+    setTimeout(() => {
+      setInitialized(true);
+    }, 3000),
+      [];
+  });
 
   const Background = useMemo(() => backgrounds[palette], [palette]);
   return (
@@ -53,9 +63,11 @@ export function PortraitComponent() {
             <Attribute attribute='hat' />
           </Canvas>
         </PortraitContainer>
-        <BackgroundContainer css={tw`absolute z-40`}>
-          <LogoCurtain />
-        </BackgroundContainer>
+        {!initialized && (
+          <BackgroundContainer css={tw`absolute z-50`}>
+            <LogoCurtain />
+          </BackgroundContainer>
+        )}
         <PortraitMenu />
       </PlaygroundContainer>
     </>
