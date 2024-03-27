@@ -1,10 +1,10 @@
 'use client';
-import { Fugaz_One, Inter, Sarpanch, Zilla_Slab } from 'next/font/google';
+import { Fugaz_One, Inter, Archivo_Narrow } from 'next/font/google';
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import tw, { GlobalStyles as BaseStyles } from 'twin.macro';
 
-import { generateColorVariables, palettes } from './constants/themes';
+import { generateColorVariables, neutrals } from './constants/themes';
 
 const fugaz = Fugaz_One({
   subsets: ['latin'],
@@ -13,60 +13,74 @@ const fugaz = Fugaz_One({
 
 const inter = Inter({ subsets: ['latin'] });
 
-const zilla = Zilla_Slab({
+const archivo = Archivo_Narrow({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
 });
+
+const stripesPalette = generateColorVariables('stripes');
+const otbPalette = generateColorVariables('otb');
+const sheaPalette = generateColorVariables('shea');
+const bsPalette = generateColorVariables('bs');
+const cesPalette = generateColorVariables('ces');
+const tapePalette = generateColorVariables('tape');
 
 const CustomStyles = createGlobalStyle({
   ':root': {
-    '--fg': palettes.stripes.fg,
-    '--bg': palettes.stripes.bg,
-    '--neutral-50': palettes.stripes.neutral[50],
-    '--neutral-100': palettes.stripes.neutral[100],
-    '--neutral-200': palettes.stripes.neutral[200],
-    '--neutral-300': palettes.stripes.neutral[300],
-    '--neutral-400': palettes.stripes.neutral[400],
-    '--neutral-500': palettes.stripes.neutral[500],
-    '--neutral-600': palettes.stripes.neutral[600],
-    '--neutral-700': palettes.stripes.neutral[700],
-    '--neutral-800': palettes.stripes.neutral[800],
-    '--neutral-900': palettes.stripes.neutral[900],
-    '--neutral-950': palettes.stripes.neutral[950],
+    '--fg': neutrals.fg,
+    '--bg': neutrals.bg,
+    '--neutral-50': neutrals.neutral[50],
+    '--neutral-100': neutrals.neutral[100],
+    '--neutral-200': neutrals.neutral[200],
+    '--neutral-300': neutrals.neutral[300],
+    '--neutral-400': neutrals.neutral[400],
+    '--neutral-500': neutrals.neutral[500],
+    '--neutral-600': neutrals.neutral[600],
+    '--neutral-700': neutrals.neutral[700],
+    '--neutral-800': neutrals.neutral[800],
+    '--neutral-900': neutrals.neutral[900],
+    '--neutral-950': neutrals.neutral[950],
 
-    '--font-header': zilla.style.fontFamily,
+    '--font-header': archivo.style.fontFamily,
     '--font-body': inter.style.fontFamily,
     '--font-aux': fugaz.style.fontFamily,
 
     '--portrait-menu-bottom': '8rem',
   },
+
   '.dark': {
-    '--fg': palettes.stripes.bg,
-    '--bg': palettes.stripes.fg,
-    '--neutral-50': palettes.stripes.neutral[950],
-    '--neutral-100': palettes.stripes.neutral[900],
-    '--neutral-200': palettes.stripes.neutral[800],
-    '--neutral-300': palettes.stripes.neutral[700],
-    '--neutral-400': palettes.stripes.neutral[600],
-    '--neutral-500': palettes.stripes.neutral[500],
-    '--neutral-600': palettes.stripes.neutral[400],
-    '--neutral-700': palettes.stripes.neutral[300],
-    '--neutral-800': palettes.stripes.neutral[200],
-    '--neutral-900': palettes.stripes.neutral[100],
-    '--neutral-950': palettes.stripes.neutral[50],
+    '--fg': neutrals.bg,
+    '--bg': neutrals.fg,
+    '--neutral-50': neutrals.neutral[950],
+    '--neutral-100': neutrals.neutral[900],
+    '--neutral-200': neutrals.neutral[800],
+    '--neutral-300': neutrals.neutral[700],
+    '--neutral-400': neutrals.neutral[600],
+    '--neutral-500': neutrals.neutral[500],
+    '--neutral-600': neutrals.neutral[400],
+    '--neutral-700': neutrals.neutral[300],
+    '--neutral-800': neutrals.neutral[200],
+    '--neutral-900': neutrals.neutral[100],
+    '--neutral-950': neutrals.neutral[50],
   },
-  '.stripes': generateColorVariables('stripes', 'light'),
-  '.stripes.dark': generateColorVariables('stripes', 'dark'),
-  '.otb': generateColorVariables('otb', 'light'),
-  '.otb.dark': generateColorVariables('otb', 'dark'),
-  '.shea': generateColorVariables('shea', 'light'),
-  '.shea.dark': generateColorVariables('shea', 'dark'),
-  '.bs': generateColorVariables('bs', 'light'),
-  '.bs.dark': generateColorVariables('bs', 'dark'),
-  '.ces': generateColorVariables('ces', 'light'),
-  '.ces.dark': generateColorVariables('ces', 'dark'),
-  '.tape': generateColorVariables('tape', 'light'),
-  '.tape.dark': generateColorVariables('tape', 'dark'),
+
+  '.stripes': stripesPalette.light,
+  '.stripes.dark': stripesPalette.dark,
+
+  '.otb': otbPalette.light,
+  '.otb.dark': otbPalette.dark,
+
+  '.shea': sheaPalette.light,
+  '.shea.dark': sheaPalette.dark,
+
+  '.bs': bsPalette.light,
+  '.bs.dark': bsPalette.dark,
+
+  '.ces': cesPalette.light,
+  '.ces.dark': cesPalette.dark,
+
+  '.tape': tapePalette.light,
+  '.tape.dark': tapePalette.dark,
 
   body: {
     ...tw`antialiased bg-neutral-100 text-neutral-950 font-body`,
@@ -95,7 +109,7 @@ const CustomStyles = createGlobalStyle({
   },
 
   h5: {
-    ...tw`font-body font-semibold text-base mb-2 uppercase`,
+    ...tw`font-header font-semibold text-base mb-2 uppercase`,
   },
 
   p: {
