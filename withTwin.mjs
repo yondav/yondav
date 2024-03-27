@@ -1,18 +1,18 @@
-import babelPluginTypescript from '@babel/plugin-syntax-typescript'
-import babelPluginMacros from 'babel-plugin-macros'
-import * as path from 'path'
-import * as url from 'url'
+import babelPluginTypescript from '@babel/plugin-syntax-typescript';
+import babelPluginMacros from 'babel-plugin-macros';
+import * as path from 'path';
+import * as url from 'url';
 // import babelPluginTwin from 'babel-plugin-twin'
 
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 // The folders containing files importing twin.macro
-const includedDirs = [path.resolve(__dirname, 'src')]
+const includedDirs = [path.resolve(__dirname, 'src')];
 
 /** @returns {import('next').NextConfig} */
 export default function withTwin(
   /** @type {import('next').NextConfig} */
-  nextConfig,
+  nextConfig
 ) {
   return {
     ...nextConfig,
@@ -23,10 +23,10 @@ export default function withTwin(
     webpack(
       /** @type {import('webpack').Configuration} */
       config,
-      options,
+      options
     ) {
-      config.module = config.module || {}
-      config.module.rules = config.module.rules || []
+      config.module = config.module || {};
+      config.module.rules = config.module.rules || [];
 
       config.module.rules.push({
         test: /\.(tsx|ts)$/,
@@ -44,12 +44,12 @@ export default function withTwin(
             },
           },
         ],
-      })
+      });
 
       if (typeof nextConfig.webpack === 'function')
-        return nextConfig.webpack(config, options)
+        return nextConfig.webpack(config, options);
 
-      return config
+      return config;
     },
-  }
+  };
 }
