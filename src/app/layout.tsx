@@ -9,6 +9,11 @@ import GlobalStyles from '../styles/GlobalStyles';
 const title = 'Yoni David | Full Stack Developer';
 const description =
   'Providing expertise in a range of technologies, delivering high-quality applications, scalable solutions and productive development environments.';
+const banner = {
+  url: 'https://cdn.sanity.io/images/0gd4yjy9/production/adb7ee0ec99092b1a5decc50e634b8a6a448b9e5-2400x1260.png',
+  width: 1200,
+  height: 630,
+};
 
 export const metadata: Metadata = {
   title,
@@ -43,14 +48,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title,
     description,
-    images: [],
+    images: [banner],
   },
   openGraph: {
     type: 'website',
     title,
     description,
-    images: [],
+    images: [banner],
   },
+  manifest: '/site.webmanifest',
 };
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
