@@ -5,7 +5,7 @@ import { MdOutlineSettingsBackupRestore } from 'react-icons/md';
 import {
   RiTShirt2Line,
   RiShuffleFill,
-  RiPaletteFill,
+  RiMapPin2Fill,
   RiContrastFill,
   RiPaintFill,
 } from 'react-icons/ri';
@@ -94,9 +94,19 @@ export function PortraitMenu() {
                 icon={MdOutlineSettingsBackupRestore}
               />
               <MenuButton size='md' task='contrast' icon={RiContrastFill} />
-              <MenuButton size='md' task='theme' icon={RiPaletteFill} />
-              <MenuButton size='md' task='custom' icon={RiTShirt2Line} />
-              <MenuButton size='md' task='color' icon={RiPaintFill} />
+              <MenuButton size='md' task='theme' icon={RiMapPin2Fill} />
+              <MenuButton
+                size='md'
+                task='custom'
+                icon={RiTShirt2Line}
+                active={view === 'custom'}
+              />
+              <MenuButton
+                size='md'
+                task='color'
+                icon={RiPaintFill}
+                active={view === 'color'}
+              />
               <MenuButton size='md' task='random' icon={RiShuffleFill} />
             </div>
 
